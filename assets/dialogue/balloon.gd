@@ -74,6 +74,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
+@onready var skip_ui: Panel = $SkipUI
 
 func _ready() -> void:
 	balloon.hide()
@@ -228,6 +229,9 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_skip_button_pressed() -> void:
+	skip_ui.visible = true
+
+func _on_skip_button_yes_pressed() -> void:
 	if is_instance_valid(audio_stream_player):
 		audio_stream_player.stop()
 
@@ -235,10 +239,13 @@ func _on_skip_button_pressed() -> void:
 
 	queue_free()
 
+func _on_skip_button_no_pressed() -> void:
+	skip_ui.visible = false
+
 func _on_autoplay_toggle_pressed() -> void:
 	is_autoplay = !is_autoplay
 	autoplay_button.text = "Autoplay: ON" if is_autoplay else "Autoplay: OFF"
-	
+		
 	autoplay_timer.start(1.5)
 
 func _on_finished_typing() -> void:

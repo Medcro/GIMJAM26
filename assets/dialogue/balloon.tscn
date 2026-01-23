@@ -199,6 +199,7 @@ text = "Response example"
 unique_name_in_owner = true
 
 [node name="SkipButton" type="Button" parent="."]
+z_index = 10
 offset_left = 1019.0
 offset_top = 6.0
 offset_right = 1141.0
@@ -206,13 +207,52 @@ offset_bottom = 36.0
 text = "skip"
 
 [node name="AutoplayButton" type="Button" parent="."]
+z_index = 10
 offset_left = 920.0
 offset_top = 6.0
 offset_right = 996.0
 offset_bottom = 37.0
 text = "autoplay"
 
+[node name="SkipUI" type="Panel" parent="."]
+visible = false
+offset_left = 227.0
+offset_top = 36.0
+offset_right = 984.0
+offset_bottom = 557.0
+
+[node name="YesButton" type="Button" parent="SkipUI"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 307.0
+offset_right = 298.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 48
+text = "YES"
+
+[node name="NoButton" type="Button" parent="SkipUI"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 309.0
+offset_right = 647.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 48
+text = "NO"
+
+[node name="Label" type="Label" parent="SkipUI"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 22.0
+offset_right = 668.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 86
+text = "ARE YOU
+SURE....... SKIP"
+horizontal_alignment = 1
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
 [connection signal="pressed" from="AutoplayButton" to="." method="_on_autoplay_toggle_pressed"]
+[connection signal="pressed" from="SkipUI/YesButton" to="." method="_on_skip_button_yes_pressed"]
+[connection signal="pressed" from="SkipUI/NoButton" to="." method="_on_skip_button_no_pressed"]

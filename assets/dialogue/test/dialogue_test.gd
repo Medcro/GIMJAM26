@@ -3,11 +3,21 @@ extends Node2D
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 
-# Called when the node enters the scene tree for the first time.
+@onready var bg_sprite: TextureRect = $Background
+
 func _ready() -> void:
-	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
+	start_story()
 
+func set_bg(img_name: String) -> void:
+	var new_tex = load("res://assets/levels/test/" + img_name + ".png")
+	
+	var tween = create_tween()
+	# Fade out current bg
+	tween.tween_property(bg_sprite, "modulate:a", 0.0, 0.5)
+	# Switch texture and fade back in
+	tween.tween_callback(func(): bg_sprite.texture = new_tex)
+	tween.tween_property(bg_sprite, "modulate:a", 1.0, 0.5)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func start_story():
+	var resource = load("res://assets/dialogue/test/test.dialogue")
+	DialogueManager.show_dialogue_balloon(resource, "start", [self])
