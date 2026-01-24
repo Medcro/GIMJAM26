@@ -76,6 +76,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 @onready var skip_ui: Panel = $SkipUI
 
+@onready var pause_ui: Panel = $PauseUI
+
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
@@ -255,3 +257,14 @@ func _on_finished_typing() -> void:
 func _on_autoplay_timeout() -> void:
 	if is_autoplay:
 		next(dialogue_line.next_id)
+
+func _on_pause_button_pressed() -> void:
+	pause_ui.visible = true
+	get_tree().paused = true
+
+func _on_pause_resume_button_pressed() -> void:
+	pause_ui.visible = false
+	get_tree().paused = false
+
+func _on_pause_quit_button_pressed() -> void:
+	pass # Replace with function body.

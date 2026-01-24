@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3w6qqd46pmtb"]
+[gd_scene load_steps=15 format=3 uid="uid://c3w6qqd46pmtb"]
 
 [ext_resource type="Script" uid="uid://cvofkfqha4taw" path="res://assets/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Shader" uid="uid://bphjwhl12bbqy" path="res://shaders/blur.gdshader" id="4_ofehm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -98,6 +99,18 @@ _data = {
 &"RESET": SubResource("Animation_nlsx6"),
 &"progress": SubResource("Animation_qkmqt")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ofehm"]
+shader = ExtResource("4_ofehm")
+shader_parameter/blur_amount = 0.8280001343299999
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmn4d"]
+shader = ExtResource("4_ofehm")
+shader_parameter/blur_amount = 0.8280001343299999
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0, 0, 0, 1)
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -198,6 +211,11 @@ text = "Response example"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 
+[node name="PauseButton" type="Button" parent="."]
+offset_right = 66.0
+offset_bottom = 33.0
+text = "pause"
+
 [node name="SkipButton" type="Button" parent="."]
 z_index = 10
 offset_left = 1019.0
@@ -216,43 +234,93 @@ text = "autoplay"
 
 [node name="SkipUI" type="Panel" parent="."]
 visible = false
-offset_left = 227.0
-offset_top = 36.0
-offset_right = 984.0
-offset_bottom = 557.0
+material = SubResource("ShaderMaterial_ofehm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="YesButton" type="Button" parent="SkipUI"]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 307.0
-offset_right = 298.0
-offset_bottom = 456.0
+offset_left = 346.0
+offset_top = 330.0
+offset_right = 542.0
+offset_bottom = 479.0
 theme_override_font_sizes/font_size = 48
 text = "YES"
 
 [node name="NoButton" type="Button" parent="SkipUI"]
 layout_mode = 0
-offset_left = 441.0
-offset_top = 309.0
-offset_right = 647.0
-offset_bottom = 456.0
+offset_left = 659.0
+offset_top = 338.0
+offset_right = 865.0
+offset_bottom = 485.0
 theme_override_font_sizes/font_size = 48
 text = "NO"
 
 [node name="Label" type="Label" parent="SkipUI"]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 22.0
-offset_right = 668.0
-offset_bottom = 261.0
+offset_left = 295.0
+offset_top = 49.0
+offset_right = 879.0
+offset_bottom = 288.0
 theme_override_font_sizes/font_size = 86
 text = "ARE YOU
 SURE....... SKIP"
 horizontal_alignment = 1
 
+[node name="PauseUI" type="Panel" parent="."]
+process_mode = 3
+visible = false
+material = SubResource("ShaderMaterial_nmn4d")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -328.0
+offset_right = 578.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.5
+offset_top = 138.0
+offset_right = 192.5
+offset_bottom = 271.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 91
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="PauseUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.5
+offset_top = -317.0
+offset_right = 190.5
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 91
+text = "Quit"
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
 [connection signal="pressed" from="AutoplayButton" to="." method="_on_autoplay_toggle_pressed"]
 [connection signal="pressed" from="SkipUI/YesButton" to="." method="_on_skip_button_yes_pressed"]
 [connection signal="pressed" from="SkipUI/NoButton" to="." method="_on_skip_button_no_pressed"]
+[connection signal="pressed" from="PauseUI/ResumeButton" to="." method="_on_pause_resume_button_pressed"]
+[connection signal="pressed" from="PauseUI/QuitButton" to="." method="_on_pause_quit_button_pressed"]
