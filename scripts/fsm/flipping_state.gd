@@ -1,21 +1,16 @@
 extends State
 
 func enter():
-	book.update_text_visibility(false) # Hide text during flip
-	
 	var page = book.current_page
 	var prev = get_parent().previous_page_number
-	var p_count = book.page_count
+	var p_count = book.page_count 
 
-	
 	if page == 0:
 		if prev == 1: book.play("close_from_first")
-		elif prev == p_count: book.play("closed_front")
-		else: book.play("close_from_middle")
-	
-	elif page == p_count:
+		else: book.play("close_from_middle") 
+	elif page == p_count: 
 		if prev == p_count - 1: book.play("close_from_last")
-		elif prev == 0: book.play("closed_back")
+		else: book.play("closed_back")
 	
 	elif page == 1:
 		if prev == 0: book.play("open_to_first")
