@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkl832t6r4y02"]
+
+[ext_resource type="Script" uid="uid://ck0l8o3hr4mbk" path="res://scripts/pathfinder_ui.gd" id="1_svm1b"]
+
+[node name="PathfinderUI" type="CanvasLayer"]
+script = ExtResource("1_svm1b")
+
+[node name="ArrowContainer" type="HBoxContainer" parent="."]
+offset_left = 373.0
+offset_top = 537.0
+offset_right = 446.0
+offset_bottom = 606.0
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 986.0
+offset_top = 5.0
+offset_right = 1148.0
+offset_bottom = 36.0
+text = "Reset all movement"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
