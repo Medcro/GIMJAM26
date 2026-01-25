@@ -17,9 +17,9 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-DialogueManager="res://addons/dialogue_manager/dialogue_manager.gd"
-GlobalSettings="res://scripts/global/global_settings.gd"
-SaveManager="res://scripts/global/save_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GlobalSettings="*res://scripts/global/global_settings.gd"
+SaveManager="*res://scripts/global/save_manager.gd"
 
 [dialogue_manager]
 
