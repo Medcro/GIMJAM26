@@ -1,6 +1,8 @@
 extends State
 
 func enter():
+	book.update_text_visibility(false)
+		
 	var page = book.current_page
 	var prev = get_parent().previous_page_number
 	var p_count = book.page_count 

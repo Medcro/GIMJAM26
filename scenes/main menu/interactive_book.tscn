@@ -1,11 +1,11 @@
 [gd_scene load_steps=117 format=3 uid="uid://dpce6f6m8gtk3"]
 
 [ext_resource type="Texture2D" uid="uid://p1abnr3d8dml" path="res://assets/select level/Book_Sheet_64x64.png" id="1_heh6r"]
-[ext_resource type="Script" uid="uid://dfspqt2ry62pd" path="res://scripts/fsm/state_machine.gd" id="2_0qncq"]
-[ext_resource type="Script" uid="uid://bflr4hh75rv2e" path="res://scripts/interactive_book.gd" id="2_sltcf"]
-[ext_resource type="Script" uid="uid://c07enjsivj23m" path="res://scripts/fsm/idle_state.gd" id="4_yletg"]
-[ext_resource type="Script" uid="uid://dnrh37kt5r4du" path="res://scripts/fsm/flipping_state.gd" id="5_avk54"]
-[ext_resource type="Script" uid="uid://cobxmxc5if4bt" path="res://scripts/fsm/reading_state.gd" id="5_yletg"]
+[ext_resource type="Script" uid="uid://dfspqt2ry62pd" path="res://scripts/main menu/fsm/state_machine.gd" id="2_0qncq"]
+[ext_resource type="Script" uid="uid://bflr4hh75rv2e" path="res://scripts/main menu/interactive_book.gd" id="2_sltcf"]
+[ext_resource type="Script" uid="uid://c07enjsivj23m" path="res://scripts/main menu/fsm/idle_state.gd" id="4_yletg"]
+[ext_resource type="Script" uid="uid://dnrh37kt5r4du" path="res://scripts/main menu/fsm/flipping_state.gd" id="5_avk54"]
+[ext_resource type="Script" uid="uid://cobxmxc5if4bt" path="res://scripts/main menu/fsm/reading_state.gd" id="5_yletg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfc60"]
 atlas = ExtResource("1_heh6r")
@@ -889,13 +889,13 @@ selection_enabled = true
 
 [node name="LeftLabel2" type="RichTextLabel" parent="Control"]
 layout_mode = 0
-offset_left = -183.0
-offset_top = -21.0
-offset_right = -26.0
-offset_bottom = 2.0
+offset_left = -154.0
+offset_top = -15.0
+offset_right = 3.0
+offset_bottom = 8.0
 focus_mode = 2
 bbcode_enabled = true
-text = "aawasdwasdwasdw"
+text = "aawasdwasdw"
 selection_enabled = true
 
 [node name="RightLabel" type="RichTextLabel" parent="Control"]
@@ -948,6 +948,6 @@ script = ExtResource("5_avk54")
 [node name="ReadingState" type="Node" parent="StateMachine"]
 script = ExtResource("5_yletg")
 
-[connection signal="button_down" from="Control/NextPageButton" to="StateMachine/ReadingState" method="_on_next_page_button_button_down"]
-[connection signal="button_down" from="Control/PreviousPageButton" to="StateMachine/ReadingState" method="_on_previous_page_button_button_down"]
-[connection signal="button_down" from="Control/CloseButton" to="StateMachine/ReadingState" method="_on_close_button_button_down"]
+[connection signal="button_down" from="Control/NextPageButton" to="StateMachine/ReadingState" method="_on_next_page_button_down"]
+[connection signal="button_down" from="Control/PreviousPageButton" to="StateMachine/ReadingState" method="_on_previous_page_button_down"]
+[connection signal="button_down" from="Control/CloseButton" to="StateMachine/ReadingState" method="_on_close_button_down"]
