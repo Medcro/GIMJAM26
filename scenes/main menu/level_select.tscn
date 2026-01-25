@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://uraui42ynce0"]
+
+[ext_resource type="PackedScene" uid="uid://dpce6f6m8gtk3" path="res://scenes/main menu/interactive_book.tscn" id="1_3shnc"]
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
+position = Vector2(3, -7)
+animation = &"next_from_first"
+frame_progress = 0.32662717
+page_count = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.495, 3.495)

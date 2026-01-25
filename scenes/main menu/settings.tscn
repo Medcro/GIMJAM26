@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://ohcnl1qsiu1k"]
+
+[ext_resource type="Script" uid="uid://c2fpcjdcv4cdy" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="MusicControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 166.0
+offset_right = 1038.0
+offset_bottom = 227.0
+
+[node name="SFXControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 273.0
+offset_right = 1037.0
+offset_bottom = 289.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 161.0
+offset_right = 540.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 41
+text = "Background Music"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 247.0
+offset_right = 491.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 41
+text = "Sound Effects"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = -8.0
+offset_right = 681.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 60
+text = "Settings
+"
+
+[node name="ResetData" type="Button" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 412.0
+offset_right = 407.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 141
+text = "reset data"
+
+[connection signal="value_changed" from="MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="value_changed" from="SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="pressed" from="ResetData" to="." method="_on_reset_data_pressed"]
