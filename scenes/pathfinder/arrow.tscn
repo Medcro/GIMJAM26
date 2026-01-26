@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd45qyuhbt1yf"]
-
-[ext_resource type="Texture2D" uid="uid://cxid5rg7e6saw" path="res://assets/pathfinder/arrow_placeholder.png" id="1_bv7n2"]
+[gd_scene format=3 uid="uid://bd45qyuhbt1yf"]
 
 [node name="Arrow" type="TextureRect"]
 anchors_preset = 15
@@ -10,5 +8,4 @@ offset_right = -900.0
 offset_bottom = -401.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_bv7n2")
 expand_mode = 1

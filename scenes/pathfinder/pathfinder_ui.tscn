@@ -1,21 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkl832t6r4y02"]
+[gd_scene load_steps=21 format=3 uid="uid://dkl832t6r4y02"]
 
 [ext_resource type="Script" uid="uid://ck0l8o3hr4mbk" path="res://scripts/pathfinder_ui.gd" id="1_svm1b"]
+[ext_resource type="Texture2D" uid="uid://cbtvwjy7vu6u7" path="res://assets/pathfinder/arrow up.tres" id="2_bl8sh"]
+[ext_resource type="Texture2D" uid="uid://dm0it4h5argop" path="res://assets/pathfinder/reset button.tres" id="2_gjigx"]
+[ext_resource type="Texture2D" uid="uid://coalcpnuicf4h" path="res://assets/pathfinder/tombol arrow/up.tres" id="3_e8cu0"]
+[ext_resource type="Texture2D" uid="uid://cmcyr5i32t7u7" path="res://assets/pathfinder/arrow down.tres" id="3_g3bk5"]
+[ext_resource type="Texture2D" uid="uid://cetjei5knpcvc" path="res://assets/pathfinder/tombol arrow/right.tres" id="4_t7i4b"]
+[ext_resource type="Texture2D" uid="uid://mp2diw557ca" path="res://assets/pathfinder/arrow kiri.tres" id="4_v3ch7"]
+[ext_resource type="Texture2D" uid="uid://cj5c57rqkiph6" path="res://assets/pathfinder/tombol arrow/down.tres" id="5_tocuq"]
+[ext_resource type="Texture2D" uid="uid://bc7s6ml5cs0qj" path="res://assets/pathfinder/arrow right.tres" id="5_wl4y1"]
+[ext_resource type="Texture2D" uid="uid://d485vd8xt1h4" path="res://assets/pathfinder/dot.tres" id="6_bl8sh"]
+[ext_resource type="Texture2D" uid="uid://oc6nqokbbdat" path="res://assets/pathfinder/tombol arrow/left.tres" id="6_ueccc"]
+[ext_resource type="Texture2D" uid="uid://d0whij54mxu7b" path="res://assets/pathfinder/arrow box.tres" id="7_bl8sh"]
+[ext_resource type="Texture2D" uid="uid://fhe6bl5pimo8" path="res://assets/pathfinder/[clicked] reset button.tres" id="8_s23mh"]
+[ext_resource type="Texture2D" uid="uid://bfv28adxaloc3" path="res://assets/pathfinder/tombol arrow/[clicked] up.tres" id="9_tlc4x"]
+[ext_resource type="Texture2D" uid="uid://csci2mrj3d7tk" path="res://assets/pathfinder/tombol arrow/[clicked] right.tres" id="11_24xn8"]
+[ext_resource type="Texture2D" uid="uid://5lk5uq3jw538" path="res://assets/pathfinder/start.tres" id="12_g3bk5"]
+[ext_resource type="Texture2D" uid="uid://cn0fmpuuha8jq" path="res://assets/pathfinder/tombol arrow/[clicked] down.tres" id="13_s23mh"]
+[ext_resource type="Texture2D" uid="uid://cg7ww6kfcjyyu" path="res://assets/pathfinder/tombol arrow/[clicked] left.tres" id="15_ywj4q"]
+[ext_resource type="Texture2D" uid="uid://c1r23kvp1d1g2" path="res://assets/pathfinder/[clicked] start.tres" id="18_ywj4q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3bk5"]
+texture = ExtResource("7_bl8sh")
 
 [node name="PathfinderUI" type="CanvasLayer"]
 script = ExtResource("1_svm1b")
+tex_up = ExtResource("2_bl8sh")
+tex_down = ExtResource("3_g3bk5")
+tex_left = ExtResource("4_v3ch7")
+tex_right = ExtResource("5_wl4y1")
+tex_dot = ExtResource("6_bl8sh")
 
-[node name="ArrowContainer" type="HBoxContainer" parent="."]
-offset_left = 373.0
-offset_top = 537.0
-offset_right = 446.0
-offset_bottom = 606.0
+[node name="ResetButton" type="TextureButton" parent="."]
+offset_left = 1005.00006
+offset_top = 6.0000005
+offset_right = 1462.0
+offset_bottom = 196.0
+scale = Vector2(0.21169987, 0.2527595)
+action_mode = 0
+texture_normal = ExtResource("2_gjigx")
+texture_pressed = ExtResource("8_s23mh")
+metadata/_edit_use_anchors_ = true
 
-[node name="ResetButton" type="Button" parent="."]
-offset_left = 986.0
-offset_top = 5.0
-offset_right = 1148.0
-offset_bottom = 36.0
-text = "Reset all movement"
+[node name="UpButton" type="TextureButton" parent="."]
+offset_left = 107.0
+offset_top = 371.0
+offset_right = 259.0
+offset_bottom = 511.0
+scale = Vector2(0.59645444, 0.6871954)
+texture_normal = ExtResource("3_e8cu0")
+texture_pressed = ExtResource("9_tlc4x")
+metadata/_edit_use_anchors_ = true
+
+[node name="RightButton" type="TextureButton" parent="."]
+offset_left = 179.0
+offset_top = 449.00003
+offset_right = 329.0
+offset_bottom = 590.0
+scale = Vector2(0.59887356, 0.6871954)
+texture_normal = ExtResource("4_t7i4b")
+texture_pressed = ExtResource("11_24xn8")
+metadata/_edit_use_anchors_ = true
+
+[node name="DownButton" type="TextureButton" parent="."]
+offset_left = 106.00001
+offset_top = 526.00006
+offset_right = 257.0
+offset_bottom = 664.00006
+scale = Vector2(0.59887356, 0.6871954)
+texture_normal = ExtResource("5_tocuq")
+texture_pressed = ExtResource("13_s23mh")
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftButton" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 456.00003
+offset_right = 185.0
+offset_bottom = 593.0
+scale = Vector2(0.59887356, 0.6871954)
+texture_normal = ExtResource("6_ueccc")
+texture_pressed = ExtResource("15_ywj4q")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExecuteButton" type="TextureButton" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -88.99994
+offset_right = 120.0
+offset_bottom = 10.000061
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.87177604, 0.717761)
+texture_normal = ExtResource("12_g3bk5")
+texture_pressed = ExtResource("18_ywj4q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Box" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -162.0
+offset_right = 230.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_g3bk5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ArrowContainer" type="HBoxContainer" parent="Box"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 454.0
+offset_bottom = 67.0
+theme_override_constants/separation = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="ExecuteButton" to="." method="_on_execute_button_pressed"]

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://mp2diw557ca"]
+
+[ext_resource type="Texture2D" uid="uid://bljg45pl0g46u" path="res://assets/pathfinder/arrow kiri.png" id="1_rgcea"]
+
+[resource]
+atlas = ExtResource("1_rgcea")
+region = Rect2(93.38101, 105.70152, 54.137634, 28.417755)

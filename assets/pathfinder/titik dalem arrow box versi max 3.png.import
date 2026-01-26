@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxid5rg7e6saw"
-path="res://.godot/imported/arrow_placeholder.png-78060f71dff99c88941dc735986e7edb.ctex"
+uid="uid://cakqj1l7pb1sl"
+path="res://.godot/imported/titik dalem arrow box versi max 3.png-92b67fc5818c9615b4f520936988fbeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pathfinder/arrow_placeholder.png"
-dest_files=["res://.godot/imported/arrow_placeholder.png-78060f71dff99c88941dc735986e7edb.ctex"]
+source_file="res://assets/pathfinder/titik dalem arrow box versi max 3.png"
+dest_files=["res://.godot/imported/titik dalem arrow box versi max 3.png-92b67fc5818c9615b4f520936988fbeb.ctex"]
 
 [params]
 

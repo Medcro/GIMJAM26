@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dm0it4h5argop"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_udmcu"]
+load_path = "res://.godot/imported/reset button.png-8584831e7a79ec7eaa3ecf206b376b5c.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_udmcu")
+region = Rect2(285.63983, 168.23172, 457.44196, 190.9938)

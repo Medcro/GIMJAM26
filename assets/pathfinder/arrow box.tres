@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d0whij54mxu7b"]
+
+[ext_resource type="Texture2D" uid="uid://bpbaq3i87ft10" path="res://assets/pathfinder/arrow box.png" id="1_5h4o4"]
+
+[resource]
+atlas = ExtResource("1_5h4o4")
+region = Rect2(592.3203, 736.9606, 737.69836, 148.83032)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d485vd8xt1h4"]
+
+[ext_resource type="Texture2D" uid="uid://cakqj1l7pb1sl" path="res://assets/pathfinder/titik dalem arrow box versi max 3.png" id="1_bnff3"]
+
+[resource]
+atlas = ExtResource("1_bnff3")
+region = Rect2(935.0658, 792.47906, 38.738037, 41.34961)
