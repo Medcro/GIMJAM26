@@ -29,6 +29,10 @@ runtime/balloon_path="res://assets/dialogue/balloon.tscn"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="GIMJAM26"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
