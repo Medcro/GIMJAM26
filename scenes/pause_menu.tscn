@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8u0eead0g2bo"]
+
+[ext_resource type="Script" uid="uid://uuj23qd10u3n" path="res://pause_menu.gd" id="1_88e76"]
+[ext_resource type="Texture2D" uid="uid://d2rgbace7wjfu" path="res://assets/bubble overlay-left.png" id="2_88e76"]
+[ext_resource type="Texture2D" uid="uid://ft7wgwkxfl0h" path="res://assets/resume button.png" id="3_71k7c"]
+[ext_resource type="Script" uid="uid://j68b0f5krv3q" path="res://scenes/resume_button.gd" id="3_knqa7"]
+[ext_resource type="Texture2D" uid="uid://s5aax3ck4lu0" path="res://assets/resume button-clicked.png" id="4_cmnsq"]
+[ext_resource type="Texture2D" uid="uid://c7tayx84ap6kp" path="res://assets/quit button.png" id="5_ofnjo"]
+[ext_resource type="Texture2D" uid="uid://6mqjp6g07nob" path="res://assets/quit button-clicked.png" id="6_1rgno"]
+[ext_resource type="Texture2D" uid="uid://djtba4c4mg5gb" path="res://assets/pause button (1).png" id="7_4hnlu"]
+[ext_resource type="Texture2D" uid="uid://biby71rwwxf73" path="res://assets/pause button-clicked.png" id="8_3o3g3"]
+[ext_resource type="Script" uid="uid://b4ufcn38qmkho" path="res://scenes/quit_button.gd" id="8_71k7c"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_88e76")
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 646.0
+mouse_filter = 2
+texture = ExtResource("2_88e76")
+expand_mode = 1
+
+[node name="ResumeImageClicked" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 140.0
+offset_right = 872.0
+offset_bottom = 435.0
+mouse_filter = 2
+texture = ExtResource("4_cmnsq")
+expand_mode = 2
+
+[node name="ResumeImage" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 151.0
+offset_right = 874.0
+offset_bottom = 446.0
+mouse_filter = 2
+texture = ExtResource("3_71k7c")
+expand_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 502.0
+offset_top = 236.0
+offset_right = 727.0
+offset_bottom = 327.0
+script = ExtResource("3_knqa7")
+
+[node name="QuitImageClicked" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 241.0
+offset_right = 857.0
+offset_bottom = 530.0
+mouse_filter = 2
+texture = ExtResource("6_1rgno")
+expand_mode = 1
+
+[node name="QuitImage" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 262.0
+offset_right = 864.0
+offset_bottom = 551.0
+mouse_filter = 2
+texture = ExtResource("5_ofnjo")
+expand_mode = 1
+
+[node name="QuitButton" type="Button" parent="PauseMenu"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 498.0
+offset_top = 356.0
+offset_right = 734.0
+offset_bottom = 456.0
+script = ExtResource("8_71k7c")
+
+[node name="PauseButton" type="TextureButton" parent="."]
+offset_left = -81.0
+offset_top = -19.0
+offset_right = 214.11111
+offset_bottom = 147.0
+texture_normal = ExtResource("7_4hnlu")
+texture_pressed = ExtResource("8_3o3g3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
