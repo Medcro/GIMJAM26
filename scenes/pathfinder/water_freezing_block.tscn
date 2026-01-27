@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bju8rr8s67v4a"]
+
+[ext_resource type="Script" uid="uid://bekjnhvtqq0o4" path="res://scripts/water_freezing_block.gd" id="1_5uylf"]
+[ext_resource type="Texture2D" uid="uid://djqk1p0ighu3o" path="res://assets/pathfinder/water 1.png" id="2_m8l7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tybqp"]
+size = Vector2(127, 114.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxlvm"]
+size = Vector2(128, 117)
+
+[node name="WaterFreezingBlock" type="StaticBody2D"]
+position = Vector2(64, 57)
+script = ExtResource("1_5uylf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.9999924, 1.0000153)
+scale = Vector2(0.7945455, 0.734)
+texture = ExtResource("2_m8l7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tybqp")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(61, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-61, -56)
+shape = SubResource("RectangleShape2D_yxlvm")
