@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://boy17ormmweo7"]
+
+[ext_resource type="Texture2D" uid="uid://nmybrk6ijybw" path="res://assets/visual novel ui/character bust-up profile.png" id="1_wejau"]
+
+[resource]
+atlas = ExtResource("1_wejau")
+region = Rect2(664, 108.46486, 658.34753, 889.4623)

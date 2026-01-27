@@ -23,7 +23,7 @@ signal dialogue_ended
 
 @onready var autoplay_timer: Timer = Timer.new()
 
-@onready var autoplay_button: Button = $AutoplayButton
+@onready var autoplay_button: TextureButton = $AutoplayButton
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -77,6 +77,8 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var skip_ui: Panel = $SkipUI
 
 @onready var pause_ui: Panel = $PauseUI
+
+@onready var chara_portrait: TextureRect = $CharaPortrait
 
 func _ready() -> void:
 	balloon.hide()
@@ -145,6 +147,11 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	
+	var potrait_path: String = "res://assets/portrait/%s/.png" % dialogue_line.character
+	if ResourceLoader.exists(potrait_path):
+		chara_portrait.texture = load(potrait_path)
+	else: chara_portrait.texture = null
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -246,8 +253,6 @@ func _on_skip_button_no_pressed() -> void:
 
 func _on_autoplay_toggle_pressed() -> void:
 	is_autoplay = !is_autoplay
-	autoplay_button.text = "Autoplay: ON" if is_autoplay else "Autoplay: OFF"
-		
 	autoplay_timer.start(1.5)
 
 func _on_finished_typing() -> void:
