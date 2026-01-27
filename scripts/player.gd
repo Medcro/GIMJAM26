@@ -7,6 +7,8 @@ signal queue_updated(new_queue: Array, max_size: int)
 @export var max_input: int = 5
 var input_queue: Array = []
 var is_moving: bool = false
+var is_turning: bool = false
+var current_direction: Vector2 = Vector2.ZERO
 
 func _ready():
 	add_to_group("player")
@@ -35,17 +37,22 @@ func reset_queue():
 func execute_commands():
 	is_moving = true
 	while input_queue.size() > 0:
-		var current_dir = input_queue.pop_front()
+		current_direction = input_queue.pop_front()
 		queue_updated.emit(input_queue, max_input)
 		
-		await move_until_collision(current_dir)
+		await move_until_collision()
 		await get_tree().create_timer(0.1).timeout
 	
+	current_direction = Vector2.ZERO
 	is_moving = false
 
-func move_until_collision(direction: Vector2):
+func move_until_collision():
 	while true:
-		var collision = move_and_collide(direction * speed * get_process_delta_time())
+		if is_turning:
+			await  get_tree().physics_frame
+			continue
+
+		var collision = move_and_collide(current_direction * speed * get_process_delta_time())
 		if collision: 
 			break
 		await get_tree().physics_frame

@@ -39,5 +39,3 @@ position = Vector2(-515, 147)
 position = Vector2(520, -21)
 
 [node name="PathfinderUI" parent="." instance=ExtResource("3_lnu2h")]
-
-[connection signal="reset_requested" from="PathfinderUI" to="Player" method="_on_pathfinder_ui_reset_requested"]
