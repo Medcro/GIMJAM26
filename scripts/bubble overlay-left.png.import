@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doyqxj5oehfjd"
-path="res://.godot/imported/pause button-clicked.png-fd217611c99b78cbb9805b8dba802391.ctex"
+uid="uid://743yilqbfq5p"
+path="res://.godot/imported/bubble overlay-left.png-408c9aeb085a41f318df029cdfe12d8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pause button-clicked.png"
-dest_files=["res://.godot/imported/pause button-clicked.png-fd217611c99b78cbb9805b8dba802391.ctex"]
+source_file="res://scripts/bubble overlay-left.png"
+dest_files=["res://.godot/imported/bubble overlay-left.png-408c9aeb085a41f318df029cdfe12d8f.ctex"]
 
 [params]
 
