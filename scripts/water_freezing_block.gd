@@ -17,9 +17,10 @@ func freeze():
 	if state == State.ICE:
 		return
 	state = State.ICE
+	wall_collision.set_deferred("disabled", false)
 	sprite.texture = ice_texture
-	wall_collision.disabled = false
 
 func _on_area_2d_body_exited(body):
 	if body is player:
 		freeze()
+		
