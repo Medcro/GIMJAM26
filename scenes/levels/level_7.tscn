@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://erijih0m4eds"]
+[gd_scene load_steps=15 format=3 uid="uid://erijih0m4eds"]
 
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="1_bl61q"]
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_u1w5x"]
@@ -8,6 +8,42 @@
 [ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="4_u1w5x"]
 [ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="5_posk4"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_sjq8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
+size = Vector2(46.976715, 114.75686)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
+size = Vector2(506, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+size = Vector2(3.5, 436.5)
+
+[sub_resource type="Animation" id="Animation_q0wsq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CloudGeserKanan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120.000015, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudGeserKiri:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -34.000004)]
+}
 
 [sub_resource type="Animation" id="Animation_sjq8i"]
 resource_name = "awan_geser"
@@ -35,33 +71,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-3, -34.000004), Vector2(-710, -34.000004)]
-}
-
-[sub_resource type="Animation" id="Animation_q0wsq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(120.000015, -30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -34.000004)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ivh0c"]
@@ -94,14 +103,50 @@ texture = ExtResource("2_772ry")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="Awan" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-34, 51)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Awan2" type="CollisionShape2D" parent="Collision"]
+position = Vector2(36, -93)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Awan3" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-35, -236)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0.625, 162)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-35, -275)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(291.25, -53.5)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-290, -56.75)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="Player" parent="." instance=ExtResource("5_sjq8i")]
+position = Vector2(-253, 122.999985)
+scale = Vector2(0.520168, 0.538477)
+max_input = 1
+
 [node name="StageAkhir" type="Sprite2D" parent="."]
 position = Vector2(-5, -28.000002)
 scale = Vector2(0.6, 0.60370374)
 texture = ExtResource("3_hq5i0")
-
-[node name="Player" parent="." instance=ExtResource("5_sjq8i")]
-position = Vector2(-253, 121.99999)
-scale = Vector2(0.5050991, 0.5090683)
 
 [node name="CloudGeserKanan" type="Sprite2D" parent="."]
 position = Vector2(120.000015, -30)
