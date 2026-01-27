@@ -6,17 +6,11 @@ extends CanvasLayer
 func _ready():
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	pause_menu.visible = false
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
-=======
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	pause_menu.visible = false
-
->>>>>>> Stashed changes
 =======
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	pause_menu.visible = false
@@ -36,12 +30,6 @@ func _on_resume_button_pressed() -> void:
 	pause_menu.visible = false
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
->>>>>>> Stashed changes
 =======
 
 func _on_quit_button_pressed() -> void:
