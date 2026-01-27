@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://uuj23qd10u3n" path="res://pause_menu.gd" id="1_88e76"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://d2rgbace7wjfu" path="res://assets/bubble overlay-left.png" id="2_88e76"]
+=======
+[ext_resource type="Texture2D" uid="uid://obdrdk06vnrn" path="res://assets/pause overlay overview.png" id="2_knqa7"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="Texture2D" uid="uid://obdrdk06vnrn" path="res://assets/pause overlay overview.png" id="2_knqa7"]
 >>>>>>> Stashed changes
@@ -36,7 +40,11 @@ offset_right = 1151.0
 offset_bottom = 646.0
 mouse_filter = 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 texture = ExtResource("2_88e76")
+=======
+texture = ExtResource("2_knqa7")
+>>>>>>> Stashed changes
 =======
 texture = ExtResource("2_knqa7")
 >>>>>>> Stashed changes
