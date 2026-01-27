@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://nejahfjj5lp8"]
+
+[ext_resource type="Script" uid="uid://dlmolfpyib0q5" path="res://scripts/pause_menu.gd" id="1_88e76"]
+[ext_resource type="Texture2D" uid="uid://743yilqbfq5p" path="res://scripts/bubble overlay-left.png" id="2_cmnsq"]
+[ext_resource type="Texture2D" uid="uid://1gphm81lwb00" path="res://assets/resume button.png" id="3_71k7c"]
+[ext_resource type="Texture2D" uid="uid://ctjbkxo1ltdbb" path="res://assets/resume button-clicked.png" id="4_cmnsq"]
+[ext_resource type="Script" uid="uid://bdi64nrworda6" path="res://scripts/resume_button.gd" id="5_71k7c"]
+[ext_resource type="Texture2D" uid="uid://cptqhu6cbg464" path="res://assets/quit button.png" id="5_ofnjo"]
+[ext_resource type="Texture2D" uid="uid://dchryyv8m8mfr" path="res://assets/quit button-clicked.png" id="6_1rgno"]
+[ext_resource type="Texture2D" uid="uid://bumo6uuhql3sn" path="res://assets/pause button (1).png" id="7_4hnlu"]
+[ext_resource type="Texture2D" uid="uid://doyqxj5oehfjd" path="res://assets/pause button-clicked.png" id="8_3o3g3"]
+[ext_resource type="Script" uid="uid://b2tigre6ip77g" path="res://scripts/quit_button.gd" id="8_71k7c"]
+[ext_resource type="Script" uid="uid://bhpdtsfehw4ao" path="res://scripts/pause_button.gd" id="11_cmnsq"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_88e76")
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 646.0
+mouse_filter = 2
+texture = ExtResource("2_cmnsq")
+expand_mode = 1
+
+[node name="ResumeImageClicked" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 140.0
+offset_right = 872.0
+offset_bottom = 435.0
+mouse_filter = 2
+texture = ExtResource("4_cmnsq")
+expand_mode = 2
+
+[node name="ResumeImage" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 150.0
+offset_right = 887.0
+offset_bottom = 460.0
+mouse_filter = 2
+texture = ExtResource("3_71k7c")
+expand_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 502.0
+offset_top = 236.0
+offset_right = 727.0
+offset_bottom = 327.0
+script = ExtResource("5_71k7c")
+
+[node name="QuitImageClicked" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 241.0
+offset_right = 857.0
+offset_bottom = 530.0
+mouse_filter = 2
+texture = ExtResource("6_1rgno")
+expand_mode = 1
+
+[node name="QuitImage" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 262.0
+offset_right = 864.0
+offset_bottom = 551.0
+mouse_filter = 2
+texture = ExtResource("5_ofnjo")
+expand_mode = 1
+
+[node name="QuitButton" type="Button" parent="PauseMenu"]
+visibility_layer = 0
+layout_mode = 0
+offset_left = 498.0
+offset_top = 356.0
+offset_right = 734.0
+offset_bottom = 456.0
+script = ExtResource("8_71k7c")
+
+[node name="PauseButton" type="Button" parent="."]
+visibility_layer = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 102.0
+offset_bottom = 100.0
+script = ExtResource("11_cmnsq")
+
+[node name="PauseImage" type="TextureRect" parent="."]
+offset_left = -84.0
+offset_top = -19.0
+offset_right = 217.0
+offset_bottom = 152.0
+mouse_filter = 2
+texture = ExtResource("7_4hnlu")
+expand_mode = 1
+
+[node name="PauseImageClicked" type="TextureRect" parent="."]
+offset_left = -85.0
+offset_top = -25.0
+offset_right = 218.0
+offset_bottom = 153.0
+mouse_filter = 2
+texture = ExtResource("8_3o3g3")
+expand_mode = 1
+
+[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
