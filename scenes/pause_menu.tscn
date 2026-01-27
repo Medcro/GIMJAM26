@@ -1,11 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8u0eead0g2bo"]
 
 [ext_resource type="Script" uid="uid://uuj23qd10u3n" path="res://pause_menu.gd" id="1_88e76"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://d2rgbace7wjfu" path="res://assets/bubble overlay-left.png" id="2_88e76"]
-=======
-[ext_resource type="Texture2D" uid="uid://obdrdk06vnrn" path="res://assets/pause overlay overview.png" id="2_knqa7"]
->>>>>>> Stashed changes
+
 [ext_resource type="Texture2D" uid="uid://ft7wgwkxfl0h" path="res://assets/resume button.png" id="3_71k7c"]
 [ext_resource type="Script" uid="uid://j68b0f5krv3q" path="res://scenes/resume_button.gd" id="3_knqa7"]
 [ext_resource type="Texture2D" uid="uid://s5aax3ck4lu0" path="res://assets/resume button-clicked.png" id="4_cmnsq"]
@@ -35,11 +31,7 @@ offset_top = -1.0
 offset_right = 1151.0
 offset_bottom = 646.0
 mouse_filter = 2
-<<<<<<< Updated upstream
-texture = ExtResource("2_88e76")
-=======
-texture = ExtResource("2_knqa7")
->>>>>>> Stashed changes
+
 expand_mode = 1
 
 [node name="ResumeImageClicked" type="TextureRect" parent="PauseMenu"]
