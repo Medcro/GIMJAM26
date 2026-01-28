@@ -76,7 +76,6 @@ func connect_links(label: RichTextLabel):
 		label.meta_clicked.connect(_on_link_clicked)
 
 func _on_link_clicked(meta):
-	print("I clicked on: ", meta)
 	if SaveManager.unlocked_levels.get(str(meta), false):
 		get_tree().change_scene_to_file("res://scenes/levels/" + str(meta) + ".tscn")
 

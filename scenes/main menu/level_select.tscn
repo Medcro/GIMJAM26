@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://uraui42ynce0"]
 
-[ext_resource type="PackedScene" uid="uid://bam328ala766s" path="res://scenes/main menu/book.tscn" id="1_l2dkl"]
+[ext_resource type="PackedScene" uid="uid://dpce6f6m8gtk3" path="res://scenes/main menu/interactive_book.tscn" id="1_3shnc"]
 [ext_resource type="Texture2D" uid="uid://bxa676ay4vlue" path="res://assets/select level/lvl selection bg dark.png" id="1_pmbag"]
 
 [node name="LevelSelect" type="Node2D"]
@@ -14,4 +14,5 @@ texture = ExtResource("1_pmbag")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 323)
 
-[node name="Book" parent="." instance=ExtResource("1_l2dkl")]
+[node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
+position = Vector2(576, 324)
