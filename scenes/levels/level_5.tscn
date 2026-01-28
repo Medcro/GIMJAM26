@@ -61,7 +61,7 @@ scale = Vector2(10.792581, 0.6274135)
 shape = SubResource("RectangleShape2D_q0wsq")
 
 [node name="Wall3" type="CollisionShape2D" parent="Collision"]
-position = Vector2(-107.00001, -238)
+position = Vector2(-107, -164.00002)
 scale = Vector2(10.792581, 0.6274135)
 shape = SubResource("RectangleShape2D_q0wsq")
 
@@ -128,6 +128,6 @@ scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
 
 [node name="WallImage3" type="Sprite2D" parent="."]
-position = Vector2(-108, -238)
+position = Vector2(-108.00001, -166.00002)
 scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
