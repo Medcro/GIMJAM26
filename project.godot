@@ -37,6 +37,10 @@ project/assembly_name="GIMJAM26"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://gh7reqe0c0in"
+
 [input]
 
 ui_left={
