@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjamdyf07kcty"]
+[gd_scene load_steps=16 format=3 uid="uid://bjamdyf07kcty"]
 
 [ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_vvoq0"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_vvoq0"]
@@ -13,17 +13,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
 size = Vector2(6.7002034, 110.772255)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
-size = Vector2(216.5, 6.78125)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anwe6"]
 size = Vector2(4.5, 440)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
 size = Vector2(3.25, 443.375)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
+size = Vector2(73, 2.984375)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvoq0"]
-size = Vector2(293, 2)
+size = Vector2(436, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqnj0"]
+size = Vector2(583, 5)
 
 [node name="Level5" type="Node2D"]
 
@@ -60,16 +63,17 @@ position = Vector2(-107.000015, 122.99999)
 scale = Vector2(10.792581, 0.6274135)
 shape = SubResource("RectangleShape2D_q0wsq")
 
+[node name="Wall4" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-108.00001, -167)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
 [node name="Wall3" type="CollisionShape2D" parent="Collision"]
-position = Vector2(-107, -164.00002)
+position = Vector2(109.99999, -22.00001)
 scale = Vector2(10.792581, 0.6274135)
 shape = SubResource("RectangleShape2D_q0wsq")
 
 [node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="wall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(2, 163)
-shape = SubResource("RectangleShape2D_posk4")
 
 [node name="wall3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(292.5, -57)
@@ -80,18 +84,25 @@ position = Vector2(-290.625, -54.6875)
 shape = SubResource("RectangleShape2D_sjq8i")
 
 [node name="wall5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(185.75, -276.59375)
+position = Vector2(257.5, -275.4922)
 shape = SubResource("RectangleShape2D_posk4")
 
 [node name="wall2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-145.5, -276)
+position = Vector2(-74, -274)
 shape = SubResource("RectangleShape2D_vvoq0")
+
+[node name="wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 162.5)
+shape = SubResource("RectangleShape2D_tqnj0")
 
 [node name="MemoryBubble" parent="." instance=ExtResource("3_dwyms")]
 position = Vector2(-330, -69)
 
 [node name="RotationPlate2" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(33, -21)
+
+[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_6xwso")]
+position = Vector2(146, 146)
 
 [node name="RotationPlate3" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(250, -20)
@@ -107,12 +118,12 @@ max_input = 1
 [node name="PathfinderUI" parent="." instance=ExtResource("6_j14br")]
 
 [node name="TitikArrowBox" type="Sprite2D" parent="PathfinderUI"]
-position = Vector2(567.00006, 403.99997)
+position = Vector2(571.00006, 403.99997)
 scale = Vector2(0.48240742, 0.48888895)
 texture = ExtResource("7_vvoq0")
 
 [node name="ExitGate" type="Sprite2D" parent="."]
-position = Vector2(117, 107.000046)
+position = Vector2(262, 106)
 rotation = -1.5707964
 scale = Vector2(0.7845365, 0.8018232)
 texture = ExtResource("8_gruok")
@@ -123,11 +134,22 @@ scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
 
 [node name="WallImage2" type="Sprite2D" parent="."]
-position = Vector2(-107, 124.00001)
+position = Vector2(-108, 123)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage5" type="Sprite2D" parent="."]
+position = Vector2(-108, -166)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage4" type="Sprite2D" parent="."]
+position = Vector2(110, -20.999992)
 scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
 
 [node name="WallImage3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-108.00001, -166.00002)
 scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
