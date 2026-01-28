@@ -5,6 +5,7 @@ signal queue_updated(new_queue: Array, max_size: int)
 
 @export var speed: float = 400.0
 @export var max_input: int = 5
+
 @onready 
 var input_queue: Array = []
 var is_moving: bool = false
@@ -55,6 +56,6 @@ func move_until_collision():
 
 		var collision = move_and_collide(current_direction * speed * get_process_delta_time())
 		if collision: 
-			emit_signal(word_added)
+			#emit_signal(word_added)
 			break
 		await get_tree().physics_frame
