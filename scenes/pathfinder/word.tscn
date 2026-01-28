@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://33ernvhe6n0l"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bey1"]
+[ext_resource type="Texture2D" uid="uid://cjikx0tmk2u2w" path="res://assets/pathfinder/memory shards.png" id="1_syhyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0q3j"]
 size = Vector2(121, 114)
@@ -8,9 +8,9 @@ size = Vector2(121, 114)
 [node name="Collision" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.9073486e-06, 1.0000029)
-scale = Vector2(120.00001, 114.00001)
-texture = SubResource("PlaceholderTexture2D_1bey1")
+position = Vector2(1.0000002, 0.99999994)
+scale = Vector2(0.681, 0.68333334)
+texture = ExtResource("1_syhyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)

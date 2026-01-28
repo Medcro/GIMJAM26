@@ -1,4 +1,5 @@
 extends Node2D
+class_name dialogue
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
