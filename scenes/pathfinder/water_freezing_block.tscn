@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bju8rr8s67v4a"]
+[gd_scene load_steps=6 format=3 uid="uid://c4ajb8eclnieh"]
 
 [ext_resource type="Script" uid="uid://bekjnhvtqq0o4" path="res://scripts/water_freezing_block.gd" id="1_5uylf"]
 [ext_resource type="Texture2D" uid="uid://djqk1p0ighu3o" path="res://assets/pathfinder/water 1.png" id="2_m8l7c"]

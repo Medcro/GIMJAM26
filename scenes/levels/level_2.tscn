@@ -1,20 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://56g3wthwx67w"]
+[gd_scene load_steps=14 format=3 uid="uid://56g3wthwx67w"]
 
-[ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_8qukl"]
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_3p04p"]
 [ext_resource type="Texture2D" uid="uid://bv41rrm6mm4cm" path="res://assets/pathfinder/6x4.png" id="3_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_nt80m"]
-[ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="5_brxtv"]
-[ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="6_tv7cl"]
-[ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="7_r88tb"]
+[ext_resource type="PackedScene" path="res://scenes/pathfinder/water_freezing_block.tscn" id="6_8qukl"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_1yj8c"]
-[ext_resource type="Texture2D" uid="uid://djqk1p0ighu3o" path="res://assets/pathfinder/water 1.png" id="9_nt80m"]
 [ext_resource type="Texture2D" uid="uid://cjikx0tmk2u2w" path="res://assets/pathfinder/memory shards.png" id="10_brxtv"]
 [ext_resource type="Texture2D" uid="uid://vsj5dbqh5ko1" path="res://assets/pathfinder/wall 2.png" id="10_tv7cl"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="11_r88tb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv7cl"]
-size = Vector2(99, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8va5"]
 size = Vector2(0.91195893, 536.0123)
@@ -31,69 +24,7 @@ size = Vector2(643, 10.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
 size = Vector2(7.25, 436.5)
 
-[sub_resource type="Animation" id="Animation_q0wsq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3.7),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(120.000015, -30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -34.000004)]
-}
-
-[sub_resource type="Animation" id="Animation_sjq8i"]
-resource_name = "awan_geser"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.36666667, -0.16666667, 1.5, 4.4666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(120.000015, -30), Vector2(44, -36), Vector2(44, -36), Vector2(695, -36)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5333334, 4.4666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-3, -34.000004), Vector2(-710, -34.000004)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivh0c"]
-_data = {
-&"RESET": SubResource("Animation_q0wsq"),
-&"awan_geser": SubResource("Animation_sjq8i")
-}
-
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_8qukl")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -114,20 +45,6 @@ scale = Vector2(0.67453706, 0.67453706)
 texture = ExtResource("3_qsp8v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Ice Cube" type="StaticBody2D" parent="."]
-
-[node name="Awan5" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(51.5, -212.5)
-shape = SubResource("RectangleShape2D_tv7cl")
-
-[node name="Awan6" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(-265, -212)
-shape = SubResource("RectangleShape2D_tv7cl")
-
-[node name="Awan6" type="CollisionShape2D" parent="Ice Cube/Awan6"]
-position = Vector2(211, 316)
-shape = SubResource("RectangleShape2D_tv7cl")
 
 [node name="Collision" type="StaticBody2D" parent="."]
 
@@ -171,23 +88,6 @@ rotation = 3.1415927
 scale = Vector2(0.79152393, -0.82502997)
 max_input = 1
 
-[node name="water" type="Node2D" parent="."]
-
-[node name="Sprite2D2" type="Sprite2D" parent="water"]
-position = Vector2(-265, -215)
-scale = Vector2(0.66199994, 0.66200006)
-texture = ExtResource("9_nt80m")
-
-[node name="Sprite2D3" type="Sprite2D" parent="water"]
-position = Vector2(51.772865, -215.28505)
-scale = Vector2(0.65314, 0.65314025)
-texture = ExtResource("9_nt80m")
-
-[node name="Sprite2D4" type="Sprite2D" parent="water"]
-position = Vector2(-54.449436, 103.38613)
-scale = Vector2(0.6415439, 0.64154446)
-texture = ExtResource("9_nt80m")
-
 [node name="WALL" type="Node2D" parent="."]
 
 [node name="Sprite2D2" type="Sprite2D" parent="WALL"]
@@ -200,32 +100,21 @@ position = Vector2(-160.00002, -2)
 scale = Vector2(0.66199994, 0.662)
 texture = ExtResource("11_r88tb")
 
+[node name="WaterFreezingBlock" parent="." instance=ExtResource("6_8qukl")]
+position = Vector2(-263, -213.99995)
+scale = Vector2(1.3999988, 1.3999988)
+
+[node name="WaterFreezingBlock2" parent="." instance=ExtResource("6_8qukl")]
+position = Vector2(53.000004, -212)
+scale = Vector2(1.3999964, 1.3999964)
+
+[node name="WaterFreezingBlock3" parent="." instance=ExtResource("6_8qukl")]
+position = Vector2(-50.999985, 101.00007)
+scale = Vector2(1.3999897, 1.3999898)
+
 [node name="word" type="Sprite2D" parent="."]
 position = Vector2(-266, -214)
 scale = Vector2(0.38157603, 0.37491962)
 texture = ExtResource("10_brxtv")
 
-[node name="StageAkhir" type="Sprite2D" parent="."]
-position = Vector2(943, 12)
-scale = Vector2(0.6, 0.60370374)
-texture = ExtResource("5_brxtv")
-
-[node name="CloudGeserKanan" type="Sprite2D" parent="."]
-position = Vector2(120.000015, -30)
-scale = Vector2(0.58020836, 0.57870376)
-texture = ExtResource("6_tv7cl")
-
-[node name="CloudGeserKiri" type="Sprite2D" parent="."]
-position = Vector2(-3, -34.000004)
-scale = Vector2(0.5947917, 0.575)
-texture = ExtResource("7_r88tb")
-
 [node name="PathfinderUI" parent="." instance=ExtResource("8_1yj8c")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ivh0c")
-}
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
