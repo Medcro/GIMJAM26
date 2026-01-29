@@ -22,6 +22,11 @@ func _ready():
 	$DownButton.pressed.connect(func(): _on_dir_pressed(Vector2.DOWN))
 	$LeftButton.pressed.connect(func(): _on_dir_pressed(Vector2.LEFT))
 	$RightButton.pressed.connect(func(): _on_dir_pressed(Vector2.RIGHT))
+	
+	$UpButton.mouse_entered.connect(func(): $ButtonHover.play())
+	$DownButton.mouse_entered.connect(func(): $ButtonHover.play())
+	$LeftButton.mouse_entered.connect(func(): $ButtonHover.play())
+	$RightButton.mouse_entered.connect(func(): $ButtonHover.play())
 
 func refresh_ui(queue: Array, max_input: int):
 	for child in arrow_container.get_children():
@@ -49,6 +54,7 @@ func get_texture_for_dir(dir: Vector2) -> Texture2D:
 	return null
 
 func _on_dir_pressed(dir: Vector2):
+	$ButtonClicked.play()
 	if player_node and not player_node.is_moving and not player_node.is_locked:
 		player_node.add_to_queue(dir)
 		
@@ -56,9 +62,18 @@ func _on_dir_pressed(dir: Vector2):
 			player_node.execute_commands()
 
 func _on_reset_button_pressed():
+	$ButtonClicked.play()
 	if player_node and not player_node.is_moving and not player_node.is_locked:
 		player_node.reset_queue()
 
 func _on_execute_button_pressed():
+	$ButtonClicked.play()
 	if player_node and not player_node.is_moving and not player_node.is_locked:
 		player_node.execute_commands()
+
+func _on_execute_button_mouse_entered() -> void:
+	$ButtonHover.play()
+	
+func _on_reset_button_mouse_entered() -> void:
+	$ButtonHover.play()
+	

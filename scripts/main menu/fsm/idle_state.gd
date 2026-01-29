@@ -1,8 +1,7 @@
 extends State
 
 func enter():
-	book.update_text_visibility(false)
-	book.get_node("Control/NextPageButton").show()
+	book.update_text_visibility(true)
 
 func _on_next_page_button_button_down():
 	get_parent().previous_page_number = book.current_page

@@ -18,6 +18,7 @@ func _on_previous_page_button_down():
 	_trigger_flip(book.current_page - 1)
 
 func _on_close_button_down():
+	book.is_settings_mode = false
 	get_parent().previous_page_number = book.current_page
 	book.current_page = 0 
 	get_parent().change_state("FlippingState")
