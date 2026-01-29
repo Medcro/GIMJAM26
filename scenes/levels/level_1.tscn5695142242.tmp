@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://erijih0m4eds"]
 
-[ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_posk4"]
-[ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_sjq8i"]
-[ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="3_q0wsq"]
-[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_ivh0c"]
-[ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="5_wreli"]
-[ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="6_ymk4h"]
-[ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="7_st48t"]
-[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_dfn7m"]
+[ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="1_bl61q"]
+[ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_u1w5x"]
+[ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_772ry"]
+[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="3_d06uk"]
+[ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="3_hq5i0"]
+[ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="4_u1w5x"]
+[ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="5_posk4"]
+[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_sjq8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
 size = Vector2(46.976715, 114.75686)
@@ -80,7 +80,7 @@ _data = {
 }
 
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("Player")]
-script = ExtResource("1_posk4")
+script = ExtResource("1_u1w5x")
 Player = NodePath("Player")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -94,12 +94,12 @@ offset_bottom = 756.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5999933, 0.5999943)
-texture = ExtResource("2_sjq8i")
+texture = ExtResource("1_bl61q")
 
 [node name="Grid" type="Sprite2D" parent="."]
 position = Vector2(-11.99995, -34.000004)
 scale = Vector2(0.6, 0.59999996)
-texture = ExtResource("3_q0wsq")
+texture = ExtResource("2_772ry")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -138,7 +138,7 @@ shape = SubResource("RectangleShape2D_sjq8i")
 position = Vector2(-290, -56.75)
 shape = SubResource("RectangleShape2D_sjq8i")
 
-[node name="Player" parent="." instance=ExtResource("4_ivh0c")]
+[node name="Player" parent="." instance=ExtResource("5_sjq8i")]
 position = Vector2(-253, 122.999985)
 scale = Vector2(0.520168, 0.538477)
 max_input = 1
@@ -146,19 +146,19 @@ max_input = 1
 [node name="StageAkhir" type="Sprite2D" parent="."]
 position = Vector2(-5, -28.000002)
 scale = Vector2(0.6, 0.60370374)
-texture = ExtResource("5_wreli")
+texture = ExtResource("3_hq5i0")
 
 [node name="CloudGeserKanan" type="Sprite2D" parent="."]
 position = Vector2(120.000015, -30)
 scale = Vector2(0.58020836, 0.57870376)
-texture = ExtResource("6_ymk4h")
+texture = ExtResource("4_u1w5x")
 
 [node name="CloudGeserKiri" type="Sprite2D" parent="."]
 position = Vector2(-3, -34.000004)
 scale = Vector2(0.5947917, 0.575)
-texture = ExtResource("7_st48t")
+texture = ExtResource("5_posk4")
 
-[node name="PathfinderUI" parent="." instance=ExtResource("8_dfn7m")]
+[node name="PathfinderUI" parent="." instance=ExtResource("3_d06uk")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

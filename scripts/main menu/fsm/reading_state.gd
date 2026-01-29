@@ -31,20 +31,4 @@ func _trigger_flip(target_page: int):
 
 func _on_link_clicked(meta):
 	if SaveManager.unlocked_levels.get(str(meta), false):
-		match meta: #The level scenes still using a placeholder
-			"level_1":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_2":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
-			"level_3":
-				get_tree().change_scene_to_file("res://scenes/collision.tscn")
-			"level_4":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_5":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
-			"level_6":
-				get_tree().change_scene_to_file("res://scenes/collision.tscn")
-			"level_7":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_8":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/" + str(meta) + ".tscn")

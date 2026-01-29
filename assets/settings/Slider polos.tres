@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://tkevx86iurv4"]
+
+[ext_resource type="Texture2D" uid="uid://ddscv2g8ypwn5" path="res://assets/settings/Slider polos.PNG" id="1_q62hi"]
+
+[resource]
+atlas = ExtResource("1_q62hi")
+region = Rect2(1108, 291, 565, 88)
