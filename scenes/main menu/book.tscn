@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://basvx8ina60eg"]
+[gd_scene load_steps=6 format=3 uid="uid://bam328ala766s"]
 
-[ext_resource type="Texture2D" path="res://assets/select level/lvl selection page.png" id="1_ew3uw"]
-[ext_resource type="Script" path="res://scripts/main menu/book.gd" id="1_tchch"]
-[ext_resource type="Texture2D" path="res://assets/select level/lvl selection next button dark.png" id="3_pli43"]
-[ext_resource type="Texture2D" path="res://assets/select level/lvl selection next button light.png" id="4_iyqmd"]
-[ext_resource type="Texture2D" path="res://assets/select level/lvl selection photo format.png" id="5_87ygy"]
+[ext_resource type="Texture2D" uid="uid://cr4ew8jp26e7n" path="res://assets/select level/lvl selection page.png" id="1_ew3uw"]
+[ext_resource type="Script" uid="uid://vk7w4vb03mv8" path="res://scripts/main menu/book.gd" id="1_tchch"]
+[ext_resource type="Texture2D" uid="uid://e6y24vqcx3ul" path="res://assets/select level/lvl selection next button dark.png" id="3_pli43"]
+[ext_resource type="Texture2D" uid="uid://buqdghr8sja6d" path="res://assets/select level/lvl selection next button light.png" id="4_iyqmd"]
+[ext_resource type="Texture2D" uid="uid://cil3g4bvil2ha" path="res://assets/select level/lvl selection photo format.png" id="5_87ygy"]
 
 [node name="Book" type="Node2D"]
 script = ExtResource("1_tchch")
