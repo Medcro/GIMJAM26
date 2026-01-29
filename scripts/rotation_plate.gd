@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var is_clockwise: bool = true
+@export var is_clockwise: bool = false
 @export var transition_speed: float = 0.1
 
 @onready var sprite: Sprite2D = $Sprite2D
@@ -15,14 +15,16 @@ func _on_body_entered(body: Node2D) -> void:
 
 func rotate_player(p: player):
 	p.is_turning = true
-	var new_dir = rotation_anticlockwise(p.current_direction) if is_clockwise else rotation_clockwise(p.current_direction)
+	var new_dir = rotation_clockwise(p.current_direction) if is_clockwise else rotation_anticlockwise(p.current_direction)
 	
 	var tween = create_tween().set_parallel(true)
+	# smoothly center the player
 	tween.tween_property(p, "global_position", global_position, transition_speed)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
+	
 	await tween.finished
 	p.current_direction = new_dir
+	p.update_animation()
 	p.is_turning = false
 	
 func toggle_mode():
