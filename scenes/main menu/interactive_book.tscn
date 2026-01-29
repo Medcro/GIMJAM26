@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cduqrt81jsw74" path="res://assets/settings/Slider black.tres" id="9_wnpga"]
 [ext_resource type="Texture2D" uid="uid://cjbukbsos7m0g" path="res://assets/settings/Merah polos.tres" id="10_w1j1p"]
 [ext_resource type="Texture2D" uid="uid://dvi0wsmaq56vu" path="res://assets/settings/Reset.tres" id="11_dgdb4"]
+[ext_resource type="AudioStream" uid="uid://c8ufn0p5ygbdt" path="res://assets/audio/Page Flip.wav" id="8_r0sq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24scs"]
 atlas = ExtResource("1_v030w")
@@ -866,6 +867,9 @@ script = ExtResource("5_avk54")
 
 [node name="ReadingState" type="Node" parent="StateMachine"]
 script = ExtResource("5_yletg")
+
+[node name="PageFlip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_r0sq5")
 
 [connection signal="button_down" from="Control/NextPageButton" to="StateMachine/ReadingState" method="_on_next_page_button_down"]
 [connection signal="button_down" from="Control/PreviousPageButton" to="StateMachine/ReadingState" method="_on_previous_page_button_down"]

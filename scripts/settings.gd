@@ -32,4 +32,8 @@ func _on_sfx_control_drag_ended(value_changed: bool) -> void:
 		GlobalSettings.save_settings()
 
 func _on_reset_data_pressed() -> void:
+	$ButtonClicked.play()
 	SaveManager.reset_data()
+	
+func _on_reset_data_mouse_entered() -> void:
+	$ButtonHover.play()
