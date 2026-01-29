@@ -1,0 +1,156 @@
+[gd_scene load_steps=16 format=3 uid="uid://8i3jkokvv33c"]
+
+[ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_e18e5"]
+[ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_m5qie"]
+[ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_kydov"]
+[ext_resource type="PackedScene" uid="uid://dwm2p8kl6kfh4" path="res://scenes/pathfinder/rotation_plate.tscn" id="4_uwlxl"]
+[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_4wfvb"]
+[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="6_tqv5a"]
+[ext_resource type="Texture2D" uid="uid://nmqd8k781byh" path="res://assets/pathfinder/titik dalem arrow box versi max 4.png" id="7_e18e5"]
+[ext_resource type="Texture2D" uid="uid://1deubfg6l73i" path="res://assets/pathfinder/exit gate.png" id="8_pafwe"]
+[ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="9_gf2l7"]
+[ext_resource type="PackedScene" uid="uid://bju8rr8s67v4a" path="res://scenes/pathfinder/water_freezing_block.tscn" id="10_m5qie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
+size = Vector2(6.7002034, 110.772255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
+size = Vector2(585.625, 3.765625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anwe6"]
+size = Vector2(4, 292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+size = Vector2(3.25, 443.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5qie"]
+size = Vector2(4, 74)
+
+[node name="Level6" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5999933, 0.5999943)
+texture = ExtResource("1_e18e5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Grid" type="Sprite2D" parent="."]
+position = Vector2(-11.99995, -34.000004)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("2_m5qie")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="Wall" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-252.15625, -21.750004)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Wall3" type="CollisionShape2D" parent="Collision"]
+position = Vector2(254, -238.00002)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(2, 163)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-0.8125, -275.1172)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(293, -130)
+shape = SubResource("RectangleShape2D_anwe6")
+
+[node name="wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-290.625, -54.6875)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="wall5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(293, 124)
+shape = SubResource("RectangleShape2D_m5qie")
+
+[node name="MemoryBubble" parent="." instance=ExtResource("3_kydov")]
+position = Vector2(-185, -285)
+
+[node name="RotationPlate2" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(178, 52)
+
+[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_uwlxl")]
+position = Vector2(73, 72)
+
+[node name="RotationPlate3" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(250, -20)
+
+[node name="RotationPlate" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(-183, 52)
+
+[node name="RotationPlate" parent="RotationPlate" instance=ExtResource("4_uwlxl")]
+position = Vector2(-73, -217)
+
+[node name="Player" parent="." instance=ExtResource("5_4wfvb")]
+position = Vector2(37, -21.000002)
+scale = Vector2(0.520168, 0.538477)
+max_input = 1
+
+[node name="PathfinderUI" parent="." instance=ExtResource("6_tqv5a")]
+
+[node name="TitikArrowBox" type="Sprite2D" parent="PathfinderUI"]
+position = Vector2(567.00006, 403.99997)
+scale = Vector2(0.48240742, 0.48888895)
+texture = ExtResource("7_e18e5")
+
+[node name="ExitGate" type="Sprite2D" parent="."]
+position = Vector2(-86.99999, 131.00005)
+scale = Vector2(0.7845365, 0.8018232)
+texture = ExtResource("8_pafwe")
+
+[node name="WallImage" type="Sprite2D" parent="."]
+position = Vector2(-252.82236, -20.718744)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_gf2l7")
+
+[node name="WallImage3" type="Sprite2D" parent="."]
+position = Vector2(255, -237.00002)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_gf2l7")
+
+[node name="WaterFreezingBlock4" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(-179, -93)
+
+[node name="WaterFreezingBlock2" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(256, -166)
+
+[node name="WaterFreezingBlock9" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(111, -167)
+
+[node name="WaterFreezingBlock6" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(111, -239)
+
+[node name="WaterFreezingBlock5" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(111, -95)
+
+[node name="WaterFreezingBlock" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(-178, -239)
+
+[node name="WaterFreezingBlock7" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(-36, 123)
+
+[node name="WaterFreezingBlock8" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(255, 51)
+
+[node name="WaterFreezingBlock3" parent="." instance=ExtResource("10_m5qie")]
+position = Vector2(-252, 124)

@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://uraui42ynce0"]
+[gd_scene load_steps=3 format=3 uid="uid://uraui42ynce0"]
 
 [ext_resource type="PackedScene" uid="uid://dpce6f6m8gtk3" path="res://scenes/main menu/interactive_book.tscn" id="1_3shnc"]
+[ext_resource type="Texture2D" uid="uid://bxa676ay4vlue" path="res://assets/select level/lvl selection bg dark.png" id="1_pmbag"]
 
 [node name="LevelSelect" type="Node2D"]
 
-[node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
-position = Vector2(3, -7)
-animation = &"next_from_first"
-frame_progress = 0.32662717
-page_count = 4
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6005867, 0.59926593)
+texture = ExtResource("1_pmbag")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.495, 3.495)
+position = Vector2(577, 323)
+
+[node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
+position = Vector2(576, 324)

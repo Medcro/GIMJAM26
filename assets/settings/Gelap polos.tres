@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cnwi1lhqqggcq"]
+
+[ext_resource type="Texture2D" uid="uid://deuh54001oknn" path="res://assets/settings/Gelap polos.PNG" id="1_vqwkx"]
+
+[resource]
+atlas = ExtResource("1_vqwkx")
+region = Rect2(1136, 326, 500, 23)

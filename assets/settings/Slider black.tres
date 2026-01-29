@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cduqrt81jsw74"]
+
+[ext_resource type="Texture2D" uid="uid://dw1e3gn1jx2cp" path="res://assets/settings/Slider black.PNG" id="1_v707x"]
+
+[resource]
+atlas = ExtResource("1_v707x")
+region = Rect2(1108, 291, 565, 88)
