@@ -1,10 +1,10 @@
 ~ start
 : Kegelapan telah datang, hanya meninggalkan sinar bulan yang menemani kemalaman tersebut dengan kakek. 
 : Para pengasuh sudah pergi, meninggalkan Kakek untuk beristirahat. Hanya suara napas Kakek yang terdengar dalam kamar tersebut dengan pandangan Kakek ke atas menghadap atap.
-Kakek: ‘[i]Gadis tadi bilang dia anakku… ada-ada saja penipuan sekarang.[/i] ’
-Kakek: Keluarga ya… 
+Kakek: ‘Gadis tadi bilang dia anakku... ada-ada saja penipuan sekarang.’
+Kakek: Keluarga ya... 
 do set_portrait("kakek", "soft smile")
-Kakek: Saya merasa saya melupakan sesuatu…
+Kakek: Saya merasa saya melupakan sesuatu...
 : Mata Kakek pun tertutup, memasuki dunia mimpi.
 do set_bg("bg day 2")
 do set_flashback(true)
@@ -25,22 +25,22 @@ Kakek: Kamu.. siapa?
 do set_portrait("anak 3", "siluet")
 Anak kecil: Ayah pulang semakin larut. Adek jadi bosan sendiri. 
 do set_portrait("anak 3", "siluet")
-Anak kecil: Kakak belajar mulu, abang buat aku nangis terus. Adek jadi main sama Mama terus. Adek mau main sama Ayah… 
+Anak kecil: Kakak belajar mulu, abang buat aku nangis terus. Adek jadi main sama Mama terus. Adek mau main sama Ayah... 
 [Suara anak tersebut semakin kecil, napasnya tersedak tangisan kecil.]
 do set_portrait("anak 3", "siluet")
-Anak kecil: Ayah… 
+Anak kecil: Ayah... 
 do set_portrait("anak 3", "siluet")
-Anak kecil: Kalau Ayah sibuk… 
+Anak kecil: Kalau Ayah sibuk... 
 do set_portrait("anak 3", "siluet")
 Anak kecil: Aku boleh tunggu? 
 do set_portrait("anak 3", "siluet")
-Anak kecil: Aku tunggu sambil gambar Ayah, biar Ayah… Biar Ayah bisa di rumah. 
-Kakek: …Saya lupa.
+Anak kecil: Aku tunggu sambil gambar Ayah, biar Ayah... Biar Ayah bisa di rumah. 
+Kakek: ...Saya lupa.
 do set_portrait("anak 3", "siluet")
 Anak kecil: Ga apa-apa, Yah. Aku ingat.
 do set_portrait("anak 3", "siluet") 
 Anak kecil: Ayah kayaknya capek, tidur aja dulu, Yah.
-Kakek: Saya belum… 
+Kakek: Saya belum... 
 do set_portrait("kakek", "sad")
 Kakek: Saya belum minta maaf.
 [Anak kecil tersebut tersenyum kecil.]
@@ -49,7 +49,7 @@ Anak kecil: Nanti saja. Aku tungguin kok, Yah.
 do set_bg("bg day 2-ceiling")
 do set_flashback(false)
 [Kembali ke kamar panti jompo Kakek. Cahaya bulan menerangi wajah Kakek yang tertidur. Napasnya berat namun teratur. Pintu kamar sedikit terbuka, seseorang mengintip.]
-Suster 1: … Akhirnya tidur.
+Suster 1: ... Akhirnya tidur.
 Suster 2: Semoga mimpinya baik.
-Kakek: (Mengigau dalam mimpi) …maaf. 
+Kakek: (Mengigau dalam mimpi) ...maaf. 
 => END

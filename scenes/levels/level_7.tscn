@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://erijih0m4eds"]
+[gd_scene load_steps=25 format=3 uid="uid://erijih0m4eds"]
 
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_posk4"]
 [ext_resource type="Resource" uid="uid://c2h0ns5ef3h7p" path="res://assets/dialogue/last_level.dialogue" id="2_q0wsq"]
@@ -177,6 +177,9 @@ _data = {
 &"nenek_geser_5": SubResource("Animation_dfn7m")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivh0c"]
+size = Vector2(76, 10)
+
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("Player")]
 script = ExtResource("1_posk4")
 Player = NodePath("Player")
@@ -260,11 +263,13 @@ scale = Vector2(0.6, 0.60370374)
 texture = ExtResource("5_wreli")
 
 [node name="CloudGeserKanan" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(120.000015, -30)
 scale = Vector2(0.58020836, 0.57870376)
 texture = ExtResource("6_ymk4h")
 
 [node name="CloudGeserKiri" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-3, -34.000004)
 scale = Vector2(0.5947917, 0.575)
 texture = ExtResource("7_st48t")
@@ -276,6 +281,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_ivh0c")
 }
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(258, -278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -34)
+shape = SubResource("RectangleShape2D_ivh0c")
+
 [connection signal="body_entered" from="Nenek" to="." method="_on_nenek_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

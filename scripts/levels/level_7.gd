@@ -50,3 +50,7 @@ func start_dialogue(word: String):
 		is_dialogue_pending = false
 		if Player: Player.is_locked = false
 	)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is PlayerLevel7:
+		LevelTransition.change_scene("res://scenes/days/day_8.tscn")

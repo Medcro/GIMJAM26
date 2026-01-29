@@ -1,0 +1,191 @@
+[gd_scene load_steps=19 format=3 uid="uid://dm2dk1rfpiagu"]
+
+[ext_resource type="Script" uid="uid://baxvnwdvnpgg2" path="res://scripts/levels/level_manager.gd" id="1_4a02d"]
+[ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="2_1tho2"]
+[ext_resource type="Texture2D" uid="uid://tk8qm6nyk7oh" path="res://assets/pathfinder/4x4.png" id="3_7ac3l"]
+[ext_resource type="PackedScene" uid="uid://c4ex86jm8iqhf" path="res://scenes/end_point.tscn" id="4_4a02d"]
+[ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="4_iig34"]
+[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_uu0hj"]
+[ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="6_4a02d"]
+[ext_resource type="Texture2D" uid="uid://co1jkgj1hclo4" path="res://assets/pathfinder/tutorial/arrow tutor 3.tres" id="7_3e81p"]
+[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_4o3hj"]
+[ext_resource type="Texture2D" uid="uid://cxbd8lwb88oop" path="res://assets/pathfinder/tutorial/arrow tutor 1.tres" id="8_g7bfq"]
+[ext_resource type="Texture2D" uid="uid://2hj4e1ulx75s" path="res://assets/tutorial/tutorial 1.png" id="11_6rmof"]
+[ext_resource type="Script" uid="uid://io0p0pg5n4f" path="res://scripts/tutorial.gd" id="11_uxtin"]
+[ext_resource type="Texture2D" uid="uid://erfwmus0cwil" path="res://assets/tutorial/next button.png" id="12_uxtin"]
+[ext_resource type="Texture2D" uid="uid://vq3mdsost731" path="res://assets/tutorial/next button-clicked.png" id="13_4cw8v"]
+[ext_resource type="AudioStream" uid="uid://3gntrqphe801" path="res://assets/audio/bgm/BGM_Level.mp3" id="15_4cw8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
+size = Vector2(8.802344, 151.4153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
+size = Vector2(284, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+size = Vector2(3.5, 378)
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_4a02d")
+next_level = "level_1"
+current_level = "level_1"
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5999933, 0.5999943)
+texture = ExtResource("2_1tho2")
+
+[node name="Grid" type="Sprite2D" parent="."]
+position = Vector2(-12, -34)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("3_7ac3l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="EndPoint" parent="." instance=ExtResource("4_4a02d")]
+position = Vector2(-136, -275)
+scale = Vector2(2.2, 2.2)
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="Collision" type="StaticBody2D" parent="Collisions"]
+position = Vector2(0, -94)
+
+[node name="Sprite2D" type="Sprite2D" parent="Collisions/Collision"]
+position = Vector2(144, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iig34")
+
+[node name="Awan" type="CollisionShape2D" parent="Collisions/Collision"]
+position = Vector2(143.5, -133.5)
+scale = Vector2(10.792582, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Collision2" type="StaticBody2D" parent="Collisions"]
+position = Vector2(-189, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="Collisions/Collision2"]
+position = Vector2(144, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iig34")
+
+[node name="Awan" type="CollisionShape2D" parent="Collisions/Collision2"]
+position = Vector2(143.5, -133.5)
+scale = Vector2(10.792582, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(5.5, 103)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(51, -274)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(192, -87)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-185, -85)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="ArrowTutor3" type="Sprite2D" parent="."]
+position = Vector2(147, -66)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_3e81p")
+
+[node name="ArrowTutor1" type="Sprite2D" parent="."]
+position = Vector2(16, -124.99999)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("8_g7bfq")
+
+[node name="AssetArrowTutor2" type="Sprite2D" parent="."]
+position = Vector2(-134.00006, -191.99994)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_3e81p")
+
+[node name="MemoryBubble" parent="." instance=ExtResource("6_4a02d")]
+position = Vector2(-174, -175.00002)
+scale = Vector2(0.35, 0.35)
+
+[node name="Player" parent="." instance=ExtResource("4_uu0hj")]
+position = Vector2(145, 56)
+scale = Vector2(0.6609538, 0.6752045)
+max_input = 3
+
+[node name="PathfinderUI" parent="." instance=ExtResource("8_4o3hj")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Tutorial" type="Panel" parent="CanvasLayer"]
+offset_right = 1154.0
+offset_bottom = 648.0
+script = ExtResource("11_uxtin")
+
+[node name="Bubble" type="TextureRect" parent="CanvasLayer/Tutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -257.0
+offset_right = 315.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_6rmof")
+
+[node name="NextButton" type="TextureButton" parent="CanvasLayer/Tutorial"]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 504.0
+offset_right = 1168.0
+offset_bottom = 863.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_uxtin")
+texture_pressed = ExtResource("13_4cw8v")
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/Tutorial"]
+layout_mode = 0
+offset_left = 386.00003
+offset_top = 505.0
+offset_right = 822.0
+offset_bottom = 864.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_uxtin")
+texture_pressed = ExtResource("13_4cw8v")
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Tutorial"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 333.0
+offset_right = 827.0
+offset_bottom = 428.0
+theme_override_colors/default_color = Color(0.11764706, 0.10980392, 0.23529412, 0.78431374)
+theme_override_font_sizes/normal_font_size = 22
+text = "Tentukan jalanmu menggunakan W A S D. Arah pertama akan menggerakkan kakek sampai bertemu dinding, lalu menjalankan arah berikutnya sampai selesai. Pastikan semua arah sudah direncanakan sebelum tekan button Start untuk mulai bergerak."
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_4cw8v")
+volume_db = -32.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Tutorial/NextButton" to="CanvasLayer/Tutorial" method="_on_next_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/BackButton" to="CanvasLayer/Tutorial" method="_on_back_button_pressed"]

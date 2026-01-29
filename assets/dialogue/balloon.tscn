@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c3w6qqd46pmtb"]
+[gd_scene load_steps=38 format=3 uid="uid://c3w6qqd46pmtb"]
 
 [ext_resource type="Script" uid="uid://cvofkfqha4taw" path="res://assets/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="Texture2D" uid="uid://cuf5e7s1mn42e" path="res://assets/visual novel ui/Dialogue box.tres" id="2_56k1m"]
@@ -24,6 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://d06n75hp7y40q" path="res://assets/visual novel ui/quit button.tres" id="22_x7iw2"]
 [ext_resource type="Texture2D" uid="uid://dg2e21fcle1ti" path="res://assets/visual novel ui/quit button-clicked.tres" id="23_l460g"]
 [ext_resource type="Texture2D" uid="uid://y7ouoo2jlq54" path="res://assets/visual novel ui/white overlay on skip and auto button.png" id="24_6rxgk"]
+[ext_resource type="PackedScene" uid="uid://nejahfjj5lp8" path="res://scenes/pause_menu.tscn" id="25_601xh"]
+[ext_resource type="AudioStream" uid="uid://bcaig8xal1r6t" path="res://assets/audio/ButtonClickSFX.wav" id="26_ewf6p"]
+[ext_resource type="AudioStream" uid="uid://btxb54wugjwa5" path="res://assets/audio/ButtonHoverSFX1.wav" id="27_xa8d0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -199,6 +202,7 @@ scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.6509804)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -206,7 +210,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Dialogue..."
 
 [node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer/HBoxContainer"]
-z_index = 1
 layout_mode = 2
 texture = ExtResource("4_6rxgk")
 expand_mode = 3
@@ -240,6 +243,7 @@ text = "Response example"
 unique_name_in_owner = true
 
 [node name="PauseButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 13.0
 offset_top = 4.0
 offset_right = 462.0
@@ -357,10 +361,10 @@ texture_normal = ExtResource("22_x7iw2")
 texture_pressed = ExtResource("23_l460g")
 
 [node name="CharaPortrait" type="TextureRect" parent="."]
-offset_left = 66.0
-offset_top = 396.0
-offset_right = 2045.9999
-offset_bottom = 1476.0
+offset_left = 67.0
+offset_top = 387.0
+offset_right = 2047.0
+offset_bottom = 1467.0
 scale = Vector2(0.125, 0.125)
 stretch_mode = 4
 
@@ -387,12 +391,28 @@ layout_mode = 2
 texture_normal = ExtResource("8_ewf6p")
 texture_pressed = ExtResource("9_xa8d0")
 
+[node name="pause_menu" parent="." instance=ExtResource("25_601xh")]
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_ewf6p")
+volume_db = -16.0
+bus = &"SFX"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_xa8d0")
+volume_db = -16.0
+bus = &"SFX"
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="mouse_entered" from="SkipUI/Awan/YesButton" to="." method="_on_yes_button_mouse_entered"]
 [connection signal="pressed" from="SkipUI/Awan/YesButton" to="." method="_on_skip_button_yes_pressed"]
+[connection signal="mouse_entered" from="SkipUI/Awan/NoButton" to="." method="_on_no_button_mouse_entered"]
 [connection signal="pressed" from="SkipUI/Awan/NoButton" to="." method="_on_skip_button_no_pressed"]
 [connection signal="pressed" from="PauseUI/Awan/ResumeButton" to="." method="_on_pause_resume_button_pressed"]
 [connection signal="pressed" from="PauseUI/Awan/QuitButton" to="." method="_on_pause_quit_button_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/AutoplayButton" to="." method="_on_autoplay_button_mouse_entered"]
 [connection signal="pressed" from="ButtonContainer/AutoplayButton" to="." method="_on_autoplay_toggle_pressed"]
+[connection signal="mouse_entered" from="ButtonContainer/SkipButton" to="." method="_on_skip_button_mouse_entered"]
 [connection signal="pressed" from="ButtonContainer/SkipButton" to="." method="_on_skip_button_pressed"]

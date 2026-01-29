@@ -56,7 +56,6 @@ func execute_commands():
 		queue_updated.emit(input_queue, max_input)
 		
 		await move_until_collision()
-		await get_tree().create_timer(0.1).timeout
 	
 	is_moving = false
 	update_animation()
@@ -72,8 +71,12 @@ func execute_commands():
 
 func move_until_collision():
 	while true:
+		if not is_inside_tree():
+			return
 		if is_turning or is_locked:
 			await  get_tree().physics_frame
+			if not is_inside_tree():
+				return
 			continue
 
 		var collision = move_and_collide(current_direction * speed * get_process_delta_time())
@@ -81,6 +84,8 @@ func move_until_collision():
 			
 			break
 		await get_tree().physics_frame
+		if not is_inside_tree():
+			return
 
 func update_animation():
 	var state = "walk" if is_moving else "idle"
@@ -100,7 +105,9 @@ func update_animation():
 	anim.play(state + suffix)
 
 func reset_level():
-	has_collected_memory = false
+	await get_tree().create_timer(0.1).timeout
+	set_process(false)
+	set_physics_process(false)
 	get_tree().reload_current_scene()
 
 func show_dialogue_and_wait(title: String):

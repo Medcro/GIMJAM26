@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://uraui42ynce0"]
+[gd_scene load_steps=6 format=3 uid="uid://uraui42ynce0"]
 
 [ext_resource type="PackedScene" uid="uid://dpce6f6m8gtk3" path="res://scenes/main menu/interactive_book.tscn" id="1_3shnc"]
 [ext_resource type="Texture2D" uid="uid://bxa676ay4vlue" path="res://assets/select level/lvl selection bg dark.png" id="1_pmbag"]
+[ext_resource type="Texture2D" uid="uid://c5kqpt1gj2ink" path="res://assets/pathfinder/stage akhir/bintang_1.png" id="2_u3kee"]
+[ext_resource type="AudioStream" uid="uid://cujgx1bhtjg5j" path="res://assets/audio/bgm/Menu.mp3" id="3_k55ey"]
+[ext_resource type="Texture2D" uid="uid://d2rgbace7wjfu" path="res://assets/bubble overlay-left.png" id="3_n8asg"]
 
 [node name="LevelSelect" type="Node2D"]
 
@@ -14,9 +17,40 @@ texture = ExtResource("1_pmbag")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 323)
 
+[node name="Bintang1" type="Sprite2D" parent="."]
+position = Vector2(67, 65)
+texture = ExtResource("2_u3kee")
+
+[node name="Bintang2" type="Sprite2D" parent="."]
+position = Vector2(396.99997, 168)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_u3kee")
+
+[node name="Bintang3" type="Sprite2D" parent="."]
+position = Vector2(40.00003, 489.99997)
+rotation = 0.08145994
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_u3kee")
+
+[node name="Bintang4" type="Sprite2D" parent="."]
+position = Vector2(216.00005, 190.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_u3kee")
+
+[node name="BubbleOverlayLeft" type="Sprite2D" parent="."]
+position = Vector2(171.00003, 660)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_n8asg")
+
 [node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
 position = Vector2(576, 324)
 animation = &"closed_front"
 frame = 0
 frame_progress = 0.0
 page_count = 3
+
+[node name="MenuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k55ey")
+volume_db = -32.0
+autoplay = true
+bus = &"Music"

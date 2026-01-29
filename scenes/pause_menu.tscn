@@ -22,12 +22,22 @@ script = ExtResource("1_88e76")
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+self_modulate = Color(1, 1, 1, 0.7882353)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 31.0
+offset_bottom = 21.0
+scale = Vector2(29.838535, 18.122831)
 
 [node name="TextureRect" type="TextureRect" parent="PauseMenu"]
 layout_mode = 0
@@ -128,10 +138,12 @@ expand_mode = 1
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_1rgno")
+volume_db = -16.0
 bus = &"SFX"
 
 [node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ofnjo")
+volume_db = -16.0
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_mouse_entered"]

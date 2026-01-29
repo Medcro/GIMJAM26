@@ -1,66 +1,66 @@
 ~ start
-[Pagi datang lebih lambat. Langit masih abu-abu, hujan kemarin terus membasahi bumi sampai malam, menyisakan bau lembab. Kakek melihat ke jendela, selimut menutupi kakinya. Ketukkan pintu datang, seperti sudah Kakek emang tunggu.]
+Pagi datang lebih lambat. Langit masih abu-abu, hujan kemarin terus membasahi bumi sampai malam, menyisakan bau lembab. Kakek melihat ke jendela, selimut menutupi kakinya. Ketukkan pintu datang, seperti sudah Kakek emang tunggu.
 Suster 2: Pak, Teh Kanaya datang lagi.
-Kakek: …Silahkan.
-[Pintu terbuka dan Kanaya masuk. Bajunya sama persis seperti kemarin. Kanaya seperti menyadari tatapan Ayahnya.]
+Kakek: ...Silahkan.
+Pintu terbuka dan Kanaya masuk. Bajunya sama persis seperti kemarin. Kanaya seperti menyadari tatapan Ayahnya.
 do set_portrait("kanaya", "bitter smile")
-Kanaya: Saya ambil shift siang untuk hari ini. Bajunya… beda kok sama yang kemarin.
-[Kakek tersebut seperti tertawa, karena dia tidak mengatakan apapun tentang pakaian anaknya.]
-Kanaya: …Kemarin, Ayah tidur?
+Kanaya: Saya ambil shift siang untuk hari ini. Bajunya... beda kok sama yang kemarin.
+Kakek tersebut seperti tertawa, karena dia tidak mengatakan apapun tentang pakaian anaknya.
+Kanaya: ...Kemarin, Ayah tidur?
 Kakek: Tidak terlalu.
-Kanaya: …Mimpi? Mimpi buruk, kah?
-Kakek: Saya… tidak yakin itu mimpi.
-[Kanaya menatap wajah Kakek lama, seperti mencari sesuatu.]
+Kanaya: ...Mimpi? Mimpi buruk, kah?
+Kakek: Saya... tidak yakin itu mimpi.
+Kanaya menatap wajah Kakek lama, seperti mencari sesuatu.
 do set_portrait("kanaya". "bitter smile")
-Kanaya: Ayah… ingat Ibu?
-Kakek: ‘[i]Ibu, ya…[/i] ’
-Kakek: Saya… tahu saya punya istri.
+Kanaya: Ayah... ingat Ibu?
+Kakek: ‘Ibu, ya...’
+Kakek: Saya... tahu saya punya istri.
 Kanaya: Tapi?
 Kakek: Namun. Wajahnya tidak jelas. Suaranya juga. 
-[Kanaya mengangguk kecil, seperti tidak kaget akan jawaban tersebut.]
-Kakek: Dulu… dia bagaimana? 
+Kanaya mengangguk kecil, seperti tidak kaget akan jawaban tersebut.
+Kakek: Dulu... dia bagaimana? 
 do set_portrait("kanaya". "soft smile")
-Kanaya: …Ibu, ya.
+Kanaya: ...Ibu, ya.
 do set_portrait("kanaya". "bitter smile")
 Kanaya: Dulu Ibu sangat sabar. 
-Kakek: …Dulu.
+Kakek: ...Dulu.
 do set_portrait("kakek". "sad")
 Kakek: Jadi, dia sudah—
 Kanaya: Ya.
-[Kanaya tersenyum tipis.]
+Kanaya tersenyum tipis.
 do set_portrait("kanaya". "bitter smile")
-Kanaya: Ibu dulu sangat sabar. Mengurus Ayah, kami, rumah… 
+Kanaya: Ibu dulu sangat sabar. Mengurus Ayah, kami, rumah... 
 do set_portrait("kanaya". "bitter smile")
 Kanaya: Bahkan waktu Ayah marah-marah, Ibu tetap begitu.
 do set_portrait("kanaya". "bitter smile")
 Kakek: Apakah dia pernah marah? Ke saya?
-Kanaya: …Tidak. Sampai akhir pun engga pernah marah sama Ayah. Seberapa seringnya Ayah kayak begitu.
+Kanaya: ...Tidak. Sampai akhir pun engga pernah marah sama Ayah. Seberapa seringnya Ayah kayak begitu.
 do set_portrait("kakek". "soft smile")
-Kakek: …Hah. Saya… jahat, ya?
-[Kakek menutup matanya, seperti tidak percaya akan perkataan anaknya tersebut.]
-Kanaya: …Ayah manusia. 
+Kakek: ...Hah. Saya... jahat, ya?
+Kakek menutup matanya, seperti tidak percaya akan perkataan anaknya tersebut.
+Kanaya: ...Ayah manusia. 
 do set_portrait("kakek". "soft smile")
 Kakek: Saya sepertinya tidak pantas dimaafkan.
 Kanaya: Ibu sudah memaafkan duluan. 
-Kanaya: Tapi… setidaknya Ayah sadar. 
+Kanaya: Tapi... setidaknya Ayah sadar. 
 do set_portrait("kakek". "angry")
-Kakek: Kenapa… kenapa dia sesabar itu? Sama seorang suami seperti—
+Kakek: Kenapa... kenapa dia sesabar itu? Sama seorang suami seperti—
 do set_portrait("kakek". "sad")
 Kakek: —saya!
-Kanaya: …Sepertinya itu cara Ibu sendiri mencintai Ayah. 
-[Sang Ayah menutup matanya, seperti sedang menahan tangisan.]
+Kanaya: ...Sepertinya itu cara Ibu sendiri mencintai Ayah. 
+Sang Ayah menutup matanya, seperti sedang menahan tangisan.
 Kanaya: Ayah. 
-Kanaya: Kalau… suatu hari Ayah lupa lagi, lupa tentang keluarga ini, tolong ingat satu hal ini saja.
-Kanaya: Tolong jangan lupakan Ibu. Bahwa… Ibu engga pernah membenci Ayah.
-[Kakek mengangguk, jelas]
+Kanaya: Kalau... suatu hari Ayah lupa lagi, lupa tentang keluarga ini, tolong ingat satu hal ini saja.
+Kanaya: Tolong jangan lupakan Ibu. Bahwa... Ibu engga pernah membenci Ayah.
+Kakek mengangguk, jelas
 do set_portrait("kakek". "soft smile")
 Kakek: Saya ingin mengingatnya. 
 do set_portrait("kanaya". "bitter smile")
 Kanaya: Itu sudah cukup bagi Ibu.
-[Kanaya mengambil napas.]
-Kanaya: Besok… ulang tahun Ayah. Saya dan yang lain akan datang sore. Agar bersama. 
-Kakek: Baik. Akan… saya tunggu. Makasih untuk hari ini, Kanaya.
+Kanaya mengambil napas.
+Kanaya: Besok... ulang tahun Ayah. Saya dan yang lain akan datang sore. Agar bersama. 
+Kakek: Baik. Akan... saya tunggu. Makasih untuk hari ini, Kanaya.
 do set_portrait("kanaya". "soft smile")
 Kanaya: Tentu, Ayah. Sampai jumpa besok.
-[Tidak biasa bagi sang Ayah tidur siang, namun karena kurangnya tidur sebelumnya, dia memejamkan matanya sementara. Masuklah memori. Sebuah kamar rumah sakit yang terang. Seorang perempuan yang sedang tidur di atasnya, badannya lemah dan tangannya kecil. Perempuan tersebut seperti sedang berbicara kepadanya, namun suaranya samar. Wujudnya pun belum jelas. Akhirnya, beliau terbangun kaget, dibangunkan dari mimpi tersebut oleh salah satu pengasuh karena sudah jam makan siang.]
+Tidak biasa bagi sang Ayah tidur siang, namun karena kurangnya tidur sebelumnya, dia memejamkan matanya sementara. Masuklah memori. Sebuah kamar rumah sakit yang terang. Seorang perempuan yang sedang tidur di atasnya, badannya lemah dan tangannya kecil. Perempuan tersebut seperti sedang berbicara kepadanya, namun suaranya samar. Wujudnya pun belum jelas. Akhirnya, beliau terbangun kaget, dibangunkan dari mimpi tersebut oleh salah satu pengasuh karena sudah jam makan siang.
 => END

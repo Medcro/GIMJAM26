@@ -1,9 +1,9 @@
 ~ exited_without_memory
-% Kenangan itu kembali menghilang
-% Memori ini belum siap untuk diingat.
+% Kenangan kembali menghilang
+% Memori mulai menghilang
 => END
 
 ~ fail_to_exit
 % Coba ingat lagi.
-% Ada alasan mengapa kamu melupakan ini.
+% Mengapa kamu melupakan ini.
 => END

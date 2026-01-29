@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjamdyf07kcty"]
+[gd_scene load_steps=17 format=3 uid="uid://bjamdyf07kcty"]
 
+[ext_resource type="Script" uid="uid://baxvnwdvnpgg2" path="res://scripts/levels/level_manager.gd" id="1_tqnj0"]
 [ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_vvoq0"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_vvoq0"]
 [ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_dwyms"]
 [ext_resource type="PackedScene" uid="uid://dwm2p8kl6kfh4" path="res://scenes/pathfinder/rotation_plate.tscn" id="4_6xwso"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_5ke18"]
+[ext_resource type="PackedScene" uid="uid://c4ex86jm8iqhf" path="res://scenes/end_point.tscn" id="5_mxx4w"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="6_j14br"]
-[ext_resource type="Texture2D" uid="uid://cfxnx057hn4gs" path="res://assets/pathfinder/titik dalem arrow box versi max 5.png" id="7_vvoq0"]
-[ext_resource type="Texture2D" uid="uid://1deubfg6l73i" path="res://assets/pathfinder/exit gate.png" id="8_gruok"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="9_h717f"]
+[ext_resource type="AudioStream" uid="uid://3gntrqphe801" path="res://assets/audio/bgm/BGM_Level.mp3" id="10_tqnj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
 size = Vector2(6.7002034, 110.772255)
@@ -29,6 +30,9 @@ size = Vector2(436, 2)
 size = Vector2(583, 5)
 
 [node name="Level5" type="Node2D"]
+script = ExtResource("1_tqnj0")
+next_level = "day_6"
+current_level = "level_6"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -96,7 +100,8 @@ position = Vector2(0, 162.5)
 shape = SubResource("RectangleShape2D_tqnj0")
 
 [node name="MemoryBubble" parent="." instance=ExtResource("3_dwyms")]
-position = Vector2(-330, -69)
+position = Vector2(-287, 17)
+scale = Vector2(0.28, 0.28)
 
 [node name="RotationPlate2" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(33, -21)
@@ -110,22 +115,9 @@ position = Vector2(250, -20)
 [node name="RotationPlate" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(-183, 52)
 
-[node name="Player" parent="." instance=ExtResource("5_5ke18")]
-position = Vector2(37, 123)
-scale = Vector2(0.520168, 0.538477)
-
-[node name="PathfinderUI" parent="." instance=ExtResource("6_j14br")]
-
-[node name="TitikArrowBox" type="Sprite2D" parent="PathfinderUI"]
-position = Vector2(571.00006, 403.99997)
-scale = Vector2(0.48240742, 0.48888895)
-texture = ExtResource("7_vvoq0")
-
-[node name="ExitGate" type="Sprite2D" parent="."]
-position = Vector2(262, 106)
-rotation = -1.5707964
-scale = Vector2(0.7845365, 0.8018232)
-texture = ExtResource("8_gruok")
+[node name="EndPoint" parent="." instance=ExtResource("5_mxx4w")]
+position = Vector2(188, -275)
+scale = Vector2(2.2, 2.2)
 
 [node name="WallImage" type="Sprite2D" parent="."]
 position = Vector2(-252.82236, -20.718744)
@@ -152,3 +144,16 @@ visible = false
 position = Vector2(-108.00001, -166.00002)
 scale = Vector2(0.4598193, 0.454875)
 texture = ExtResource("9_h717f")
+
+[node name="Player" parent="." instance=ExtResource("5_5ke18")]
+position = Vector2(37, 123)
+scale = Vector2(0.520168, 0.538477)
+max_input = 6
+
+[node name="PathfinderUI" parent="." instance=ExtResource("6_j14br")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_tqnj0")
+volume_db = -32.0
+autoplay = true
+bus = &"Music"

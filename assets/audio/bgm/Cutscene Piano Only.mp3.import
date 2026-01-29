@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1vayhksgwlq5"
+path="res://.godot/imported/Cutscene Piano Only.mp3-4039c5726c4642811df51659fb31e285.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Cutscene Piano Only.mp3"
+dest_files=["res://.godot/imported/Cutscene Piano Only.mp3-4039c5726c4642811df51659fb31e285.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

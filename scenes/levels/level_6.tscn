@@ -1,15 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://8i3jkokvv33c"]
+[gd_scene load_steps=17 format=3 uid="uid://8i3jkokvv33c"]
 
 [ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_e18e5"]
+[ext_resource type="Script" uid="uid://baxvnwdvnpgg2" path="res://scripts/levels/level_manager.gd" id="1_m5qie"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_m5qie"]
 [ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_kydov"]
 [ext_resource type="PackedScene" uid="uid://dwm2p8kl6kfh4" path="res://scenes/pathfinder/rotation_plate.tscn" id="4_uwlxl"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_4wfvb"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="6_tqv5a"]
-[ext_resource type="Texture2D" uid="uid://nmqd8k781byh" path="res://assets/pathfinder/titik dalem arrow box versi max 4.png" id="7_e18e5"]
-[ext_resource type="Texture2D" uid="uid://1deubfg6l73i" path="res://assets/pathfinder/exit gate.png" id="8_pafwe"]
+[ext_resource type="PackedScene" uid="uid://c4ex86jm8iqhf" path="res://scenes/end_point.tscn" id="9_e18e5"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="9_gf2l7"]
 [ext_resource type="PackedScene" uid="uid://bju8rr8s67v4a" path="res://scenes/pathfinder/water_freezing_block.tscn" id="10_m5qie"]
+[ext_resource type="AudioStream" uid="uid://3gntrqphe801" path="res://assets/audio/bgm/BGM_Level.mp3" id="11_kydov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
 size = Vector2(6.7002034, 110.772255)
@@ -27,6 +28,9 @@ size = Vector2(3.25, 443.375)
 size = Vector2(4, 74)
 
 [node name="Level6" type="Node2D"]
+script = ExtResource("1_m5qie")
+next_level = "day_7"
+current_level = "level_7"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -83,41 +87,6 @@ shape = SubResource("RectangleShape2D_sjq8i")
 position = Vector2(293, 124)
 shape = SubResource("RectangleShape2D_m5qie")
 
-[node name="MemoryBubble" parent="." instance=ExtResource("3_kydov")]
-position = Vector2(-185, -285)
-
-[node name="RotationPlate2" parent="." instance=ExtResource("4_uwlxl")]
-position = Vector2(178, 52)
-
-[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_uwlxl")]
-position = Vector2(73, 72)
-
-[node name="RotationPlate3" parent="." instance=ExtResource("4_uwlxl")]
-position = Vector2(250, -20)
-
-[node name="RotationPlate" parent="." instance=ExtResource("4_uwlxl")]
-position = Vector2(-183, 52)
-
-[node name="RotationPlate" parent="RotationPlate" instance=ExtResource("4_uwlxl")]
-position = Vector2(-73, -217)
-
-[node name="Player" parent="." instance=ExtResource("5_4wfvb")]
-position = Vector2(37, -21.000002)
-scale = Vector2(0.520168, 0.538477)
-max_input = 1
-
-[node name="PathfinderUI" parent="." instance=ExtResource("6_tqv5a")]
-
-[node name="TitikArrowBox" type="Sprite2D" parent="PathfinderUI"]
-position = Vector2(567.00006, 403.99997)
-scale = Vector2(0.48240742, 0.48888895)
-texture = ExtResource("7_e18e5")
-
-[node name="ExitGate" type="Sprite2D" parent="."]
-position = Vector2(-86.99999, 131.00005)
-scale = Vector2(0.7845365, 0.8018232)
-texture = ExtResource("8_pafwe")
-
 [node name="WallImage" type="Sprite2D" parent="."]
 position = Vector2(-252.82236, -20.718744)
 scale = Vector2(0.4598193, 0.454875)
@@ -136,21 +105,62 @@ position = Vector2(256, -166)
 
 [node name="WaterFreezingBlock9" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(111, -167)
+scale = Vector2(0.9036625, 0.8889374)
 
 [node name="WaterFreezingBlock6" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(111, -239)
+scale = Vector2(0.9543906, 0.92507887)
 
 [node name="WaterFreezingBlock5" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(111, -95)
+scale = Vector2(0.91233975, 0.95121366)
 
 [node name="WaterFreezingBlock" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(-178, -239)
+scale = Vector2(0.95486665, 0.885759)
 
 [node name="WaterFreezingBlock7" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(-36, 123)
 
 [node name="WaterFreezingBlock8" parent="." instance=ExtResource("10_m5qie")]
-position = Vector2(255, 51)
+position = Vector2(258, 53)
 
 [node name="WaterFreezingBlock3" parent="." instance=ExtResource("10_m5qie")]
 position = Vector2(-252, 124)
+
+[node name="EndPoint" parent="." instance=ExtResource("9_e18e5")]
+position = Vector2(294, 45)
+rotation = 1.5658294
+scale = Vector2(2.1999998, 2.1999998)
+
+[node name="MemoryBubble" parent="." instance=ExtResource("3_kydov")]
+position = Vector2(-138, -198)
+scale = Vector2(0.27, 0.27)
+
+[node name="RotationPlate2" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(178, 52)
+
+[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_uwlxl")]
+position = Vector2(73, 72)
+
+[node name="RotationPlate3" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(250, -20)
+
+[node name="RotationPlate" parent="." instance=ExtResource("4_uwlxl")]
+position = Vector2(-183, 52)
+
+[node name="RotationPlate" parent="RotationPlate" instance=ExtResource("4_uwlxl")]
+position = Vector2(-73, -217)
+
+[node name="Player" parent="." instance=ExtResource("5_4wfvb")]
+position = Vector2(37, -21.000002)
+scale = Vector2(0.5, 0.517)
+max_input = 4
+
+[node name="PathfinderUI" parent="." instance=ExtResource("6_tqv5a")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_kydov")
+volume_db = -32.0
+autoplay = true
+bus = &"Music"

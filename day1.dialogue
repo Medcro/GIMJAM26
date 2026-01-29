@@ -1,0 +1,46 @@
+~ start
+Suster 1: Yang benar saja.
+Suster 2: Buat apa aku bohong? Benar kok, ada pengunjung buat kakek itu.
+Suster 1: Yaudah, kamu kabari kakeknya. Aku ajak dia ke kamarnya. Terus jangan lupa bilang...
+Kakek: ‘Melihat keluar jendela setiap hari sudah biasa bagi saya.’ 
+Kakek: ‘Bahkan dengan mata tertutup, saya dapat melihat persis apa yang di luar jendela kamarku ini, saking tidak berubahnya dunia dari mata yang terjebak disini.’ 
+Kakek: ‘Pohon, lapangan, awan... Apakah hidup memang segini saja untuk seorang manusia seperti saya?’ |
+Suster 2: Selamat siang pak. Mohon maaf mengganggu, namun Bapak memiliki tamu.
+Kakek : ...
+Suster 2: ...Permisi pak? 
+Terdengar suara kebisingan dari luar
+do set_portrait("anak 3", "default")
+Suster 1: Hei! Kamu jangan masuk dulu—!
+???: Ayah! 
+Kakek : ‘...Ayah?’
+Kakek akhirnya menoleh dari jendela dan berhadapan dengan sumber kebisingan tersebut. Seorang gadis berkacamata tersebut membuka paksa pintu kamar Kakek dan memanggilnya ‘ayah’, sehingga menanam bibit amarah di hati beliau.
+Kakek : ‘Siapa anak tidak sopan ini?’
+do set_portrait("anak 3", "default")
+???: Ayah? Ayah ga apa-apa? 
+Kakek : Siapa kamu? Berani-beraninya masuk aja ke kamar saya. 
+do set_portrait("anak 3", "default")
+???: E-eh.. M-maaf aku paksa buka pintu, tapi kata pengasuh tadi ayah—
+Kakek : Terus sajalah panggil saya ayah, gila kah kamu? Kita kenal saja tidak! Apa urusanmu disini?
+Entah kenapa, hadirnya gadis tersebut membuat amarah muncul di diri Kakeknya. Berani-beraninya orang tersebut.
+Suster 1: Hush, nak! Emang kamu harusnya ga boleh masuk sampai Bapaknya mengizinkan.
+do set_portrait("anak 3", "default")
+???: T-tapi bu.. Ayah saya kenapa ga bolehin anaknya sendiri masuk—
+Tangisan mulai muncul di mata gadis tersebut.
+Kakek : Hah?! Kamu anak saya? 
+do set_portrait("anak 3", "default")
+???: ...Iya yah. Aku kesini cuman—
+Kakek : Jangan. J-jangan sebut saya begitu! Saya tidak punya keluarga, apalagi anak gadis! *batuk*
+Suster 2: Pak, tolong tenangkan dirimu—
+Kakek : Diam kamu! S-saya tidak akan tenang sampai dia keluar! *batuk* Keluarkan dia, saya pusing.
+do set_portrait("anak 3", "default")
+???: Tapi ayah—
+Kakek : Ayah, ayah, ayah... Kamu kira saya tidak sadar apa yang kamu coba lakukan?! Menipu orang seperti saya... Kamu pikir saya bodoh dan langsung percaya begitu ya?! 
+do set_portrait("anak 3", "default")
+???: S-saya ga mungkin—
+Suster 1: Kak, maaf, kondisi ayahmu sedang tidak stabil, tolong keluar sekarang sebelum kami panggil keamanan. 
+do set_portrait("anak 3", "default")
+???: I-iya.. baik, bu. Aku.. minta maaf. Semoga aya— anu, Bapaknya.. cepat sembuh, ya Pak. Aku... cuman ingin bilang—
+Kakek : Jangan bilang apa-apa lagi! 
+Kakek: K-kalau kamu benar anak saya...
+Kakek: ...kenapa rasanya asing sekali...? 
+=> END

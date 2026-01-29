@@ -28,13 +28,14 @@ var current_page : int = 0
 @onready var play_button: TextureButton = $Control/ButtonContainer/PlayButton
 @onready var settings_button: TextureButton = $Control/ButtonContainer/SettingsButton
 @onready var quit_button: TextureButton = $Control/ButtonContainer/QuitButton
+@onready var sandikala_rounded: Sprite2D = $Control/SandikalaRounded
 
 var is_settings_mode : bool = false
 
 var book_content = {
-	1: ["", "", "", "Act 1", "[url=tutorial]Tutorial[/url]", "[url=level_1]Level 1[/url]"],
-	2: ["Act 2", "[url=level_2]Level 2[/url]", "[url=level_3]Level 3[/url]", "Act 3", "[url=level_4]Level 4[/url]", "[url=level_5]Level 5[/url]"],
-	3: ["Act 4", "[url=level_6]Level 6[/url]", "[url=level_7]Level 7[/url]", "", "", ""]
+	1: ["", "", "", "", "[url=tutorial]Tutorial[/url]", "[url=level_1]Level 1[/url]"],
+	2: ["", "[url=level_2]Level 2[/url]", "[url=level_3]Level 3[/url]", "", "[url=level_4]Level 4[/url]", "[url=level_5]Level 5[/url]"],
+	3: ["", "[url=level_6]Level 6[/url]", "[url=level_7]Level 7[/url]", "", "", ""]
 }
 
 func _ready():
@@ -44,12 +45,14 @@ func update_text_visibility(should_show: bool):
 	if not should_show:
 		_set_reading_content_visible(false)
 		button_container.visible = false
+		sandikala_rounded.visible = false
 		settings_container.visible = false
 		_set_photos_visible(false, false)
 		return
 
 	if current_page == 0:
 		button_container.visible = true       # Show Menu
+		sandikala_rounded.visible = true
 		_set_reading_content_visible(false)   # Hide Book Text
 		_set_photos_visible(false, false)     # Hide Photos
 		settings_container.visible = false
@@ -58,6 +61,7 @@ func update_text_visibility(should_show: bool):
 
 	elif current_page > page_count:
 		button_container.visible = false      # Hide Menu
+		sandikala_rounded.visible = false
 		_set_reading_content_visible(false)   # Hide Book Text
 		_set_photos_visible(false, false)     # Hide Photos
 		settings_container.visible = false
@@ -68,6 +72,7 @@ func update_text_visibility(should_show: bool):
 		
 	else:
 		button_container.visible = false      # Hide Menu
+		sandikala_rounded.visible = false
 		_set_reading_content_visible(true)    # Show Book Text
 		
 		next_button.visible = true            

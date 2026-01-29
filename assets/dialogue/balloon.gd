@@ -1,7 +1,7 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
-signal dialogue_ended
+signal dialogue_skipped
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -84,6 +84,8 @@ var is_manual_portrait: bool = false
 @onready var chara_portrait: TextureRect = $CharaPortrait
 
 func _ready() -> void:
+	DialogueManager.dialogue_ended.connect(_on_skip_button_yes_pressed)
+	
 	var level_id = SaveManager.current_level
 	var is_finished = SaveManager.unlocked_levels.get(level_id, false)
 	
@@ -285,20 +287,25 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_skip_button_pressed() -> void:
+	$ButtonClicked.play()
 	skip_ui.visible = true
 
 func _on_skip_button_yes_pressed() -> void:
+	$ButtonClicked.play()
 	if is_instance_valid(audio_stream_player):
 		audio_stream_player.stop()
-
-	dialogue_ended.emit()
-
+	await get_tree().create_timer(0.5).timeout
+	
+	dialogue_skipped.emit()
+	print("clicked")
 	queue_free()
 
 func _on_skip_button_no_pressed() -> void:
+	$ButtonClicked.play()
 	skip_ui.visible = false
 
 func _on_autoplay_toggle_pressed() -> void:
+	$ButtonClicked.play()
 	is_autoplay = !is_autoplay
 	autoplay_timer.start(1.5)
 
@@ -311,12 +318,27 @@ func _on_autoplay_timeout() -> void:
 		next(dialogue_line.next_id)
 
 func _on_pause_button_pressed() -> void:
+	$ButtonClicked.play()
 	pause_ui.visible = true
 	get_tree().paused = true
 
 func _on_pause_resume_button_pressed() -> void:
+	$ButtonClicked.play()
 	pause_ui.visible = false
 	get_tree().paused = false
 
 func _on_pause_quit_button_pressed() -> void:
-	pass # Replace with function body.
+	LevelTransition.change_scene("res://scenes/main menu/level_select.tscn")
+
+func _on_yes_button_mouse_entered() -> void:
+	$ButtonHover.play()
+
+func _on_no_button_mouse_entered() -> void:
+	$ButtonHover.play()
+
+
+func _on_autoplay_button_mouse_entered() -> void:
+	$ButtonHover.play()
+
+func _on_skip_button_mouse_entered() -> void:
+	$ButtonHover.play()

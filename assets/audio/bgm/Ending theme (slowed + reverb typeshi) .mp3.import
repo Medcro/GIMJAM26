@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rb48llettx7g"
+path="res://.godot/imported/Ending theme (slowed + reverb typeshi) .mp3-145200d18b98c0ac958f0147e9e09001.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Ending theme (slowed + reverb typeshi) .mp3"
+dest_files=["res://.godot/imported/Ending theme (slowed + reverb typeshi) .mp3-145200d18b98c0ac958f0147e9e09001.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

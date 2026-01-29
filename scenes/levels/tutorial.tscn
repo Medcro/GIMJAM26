@@ -1,123 +1,40 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm2dk1rfpiagu"]
+[gd_scene load_steps=4 format=3 uid="uid://s1vo4afukwb1"]
 
-[ext_resource type="Script" uid="uid://baxvnwdvnpgg2" path="res://scripts/levels/level_manager.gd" id="1_4a02d"]
-[ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_g7bfq"]
-[ext_resource type="Texture2D" uid="uid://tk8qm6nyk7oh" path="res://assets/pathfinder/4x4.png" id="3_7ac3l"]
-[ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="4_iig34"]
-[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_uu0hj"]
-[ext_resource type="Texture2D" uid="uid://o8gr4lk4rvt5" path="res://assets/pathfinder/exit gate.tres" id="6_7ac3l"]
-[ext_resource type="Texture2D" uid="uid://co1jkgj1hclo4" path="res://assets/pathfinder/tutorial/arrow tutor 3.tres" id="7_3e81p"]
-[ext_resource type="PackedScene" uid="uid://33ernvhe6n0l" path="res://scenes/pathfinder/word.tscn" id="7_g7bfq"]
-[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_4o3hj"]
-[ext_resource type="Texture2D" uid="uid://cxbd8lwb88oop" path="res://assets/pathfinder/tutorial/arrow tutor 1.tres" id="8_g7bfq"]
+[ext_resource type="Script" uid="uid://dc2s66grhq10f" path="res://assets/dialogue/test/dialogue_test.gd" id="1_1r3rq"]
+[ext_resource type="Resource" uid="uid://cxmab4oak0rjo" path="res://day1.dialogue" id="2_u4f7j"]
+[ext_resource type="Texture2D" uid="uid://0svyyaf4frcq" path="res://assets/levels/day 3/bg day 3.png" id="3_1r3rq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
-size = Vector2(8.802344, 151.4153)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
-size = Vector2(284, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
-size = Vector2(3.5, 378)
-
-[node name="Tutorial" type="Node2D"]
-script = ExtResource("1_4a02d")
-next_level = "level_1"
+[node name="Day1" type="Node2D"]
+script = ExtResource("1_1r3rq")
+dialogue_resource = ExtResource("2_u4f7j")
+num_day = "1"
+current_level = "day_1"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 1344.0
-offset_bottom = 756.0
+offset_left = -640.00006
+offset_top = -360.00003
+offset_right = 1340.0
+offset_bottom = 746.15405
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5999933, 0.5999943)
-texture = ExtResource("2_g7bfq")
-
-[node name="Grid" type="Sprite2D" parent="."]
-position = Vector2(-12, -34)
-scale = Vector2(0.6, 0.59999996)
-texture = ExtResource("3_7ac3l")
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_1r3rq")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
 
-[node name="Collisions" type="Node2D" parent="."]
-
-[node name="Collision" type="StaticBody2D" parent="Collisions"]
-position = Vector2(0, -94)
-
-[node name="Sprite2D" type="Sprite2D" parent="Collisions/Collision"]
-position = Vector2(144, -134)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_iig34")
-
-[node name="Awan" type="CollisionShape2D" parent="Collisions/Collision"]
-position = Vector2(143.5, -133.5)
-scale = Vector2(10.792582, 0.6274135)
-shape = SubResource("RectangleShape2D_q0wsq")
-
-[node name="Collision2" type="StaticBody2D" parent="Collisions"]
-position = Vector2(-189, 188)
-
-[node name="Sprite2D" type="Sprite2D" parent="Collisions/Collision2"]
-position = Vector2(144, -134)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_iig34")
-
-[node name="Awan" type="CollisionShape2D" parent="Collisions/Collision2"]
-position = Vector2(143.5, -133.5)
-scale = Vector2(10.792582, 0.6274135)
-shape = SubResource("RectangleShape2D_q0wsq")
-
-[node name="ExitGate" type="Sprite2D" parent="."]
-position = Vector2(-136, -270)
-rotation = -1.5766902
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_7ac3l")
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="wall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(5.5, 103)
-shape = SubResource("RectangleShape2D_posk4")
-
-[node name="wall2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(51, -274)
-shape = SubResource("RectangleShape2D_posk4")
-
-[node name="wall3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(192, -87)
-shape = SubResource("RectangleShape2D_sjq8i")
-
-[node name="wall4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-185, -85)
-shape = SubResource("RectangleShape2D_sjq8i")
-
-[node name="ArrowTutor3" type="Sprite2D" parent="."]
-position = Vector2(147, -66)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_3e81p")
-
-[node name="ArrowTutor1" type="Sprite2D" parent="."]
-position = Vector2(16, -124.99999)
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("8_g7bfq")
-
-[node name="AssetArrowTutor2" type="Sprite2D" parent="."]
-position = Vector2(-134.00006, -191.99994)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_3e81p")
-
-[node name="Word" parent="." instance=ExtResource("7_g7bfq")]
-position = Vector2(-136, -136)
-scale = Vector2(0.5, 0.5)
-
-[node name="Player" parent="." instance=ExtResource("4_uu0hj")]
-position = Vector2(145, 56)
-scale = Vector2(0.6609538, 0.6752045)
-max_input = 3
-
-[node name="PathfinderUI" parent="." instance=ExtResource("8_4o3hj")]
+[node name="FlashbackEffect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -637.0
+offset_top = -365.0
+offset_right = 643.0
+offset_bottom = 365.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

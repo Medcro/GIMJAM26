@@ -31,9 +31,9 @@ func toggle_mode():
 	is_clockwise = !is_clockwise
 
 	if is_clockwise:
-		sprite.flip_h = false
-	else:
 		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
 
 func rotation_clockwise(dir: Vector2) -> Vector2:
 	match dir:

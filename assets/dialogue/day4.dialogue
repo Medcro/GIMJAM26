@@ -1,88 +1,88 @@
 ~ start
-[Teriknya mentari menemani Kakek pada siang tersebut. Secara tidak sadar, Kakek sedang menunggu kehadiran pria yang datang kemarin. Pikirannya Kakek sedang di awan, dadanya sesak semenjak mimpi malam tadi.]
-Kakek: ‘[i]Mimpi itu…[/i]’
+Teriknya mentari menemani Kakek pada siang tersebut. Secara tidak sadar, Kakek sedang menunggu kehadiran pria yang datang kemarin. Pikirannya Kakek sedang di awan, dadanya sesak semenjak mimpi malam tadi.
+Kakek: ‘Mimpi itu...’
 do set_flashback(true)
-Kakek: ‘[i]Ada dapur, nasi, meja, seperti yang sebelumnya.[/i] ’ 
-Kakek: ‘[i]Tangan saya sendiri terangkat dan bergerak cepat.[/i] ’ 
-Kakek: ‘[i]Ada anak lelaki, kecil.[/i] ’ 
-Kakek: ‘[i]Dia menunduk, takut, tapi tidak menangis keras.[/i] ’ 
-Kakek: ‘[i]Namun tak perlu, mukanya terlihat sangat takut dengan badan kecilnya yang bergemetaran.[/i]’
-[Kakek tersebut menutup mata, seperti sakit memang mengingat mimpi tersebut yang seperti ingatan.]
-Kakek: ‘[i]Saya… marah. Saya ingat ucapan saya sendiri.[/i] ’
+Kakek: ‘Ada dapur, nasi, meja, seperti yang sebelumnya.
+Kakek: ‘Tangan saya sendiri terangkat dan bergerak cepat.
+Kakek: ‘Ada anak lelaki, kecil.
+Kakek: ‘Dia menunduk, takut, tapi tidak menangis keras.
+Kakek: ‘Namun tak perlu, mukanya terlihat sangat takut dengan badan kecilnya yang bergemetaran.’
+Kakek tersebut menutup mata, seperti sakit memang mengingat mimpi tersebut yang seperti ingatan.
+Kakek: ‘Saya... marah. Saya ingat ucapan saya sendiri.
 do set_portrait("kakek", "muda")
-Kakek: Kamu ya…
-[Terdengar suara tajam, seperti kulit mengenai kulit lainnya.]
+Kakek: Kamu ya...
+Terdengar suara tajam, seperti kulit mengenai kulit lainnya.
 do set_portrait("kakek", "muda")
-Kakek: …Memang anak nakal! Kamu sangat pantas dihukum! 
-[Suara tersebut ada lagi.] 
+Kakek: ...Memang anak nakal! Kamu sangat pantas dihukum! 
+Suara tersebut ada lagi.]
 do set_portrait("kakek", "muda")
 Kakek: Memang saya ajarkan begitu, hah? Ajaran siapa itu?!
-[Suara tangisan membesar, namun bukan dari anak lelaki tersebut, bukan dari anak lelaki bermuka mirip dengan pria yang kemarin mengunjunginya. Namun, tangisan tersebut dari pintu kamar tidur yang terbuka.]
-[Anak paling bungsu, memeluk figur yang lebih besar yang berupaya menenangkannya. Tak lama kemudian, muncul bayangan wanita dewasa yang teriak dari dapur, mencoba menghentikan apa yang sedang diperbuat ke anak lelakinya. Namun saat bayangan tersebut mendekatinya, tiba-tiba Kakek terbangun dari mimpinya, matanya basah tanpa sadar.]
+Suara tangisan membesar, namun bukan dari anak lelaki tersebut, bukan dari anak lelaki bermuka mirip dengan pria yang kemarin mengunjunginya. Namun, tangisan tersebut dari pintu kamar tidur yang terbuka.
+Anak paling bungsu, memeluk figur yang lebih besar yang berupaya menenangkannya. Tak lama kemudian, muncul bayangan wanita dewasa yang teriak dari dapur, mencoba menghentikan apa yang sedang diperbuat ke anak lelakinya. Namun saat bayangan tersebut mendekatinya, tiba-tiba Kakek terbangun dari mimpinya, matanya basah tanpa sadar.
 do set_flashback(false)
-Kakek: Mimpi tadi… bukan, terlalu nyata untuk sebuah mimpi. Memori, kah?
-[Suara ketukan pintu mengganggu Kakek yang sedang memikirkan kembali mimpi tadi, membuka matanya lagi.]
+Kakek: Mimpi tadi... bukan, terlalu nyata untuk sebuah mimpi. Memori, kah?
+Suara ketukan pintu mengganggu Kakek yang sedang memikirkan kembali mimpi tadi, membuka matanya lagi.
 Pengkafin: Permisi, Pak. Ada tamu. Lelaki kemarin.
-Kakek: …Ya, silahkan. 
-[Pintu terbuka, Kakek mengalihkan pandangannya ke pintu lagi. Pria yang sama seperti kemarin masuk, tetap tidak menatapnya. Kupingnya sedikit merah, mungkin karena malu kabur seperti itu kemarin. Namun selain itu, wajahnya lebih kaku dari sebelumnya.]
+Kakek: ...Ya, silahkan. 
+Pintu terbuka, Kakek mengalihkan pandangannya ke pintu lagi. Pria yang sama seperti kemarin masuk, tetap tidak menatapnya. Kupingnya sedikit merah, mungkin karena malu kabur seperti itu kemarin. Namun selain itu, wajahnya lebih kaku dari sebelumnya.
 do set_portrait("kafin", "default")
 ???: Siang.
-Kakek: Siang… 
-Kakek: ‘[i]…Bolehkah saya bertanya itu kepadanya?[/i] ’ 
-Kakek: Kamu… bagaimana hidupmu sekarang?
-[Pria itu tersentak, seperti sedang ditanyakan rahasia dari alam semesta.]
+Kakek: Siang... 
+Kakek: ‘...Bolehkah saya bertanya itu kepadanya?
+Kakek: Kamu... bagaimana hidupmu sekarang?
+Pria itu tersentak, seperti sedang ditanyakan rahasia dari alam semesta.
 do set_portrait("kafin", "questioning")
-???: …Hah? Bapak serius?
-Kakek: ‘[i]Reaksinya sampai begitu…[/i] ’
-Kakek: …Iya. Bagaimana hidupmu? 
-[Pria tersebut seperti tidak percaya apa yang didengar, dia menutup matanya sambil duduk. Terlihat senyum ketidak percayaannya meskipun dia tidak menatap ayahnya.]
+???: ...Hah? Bapak serius?
+Kakek: ‘Reaksinya sampai begitu...
+Kakek: ...Iya. Bagaimana hidupmu? 
+Pria tersebut seperti tidak percaya apa yang didengar, dia menutup matanya sambil duduk. Terlihat senyum ketidak percayaannya meskipun dia tidak menatap ayahnya.
 do set_portrait("kafin", "teared up")
-???: …Pertanyaan macam apa itu? Tiba-tiba banget.
-Kakek: Saya… merasa harus bertanya. 
-[Pria tersebut diam, namun menatap Bapaknya dengan muka sepertinya bertanya ‘terus?’. Kakek menghembuskan napasnya.]
+???: ...Pertanyaan macam apa itu? Tiba-tiba banget.
+Kakek: Saya... merasa harus bertanya. 
+Pria tersebut diam, namun menatap Bapaknya dengan muka sepertinya bertanya ‘terus?’. Kakek menghembuskan napasnya.
 do set_portrait("kakek", "sad")
-Kakek: …Karena tadi malam. Saya… sepertinya teringat sesuatu yang tidak menyenangkan.
-[Ruangannya terasa dingin seperti es bagi pria tadi, rahangnya mengeras. Gugup.]
+Kakek: ...Karena tadi malam. Saya... sepertinya teringat sesuatu yang tidak menyenangkan.
+Ruangannya terasa dingin seperti es bagi pria tadi, rahangnya mengeras. Gugup.
 do set_portrait("kafin", "default")
-???: Kalau… k-kalau itu tentang aku, ga usah diingat.
-Kakek: Maaf. Tapi…
-Kakek: Saya ingat saya… marah. Saya ingat bilang kamu pantas dihukum. 
-[Suara pria tersebut mendingin, tangan dikepal.]
+???: Kalau... k-kalau itu tentang aku, ga usah diingat.
+Kakek: Maaf. Tapi...
+Kakek: Saya ingat saya... marah. Saya ingat bilang kamu pantas dihukum. 
+Suara pria tersebut mendingin, tangan dikepal.
 do set_portrait("kafin", "default")
 ???: Oh. Jadi itu. Yang.. diingat.
-Kakek: Apakah… hidupmu baik-baik saja? Setelah, semua itu.
+Kakek: Apakah... hidupmu baik-baik saja? Setelah, semua itu.
 do set_portrait("kafin", "questioning")
 ???: Menurutmu?
-[Hening panjang. Napas lelaki terdengar lebih cepat.]
+Hening panjang. Napas lelaki terdengar lebih cepat.
 do set_portrait("kakek", "sad")
-Kakek: …Maaf.
+Kakek: ...Maaf.
 do set_portrait("kafin", "teared up")
-???: …Aku juga.
-[Pria tersebut menarik napas panjang, sebelum menghembuskannya.]
+???: ...Aku juga.
+Pria tersebut menarik napas panjang, sebelum menghembuskannya.
 do set_portrait("kafin", "default")
 ???: Hidup saya, ya, jalan. Kerja, pulang. Gitu aja. Ga gimana-gimana. 
-Kakek: Itu… baik? Untukmu?
+Kakek: Itu... baik? Untukmu?
 do set_portrait("kafin", "default")
 ???: Itu cukup. 
 do set_portrait("kakek", "sad")
-Kakek: …Saya menyesal. Saya… minta maaf. Padamu. 
+Kakek: ...Saya menyesal. Saya... minta maaf. Padamu. 
 do set_portrait("kafin", "questioning")
 ???: Sudah aja. Kalau Bapak ingat, aku marah, Kalau engga? Ya sudah, aku sendiri udah lelah.
 do set_portrait("kafin", "default")
-???: …Tapi, makasih. Udah nanyain. Setidaknya Bapak nanya.
-[Pria tersebut tidak dapat menyembunyikan senyum kecilnya.]
-Kakek: Nama kamu… siapa? Kalau Bapak boleh tahu?
+???: ...Tapi, makasih. Udah nanyain. Setidaknya Bapak nanya.
+Pria tersebut tidak dapat menyembunyikan senyum kecilnya.
+Kakek: Nama kamu... siapa? Kalau Bapak boleh tahu?
 do set_portrait("kafin", "questioning")
-???: …Bapak serius?
-Kakek: Ya… Saya ingin tahu. Saya lelah memikirkanmu sebagai ‘pria tersebut’.
-Kafin: Nama aku Kafin. Adek… Kalea. Kakak… Bapak tanya sendiri aja besok. Mau datang dia.
-Kakek: …Tolong bilang ke Kalea, saya tidak akan marah lagi. Dan saya minta maaf.
+???: ...Bapak serius?
+Kakek: Ya... Saya ingin tahu. Saya lelah memikirkanmu sebagai ‘pria tersebut’.
+Kafin: Nama aku Kafin. Adek... Kalea. Kakak... Bapak tanya sendiri aja besok. Mau datang dia.
+Kakek: ...Tolong bilang ke Kalea, saya tidak akan marah lagi. Dan saya minta maaf.
 Kafin: Oke. Tapi aku ga janji dia mau datang lagi.
-Kakek: Itu tidak apa-apa. Saya… hanya ingin dia tahu.
+Kakek: Itu tidak apa-apa. Saya... hanya ingin dia tahu.
 Kafin: Aku... harus pergi.
 do set_portrait("kakek", "soft smile")
-Kakek: Terima kasih… Kafin.
+Kakek: Terima kasih... Kafin.
 do set_portrait("kafin", "teared up")
-Kafin: Ya, makasih juga, Bapak. …Makasih udah minta maaf.
-[Pintunya menutup, meninggalkan Kakek sendiri di kamarnya lagi. Cahaya siang terasa lebih terik dari biasanya.]
+Kafin: Ya, makasih juga, Bapak. ...Makasih udah minta maaf.
+Pintunya menutup, meninggalkan Kakek sendiri di kamarnya lagi. Cahaya siang terasa lebih terik dari biasanya.
 => END

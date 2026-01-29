@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://dpce6f6m8gtk3"]
+[gd_scene load_steps=94 format=3 uid="uid://dpce6f6m8gtk3"]
 
 [ext_resource type="Texture2D" uid="uid://bvyhepiwqq827" path="res://assets/select level/Animation sprite.PNG" id="1_v030w"]
 [ext_resource type="Script" uid="uid://dfspqt2ry62pd" path="res://scripts/main menu/fsm/state_machine.gd" id="2_0qncq"]
@@ -8,9 +8,9 @@
 [ext_resource type="Script" uid="uid://c07enjsivj23m" path="res://scripts/main menu/fsm/idle_state.gd" id="4_yletg"]
 [ext_resource type="Script" uid="uid://dnrh37kt5r4du" path="res://scripts/main menu/fsm/flipping_state.gd" id="5_avk54"]
 [ext_resource type="Script" uid="uid://c2fpcjdcv4cdy" path="res://scripts/settings.gd" id="5_hb7p1"]
+[ext_resource type="Texture2D" uid="uid://dlh63x0ok3usn" path="res://assets/settings/new text.PNG" id="5_uantw"]
 [ext_resource type="Script" uid="uid://cobxmxc5if4bt" path="res://scripts/main menu/fsm/reading_state.gd" id="5_yletg"]
 [ext_resource type="Texture2D" uid="uid://dbc2r86rikxhv" path="res://assets/settings/Settings button with text.PNG" id="6_7fe6y"]
-[ext_resource type="Texture2D" uid="uid://dmkeppe6g3m42" path="res://assets/settings/Text.PNG" id="7_fn1bl"]
 [ext_resource type="AudioStream" uid="uid://c8ufn0p5ygbdt" path="res://assets/audio/Page Flip.wav" id="8_r0sq5"]
 [ext_resource type="Texture2D" uid="uid://d2vkkqu2prcyu" path="res://assets/settings/Circle slider.tres" id="8_uantw"]
 [ext_resource type="Texture2D" uid="uid://cduqrt81jsw74" path="res://assets/settings/Slider black.tres" id="9_wnpga"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cjbukbsos7m0g" path="res://assets/settings/Merah polos.tres" id="10_w1j1p"]
 [ext_resource type="Texture2D" uid="uid://dvi0wsmaq56vu" path="res://assets/settings/Reset.tres" id="11_dgdb4"]
 [ext_resource type="AudioStream" uid="uid://bcaig8xal1r6t" path="res://assets/audio/ButtonClickSFX.wav" id="11_wnpga"]
+[ext_resource type="Texture2D" uid="uid://dmkig6q2d17bq" path="res://assets/select level/Sandikala_rounded.png" id="14_wnpga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24scs"]
 atlas = ExtResource("1_v030w")
@@ -727,7 +728,7 @@ offset_left = -954.6666
 offset_top = -531.6666
 offset_right = 965.3334
 offset_bottom = 548.3334
-texture = ExtResource("7_fn1bl")
+texture = ExtResource("5_uantw")
 
 [node name="MusicControl" type="HSlider" parent="Control/Settings"]
 layout_mode = 0
@@ -742,7 +743,7 @@ theme_override_icons/grabber_disabled = ExtResource("8_uantw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
-value = 50.0
+value = 20.0
 
 [node name="SFXControl" type="HSlider" parent="Control/Settings"]
 layout_mode = 0
@@ -757,7 +758,7 @@ theme_override_icons/grabber_disabled = ExtResource("8_uantw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
-value = 50.0
+value = 20.0
 
 [node name="ResetData" type="TextureButton" parent="Control/Settings"]
 layout_mode = 0
@@ -867,6 +868,11 @@ texture = ExtResource("3_24scs")
 position = Vector2(885, 263.33322)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_24scs")
+
+[node name="SandikalaRounded" type="Sprite2D" parent="Control"]
+position = Vector2(-448.33334, 31.666626)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_wnpga")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_0qncq")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ex86jm8iqhf"]
+
+[ext_resource type="Texture2D" uid="uid://o8gr4lk4rvt5" path="res://assets/pathfinder/exit gate.tres" id="1_5pkkc"]
+[ext_resource type="Script" uid="uid://duft8km3h3hx5" path="res://scripts/end_point.gd" id="1_fs12u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pkkc"]
+size = Vector2(62, 5)
+
+[node name="EndPoint" type="Area2D"]
+script = ExtResource("1_fs12u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
+shape = SubResource("RectangleShape2D_5pkkc")
+
+[node name="ExitGate" type="Sprite2D" parent="."]
+position = Vector2(-0.99999976, -3.0000005)
+rotation = -1.5766902
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_5pkkc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

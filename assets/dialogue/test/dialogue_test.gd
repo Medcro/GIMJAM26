@@ -8,8 +8,10 @@ class_name dialogue
 
 @onready var bg_sprite: TextureRect = $Background
 @onready var flashback_ui: ColorRect = %FlashbackEffect
+@onready var balloon_node = DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 
 func _ready() -> void:
+	balloon_node.dialogue_skipped.connect(go_to_next_lvl)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	start_story()
 

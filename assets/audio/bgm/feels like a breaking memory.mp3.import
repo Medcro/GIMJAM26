@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbwkpxmoda1oo"
+path="res://.godot/imported/feels like a breaking memory.mp3-f791598b847ed7a0a2ed7672479e6b7d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/feels like a breaking memory.mp3"
+dest_files=["res://.godot/imported/feels like a breaking memory.mp3-f791598b847ed7a0a2ed7672479e6b7d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

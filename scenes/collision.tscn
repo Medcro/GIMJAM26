@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://biilea57qgx0k"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bey1"]
+[ext_resource type="Texture2D" uid="uid://ds4inc3ojs8n1" path="res://assets/pathfinder/wall 1.tres" id="1_u8cmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0q3j"]
-size = Vector2(121, 114)
+size = Vector2(96, 95)
 
 [node name="Collision" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.9073486e-06, 1.0000029)
-scale = Vector2(120.00001, 114.00001)
-texture = SubResource("PlaceholderTexture2D_1bey1")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_u8cmh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_m0q3j")
