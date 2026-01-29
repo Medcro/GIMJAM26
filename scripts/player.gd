@@ -107,3 +107,4 @@ func show_dialogue_and_wait(title: String):
 	is_locked = true
 	var balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, title, [self])
 	await balloon.tree_exited
+	

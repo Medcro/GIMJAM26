@@ -1,45 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://nejahfjj5lp8"]
+[gd_scene load_steps=9 format=3 uid="uid://nejahfjj5lp8"]
 
-[ext_resource type="PackedScene" path="res://scenes/pathfinder/water_freezing_block.tscn" id="1_5d2l8"]
-[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="2_7l7mv"]
-[ext_resource type="PackedScene" uid="uid://biilea57qgx0k" path="res://scenes/collision.tscn" id="3_v4r4p"]
-[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="4_1s2dm"]
+[ext_resource type="Script" uid="uid://dlmolfpyib0q5" path="res://scripts/pause_menu.gd" id="1_88e76"]
+[ext_resource type="Texture2D" uid="uid://b3j6af1bvuook" path="res://assets/visual novel ui/pause button.tres" id="2_knqa7"]
+[ext_resource type="Texture2D" uid="uid://dcxcq14pmuyap" path="res://assets/visual novel ui/pause button-clicked.tres" id="3_71k7c"]
+[ext_resource type="Texture2D" uid="uid://d2rgbace7wjfu" path="res://assets/bubble overlay-left.png" id="4_cmnsq"]
+[ext_resource type="Texture2D" uid="uid://df6qv0s4ginyk" path="res://assets/resume button.tres" id="5_ofnjo"]
+[ext_resource type="Texture2D" uid="uid://cipnujxbndbtb" path="res://assets/resume button-clicked.tres" id="6_1rgno"]
+[ext_resource type="Texture2D" uid="uid://b2ir0ykkqjwqe" path="res://assets/quit button.tres" id="7_4hnlu"]
+[ext_resource type="Texture2D" uid="uid://4pitei3q5nxj" path="res://assets/quit button-clicked.tres" id="8_3o3g3"]
 
-[node name="game" type="Node2D"]
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_88e76")
 
-[node name="WaterFreezingBlock" parent="." instance=ExtResource("1_5d2l8")]
-position = Vector2(393, -23)
+[node name="PauseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 466.0
+offset_bottom = 467.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_knqa7")
+texture_pressed = ExtResource("3_71k7c")
 
-[node name="Player" parent="." instance=ExtResource("2_7l7mv")]
+[node name="PauseMenu" type="TextureRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_cmnsq")
 
-[node name="Collision" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(8, -246)
-scale = Vector2(9.596054, 0.87832785)
+[node name="Resume" type="TextureButton" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 758.3334
+offset_top = 309.99982
+offset_right = 1630.3334
+offset_bottom = 689.9998
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("5_ofnjo")
+texture_pressed = ExtResource("6_1rgno")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Quit" type="TextureButton" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 768.3335
+offset_top = 598.33374
+offset_right = 1716.3335
+offset_bottom = 995.33374
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("7_4hnlu")
+texture_pressed = ExtResource("8_3o3g3")
 
-[node name="Collision2" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(520, -136)
-
-[node name="Collision3" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(-515, -138)
-
-[node name="Collision5" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(-394, 265)
-
-[node name="Collision6" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(520, 146)
-
-[node name="Collision7" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(399, 265)
-
-[node name="Collision8" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(4, 265)
-
-[node name="Collision9" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(-515, 147)
-
-[node name="Collision4" parent="." instance=ExtResource("3_v4r4p")]
-position = Vector2(520, -21)
-
-[node name="PathfinderUI" parent="." instance=ExtResource("4_1s2dm")]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Quit" to="." method="_on_quit_button_pressed"]
