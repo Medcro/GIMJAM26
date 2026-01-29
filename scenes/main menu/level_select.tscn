@@ -16,3 +16,7 @@ position = Vector2(577, 323)
 
 [node name="InteractiveBook" parent="." instance=ExtResource("1_3shnc")]
 position = Vector2(576, 324)
+animation = &"closed_front"
+frame = 0
+frame_progress = 0.0
+page_count = 3

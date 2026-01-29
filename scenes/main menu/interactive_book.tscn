@@ -1,12 +1,20 @@
-[gd_scene load_steps=78 format=3 uid="uid://dpce6f6m8gtk3"]
+[gd_scene load_steps=90 format=3 uid="uid://dpce6f6m8gtk3"]
 
 [ext_resource type="Texture2D" uid="uid://bvyhepiwqq827" path="res://assets/select level/Animation sprite.PNG" id="1_v030w"]
 [ext_resource type="Script" uid="uid://dfspqt2ry62pd" path="res://scripts/main menu/fsm/state_machine.gd" id="2_0qncq"]
 [ext_resource type="Script" uid="uid://bflr4hh75rv2e" path="res://scripts/main menu/interactive_book.gd" id="2_sltcf"]
 [ext_resource type="Texture2D" uid="uid://cil3g4bvil2ha" path="res://assets/select level/lvl selection photo format.png" id="3_24scs"]
+[ext_resource type="Texture2D" uid="uid://vd6bqvjn7q6t" path="res://assets/select level/Button Main Menu.tres" id="3_r0sq5"]
 [ext_resource type="Script" uid="uid://c07enjsivj23m" path="res://scripts/main menu/fsm/idle_state.gd" id="4_yletg"]
 [ext_resource type="Script" uid="uid://dnrh37kt5r4du" path="res://scripts/main menu/fsm/flipping_state.gd" id="5_avk54"]
+[ext_resource type="Script" uid="uid://c2fpcjdcv4cdy" path="res://scripts/settings.gd" id="5_hb7p1"]
 [ext_resource type="Script" uid="uid://cobxmxc5if4bt" path="res://scripts/main menu/fsm/reading_state.gd" id="5_yletg"]
+[ext_resource type="Texture2D" uid="uid://dbc2r86rikxhv" path="res://assets/settings/Settings button with text.PNG" id="6_7fe6y"]
+[ext_resource type="Texture2D" uid="uid://dmkeppe6g3m42" path="res://assets/settings/Text.PNG" id="7_fn1bl"]
+[ext_resource type="Texture2D" uid="uid://d2vkkqu2prcyu" path="res://assets/settings/Circle slider.tres" id="8_uantw"]
+[ext_resource type="Texture2D" uid="uid://cduqrt81jsw74" path="res://assets/settings/Slider black.tres" id="9_wnpga"]
+[ext_resource type="Texture2D" uid="uid://cjbukbsos7m0g" path="res://assets/settings/Merah polos.tres" id="10_w1j1p"]
+[ext_resource type="Texture2D" uid="uid://dvi0wsmaq56vu" path="res://assets/settings/Reset.tres" id="11_dgdb4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24scs"]
 atlas = ExtResource("1_v030w")
@@ -79,6 +87,38 @@ region = Rect2(0, 0, 1920, 1080)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8uf1"]
 atlas = ExtResource("1_v030w")
 region = Rect2(1920, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uix2"]
+atlas = ExtResource("1_v030w")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d4r1"]
+atlas = ExtResource("1_v030w")
+region = Rect2(7680, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic0ni"]
+atlas = ExtResource("1_v030w")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyu87"]
+atlas = ExtResource("1_v030w")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdrbb"]
+atlas = ExtResource("1_v030w")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxv5j"]
+atlas = ExtResource("1_v030w")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhsl8"]
+atlas = ExtResource("1_v030w")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qixq4"]
+atlas = ExtResource("1_v030w")
+region = Rect2(0, 0, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4syqw"]
 atlas = ExtResource("1_v030w")
@@ -192,49 +232,21 @@ region = Rect2(3840, 0, 1920, 1080)
 atlas = ExtResource("1_v030w")
 region = Rect2(5760, 0, 1920, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uix2"]
-atlas = ExtResource("1_v030w")
-region = Rect2(7680, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6d4r1"]
-atlas = ExtResource("1_v030w")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ic0ni"]
-atlas = ExtResource("1_v030w")
-region = Rect2(1920, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gyu87"]
-atlas = ExtResource("1_v030w")
-region = Rect2(3840, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdrbb"]
-atlas = ExtResource("1_v030w")
-region = Rect2(5760, 1080, 1920, 1080)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_svetv"]
 atlas = ExtResource("1_v030w")
-region = Rect2(5760, 1080, 1920, 1080)
+region = Rect2(1920, 2160, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrpkf"]
 atlas = ExtResource("1_v030w")
-region = Rect2(3840, 1080, 1920, 1080)
+region = Rect2(0, 2160, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcuru"]
 atlas = ExtResource("1_v030w")
-region = Rect2(1920, 1080, 1920, 1080)
+region = Rect2(7680, 1080, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_goa7e"]
 atlas = ExtResource("1_v030w")
-region = Rect2(0, 1080, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxv5j"]
-atlas = ExtResource("1_v030w")
-region = Rect2(7680, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhsl8"]
-atlas = ExtResource("1_v030w")
-region = Rect2(5760, 0, 1920, 1080)
+region = Rect2(5760, 1080, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqf6y"]
 atlas = ExtResource("1_v030w")
@@ -355,6 +367,30 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m8uf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uix2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d4r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic0ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyu87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdrbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxv5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhsl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qixq4")
 }],
 "loop": false,
 "name": &"closed_back",
@@ -474,21 +510,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x72ne")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uix2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6d4r1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ic0ni")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gyu87")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bdrbb")
 }],
 "loop": false,
 "name": &"open_to_last",
@@ -506,12 +527,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_goa7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yxv5j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rhsl8")
 }],
 "loop": false,
 "name": &"previous_from_last",
@@ -564,12 +579,35 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x83lf"]
+texture = ExtResource("9_wnpga")
+expand_margin_top = 30.0
+expand_margin_bottom = 30.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr1bv"]
+texture = ExtResource("10_w1j1p")
+texture_margin_bottom = 10.0
+expand_margin_top = 14.0
+expand_margin_bottom = 14.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(-30, 0, 0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8uf1"]
+texture = ExtResource("10_w1j1p")
+expand_margin_top = 14.0
+expand_margin_bottom = 14.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(-30, 0, 0, 0)
+
 [node name="InteractiveBook" type="AnimatedSprite2D"]
 position = Vector2(574, 324)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ikw14")
-animation = &"open_to_last"
+animation = &"closed_back"
 autoplay = "closed_front"
+frame = 8
+frame_progress = 1.0
 script = ExtResource("2_sltcf")
 page_count = 4
 
@@ -592,16 +630,6 @@ offset_left = -840.0
 offset_top = -416.66663
 offset_right = -1.000061
 offset_bottom = 460.33337
-
-[node name="CloseButton" type="Button" parent="Control"]
-visible = false
-layout_mode = 0
-offset_left = -16.666664
-offset_top = 506.66666
-offset_right = 58.333336
-offset_bottom = 544.6666
-theme_override_font_sizes/font_size = 21
-text = "Closed"
 
 [node name="LeftLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 0
@@ -675,6 +703,135 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = "asdwa"
 
+[node name="Settings" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_hb7p1")
+
+[node name="SettingLabel" type="TextureRect" parent="Control/Settings"]
+layout_mode = 0
+offset_left = -956.6666
+offset_top = -529.6666
+offset_right = 963.3334
+offset_bottom = 550.3334
+texture = ExtResource("6_7fe6y")
+
+[node name="Text" type="TextureRect" parent="Control/Settings"]
+layout_mode = 0
+offset_left = -954.6666
+offset_top = -531.6666
+offset_right = 965.3334
+offset_bottom = 548.3334
+texture = ExtResource("7_fn1bl")
+
+[node name="MusicControl" type="HSlider" parent="Control/Settings"]
+layout_mode = 0
+offset_left = 161.66663
+offset_top = -233.3333
+offset_right = 537.6666
+offset_bottom = -173.3333
+scale = Vector2(1.6, 1.6)
+theme_override_icons/grabber = ExtResource("8_uantw")
+theme_override_icons/grabber_highlight = ExtResource("8_uantw")
+theme_override_icons/grabber_disabled = ExtResource("8_uantw")
+theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
+
+[node name="SFXControl" type="HSlider" parent="Control/Settings"]
+layout_mode = 0
+offset_left = 174.99997
+offset_top = -26.666687
+offset_right = 551.0
+offset_bottom = 33.333313
+scale = Vector2(1.6, 1.6)
+theme_override_icons/grabber = ExtResource("8_uantw")
+theme_override_icons/grabber_highlight = ExtResource("8_uantw")
+theme_override_icons/grabber_disabled = ExtResource("8_uantw")
+theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
+
+[node name="ResetData" type="TextureButton" parent="Control/Settings"]
+layout_mode = 0
+offset_left = -716.6666
+offset_top = 296.6667
+offset_right = -430.66663
+offset_bottom = 406.6667
+texture_normal = ExtResource("11_dgdb4")
+
+[node name="CloseButton" type="Button" parent="Control"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -16.666626
+offset_top = 506.66663
+offset_right = 58.333374
+offset_bottom = 544.6666
+theme_override_font_sizes/font_size = 21
+text = "Closed"
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -48.333332
+offset_right = 583.0
+offset_bottom = 302.66666
+theme_override_constants/separation = 27
+
+[node name="PlayButton" type="TextureButton" parent="Control/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_r0sq5")
+
+[node name="PlayLabel" type="Label" parent="Control/ButtonContainer/PlayButton"]
+z_index = 1
+layout_mode = 0
+offset_left = 38.333332
+offset_top = 18.333334
+offset_right = 294.99997
+offset_bottom = 86.66665
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="Control/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_r0sq5")
+
+[node name="SettingsLabel" type="Label" parent="Control/ButtonContainer/SettingsButton"]
+z_index = 1
+layout_mode = 0
+offset_left = 38.33333
+offset_top = 21.666649
+offset_right = 294.99994
+offset_bottom = 89.99996
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="Control/ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_r0sq5")
+
+[node name="QuitLabel" type="Label" parent="Control/ButtonContainer/QuitButton"]
+z_index = 1
+layout_mode = 0
+offset_left = 38.33333
+offset_top = 21.666649
+offset_right = 294.99994
+offset_bottom = 89.99996
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Photos" type="Node2D" parent="Control"]
 position = Vector2(-646.6666, -406.66666)
 
@@ -712,4 +869,12 @@ script = ExtResource("5_yletg")
 
 [connection signal="button_down" from="Control/NextPageButton" to="StateMachine/ReadingState" method="_on_next_page_button_down"]
 [connection signal="button_down" from="Control/PreviousPageButton" to="StateMachine/ReadingState" method="_on_previous_page_button_down"]
+[connection signal="drag_ended" from="Control/Settings/MusicControl" to="Control/Settings" method="_on_music_control_drag_ended"]
+[connection signal="value_changed" from="Control/Settings/MusicControl" to="Control/Settings" method="_on_music_control_value_changed"]
+[connection signal="drag_ended" from="Control/Settings/SFXControl" to="Control/Settings" method="_on_sfx_control_drag_ended"]
+[connection signal="value_changed" from="Control/Settings/SFXControl" to="Control/Settings" method="_on_sfx_control_value_changed"]
+[connection signal="pressed" from="Control/Settings/ResetData" to="Control/Settings" method="_on_reset_data_pressed"]
 [connection signal="button_down" from="Control/CloseButton" to="StateMachine/ReadingState" method="_on_close_button_down"]
+[connection signal="pressed" from="Control/ButtonContainer/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/ButtonContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/ButtonContainer/QuitButton" to="." method="_on_quit_pressed"]
