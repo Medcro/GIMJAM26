@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var pause_menu = $PauseMenu
 
@@ -15,4 +15,4 @@ func _on_resume_button_pressed() -> void:
 	pause_menu.visible = false
 	
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	pass

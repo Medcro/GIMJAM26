@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dkl832t6r4y02"]
+[gd_scene load_steps=22 format=3 uid="uid://dkl832t6r4y02"]
 
 [ext_resource type="Script" uid="uid://ck0l8o3hr4mbk" path="res://scripts/pathfinder_ui.gd" id="1_svm1b"]
 [ext_resource type="Texture2D" uid="uid://cbtvwjy7vu6u7" path="res://assets/pathfinder/arrow up.tres" id="2_bl8sh"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cn0fmpuuha8jq" path="res://assets/pathfinder/tombol arrow/[clicked] down.tres" id="13_s23mh"]
 [ext_resource type="Texture2D" uid="uid://cg7ww6kfcjyyu" path="res://assets/pathfinder/tombol arrow/[clicked] left.tres" id="15_ywj4q"]
 [ext_resource type="Texture2D" uid="uid://c1r23kvp1d1g2" path="res://assets/pathfinder/[clicked] start.tres" id="18_ywj4q"]
+[ext_resource type="PackedScene" uid="uid://nejahfjj5lp8" path="res://scenes/pause_menu.tscn" id="20_ywj4q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3bk5"]
 texture = ExtResource("7_bl8sh")
@@ -127,6 +128,8 @@ offset_bottom = 67.0
 theme_override_constants/separation = 4
 alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="pause_menu" parent="." instance=ExtResource("20_ywj4q")]
 
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="ExecuteButton" to="." method="_on_execute_button_pressed"]

@@ -5,7 +5,7 @@ extends Area2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-func _ready():
+func _ready() -> void:
 	add_to_group("plates")
 
 func _on_body_entered(body: Node2D) -> void:
@@ -17,12 +17,6 @@ func rotate_player(p: player):
 	p.is_turning = true
 	var new_dir = rotation_clockwise(p.current_direction) if is_clockwise else rotation_anticlockwise(p.current_direction)
 	
-	var new_dir: Vector2
-	
-	if !hasRotated:
-		new_dir = rotation_anticlockwise(p.current_direction) # rotate clockwise
-	else:
-		new_dir = rotation_clockwise(p.current_direction) # rotate anticlockwise
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(p, "global_position", global_position, transition_speed)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -30,9 +24,10 @@ func rotate_player(p: player):
 	await tween.finished
 	p.current_direction = new_dir
 	p.is_turning = false
-
+	
 func toggle_mode():
 	is_clockwise = !is_clockwise
+
 	if is_clockwise:
 		sprite.flip_h = false
 	else:
