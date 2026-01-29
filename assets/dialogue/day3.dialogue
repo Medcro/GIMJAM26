@@ -1,53 +1,77 @@
 ~ start
 [Pagi menyambut Kakek dari mimpinya. Cahaya matahari masuk dari jendela yang sama, dengan Kakek duduk menatap keluar. Terdengar suara ketukan pintu.]
-Pengasuh 2: Pak, ada yang mau menjenguk.
+Suster 2: Pak, ada yang mau menjenguk.
 Kakek: ‘[i]Apakah gadis yang kemarin?[/i] ’ 
 Kakek: Silahkan.
-[Pengasuh 2 mengangguk dibalik pintu. Namun, lainkan gadis tersebut, seorang pria berdiri di ambang pintu kamarnya Kakek dan masuk. Tatapannya kesal dan menatap apapun selain mata Kakek.] 
+[Suster 2 mengangguk dibalik pintu. Namun, lainkan gadis tersebut, seorang pria berdiri di ambang pintu kamarnya Kakek dan masuk. Tatapannya kesal dan menatap apapun selain mata Kakek.] 
+do set_portrait("kafin", "default")
 ???: Pagi.
 [Kakek tersebut mengamati pergerakannya pria tersebut]
 Kakek: ‘[i]Siapa lagi pria ini?[/i] ’
 Kakek: Pagi… 
 Kakek: Apakah… kita pernah bertemu? 
 [Pria tersebut menghela napas pendek dan tidak menjawab pertanyaan Kakek.]
+do set_portrait("kafin", "default")
 ???: Aku disini cuma sebentar, ngegantiin Kakak. Ga bisa datang, dia.
 [Kakek mengangguk samar, seperti dia mengerti kata-kata pria tersebut yang terdengar sangat asing. Pria itu seperti tidak berharap banyak dan akhirnya duduk.]
+do set_portrait("kafin", "default")
 ???: Kakak sama Adek titip salam. 
 [Bibir pria tersebut senyum pahit, matanya tidak pernah menatap Kakek.]
+do set_portrait("kafin", "teared up")
 ???: Kakak, aku ngerti. Adek… Walaupun, setelah kemarin. Itu anak masih gitu aja sama Bapak.
 Kakek: ‘[i]Kemarin… artinya gadis tersebut.[/i] ’ 
+do set_portrait("kakek", "sad")
 Kakek: ‘[i]Gadis yang di mimpi juga, dia.[/i] ’ 
+do set_portrait("kakek", "sad")
 Kakek: Gadis kemarin…
+do set_portrait("kafin", "angry")
 ???: Bapak bentak dia, kan? Anaknya nangis lama. 
+do set_portrait("kafin", "questioning")
 ???: Aneh, yang paling peduli sama Bapak malah diusir. 
+do set_portrait("kafin", "questioning")
 ???: Lah, aku? Duduk gini dibiarkan. 
 Kakek: Maaf, saya… tidak ingat gadis tersebut. Kamu juga. Kemarin, saya tidak bermaksud—
+do set_portrait("kafin", "teared up")
 ???: Aku tau. 
 [Hening.]
 Kakek: Kamu… dan gadis kemarin, anak saya?
+do set_portrait("kafin", "default")
 ???: Sayangnya begitu. 
 Kakek: ‘[i]Respon pria ini… sangat dingin. Jauh beda dengan gadis kemarin. Kenapa, ya?[/i] ’
 Kakek: Terus, tadi kamu bilang ‘Kakak’. Anak saya… ada berapa ya?
+do set_portrait("kafin", "questioning")
 ???: Ini aku diinterogasi, kah? Tiga. Cuman Kakak, Aku, sama si Adek. 
+do set_portrait("kafin", "default")
 ???: Saya yang tengah. Bukan paling pintar, bukan juga yang paling diperhatiin. 
 Kakek: ‘[i]Bukan paling pintar? Bukan yang diperhatikan? Apakah saya…[/i] ’
 Kakek: Kalau begitu… kenapa kamu yang datang? 
+do set_portrait("kafin", "angry")
 ???: Kemaren Kakak suruh, setelah dengerin tangisan si Adek. 
+do set_portrait("kafin", "angry")
 ???: Aslinya? Aku ga ingin lihat wajahmu lagi.
+do set_portrait("kakek", "sad")
 Kakek: Maaf. 
 [Pria tersebut kaget, terdiam di kursinya.]
+do set_portrait("kafin", "teared up")
 ???: …Ga usah minta maaf kalau ga ingat. 
 Kakek: Meskipun begitu, sepertinya… kamu sangat membenci saya. 
 Kakek: Sepertinya, saya bukan ayah yang baik. 
+do set_portrait("kafin", "angry")
 ???: Cukup! Sepertinya, sepertinya… Tapi aslinya ga ingat, ‘kan?! Aku ga butuh permintaan maaf seperti itu!
 [Pria tersebut berteriak marah sambil loncat berdiri. Setelah api amarah padam, dia malu dan takut sendiri, matanya berkaca-kaca. Badannya menunduk kecil otomatis, seperti sudah tak asing dengan gerakan tersebut.]
+do set_portrait("kafin", "teared up")
 ???: …Maaf. Bukan.. salahmu… Bapak ga ingat. 
+do set_portrait("kafin", "teared up")
 ???: Aku… juga bukan anak yang baik.
 [Hening yang panjang seperti mengekam ruangan tersebut.]
 Kakek: Iya, tidak apa. Tidak perlu menunduk segala… 
+do set_portrait("kafin", "default")
 ???: …Hn. Aku harus pergi. Mungkin… besok datang lagi.
+do set_portrait("kakek", "soft smile")
 Kakek: …Boleh saya titip salam ke.. Adek? Bapak minta maaf sudah mengusir kemarin. 
+do set_portrait("kafin", "default")
 ???: …Iya, aku bilangin nanti. Udah ya. Aku harus pergi.
+do set_portrait("kakek", "soft smile")
 Kakek: Baik. …Hati-hati.
 [Pria tersebut tidak menjawab sebelum dia menutup pintunya sendiri dengan tergesa-gesa. Kakek kembali sendirian dengan pandangan diluar jendelanya, cahaya terik sekarang.]
 => END

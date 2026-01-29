@@ -4,15 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dsifykf7i0sbe" path="res://assets/pathfinder/rotate clockwise.png" id="1_g42xi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wnsu"]
-radius = 61.03278
+radius = 34.399113
 
 [node name="RotationPlate" type="Area2D"]
 script = ExtResource("1_3wnsu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.7999477, 7.867813e-06)
+scale = Vector2(0.47599986, 0.476)
 texture = ExtResource("1_g42xi")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.7374878, 0.06251526)
 shape = SubResource("CircleShape2D_3wnsu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cjbukbsos7m0g"]
+
+[ext_resource type="Texture2D" uid="uid://kg6y230wikaa" path="res://assets/settings/Merah polos.PNG" id="1_0tobt"]
+
+[resource]
+atlas = ExtResource("1_0tobt")
+region = Rect2(1136, 326, 500, 23)

@@ -5,64 +5,142 @@ class_name InteractiveBook2D
 var current_page : int = 0
 
 @onready var state_machine = $StateMachine
+
 @onready var next_button = $Control/NextPageButton
 @onready var prev_button = $Control/PreviousPageButton
+@onready var close_button: Button = $Control/CloseButton
+
 @onready var left_title: RichTextLabel = $Control/LeftTitle
 @onready var left_label: RichTextLabel = $Control/LeftLabel
 @onready var left_label_2: RichTextLabel = $Control/LeftLabel2
 @onready var right_title: RichTextLabel = $Control/RightTitle
 @onready var right_label: RichTextLabel = $Control/RightLabel
 @onready var right_label_2: RichTextLabel = $Control/RightLabel2
-@onready var close_button: Button = $Control/CloseButton
+
+@onready var settings_container: Control = $Control/Settings
+
+@onready var photo_1 = $Control/Photos/Photo
+@onready var photo_2 = $Control/Photos/Photo2
+@onready var photo_3 = $Control/Photos/Photo3
+@onready var photo_4 = $Control/Photos/Photo4
+
+@onready var button_container: VBoxContainer = $Control/ButtonContainer 
+@onready var play_button: TextureButton = $Control/ButtonContainer/PlayButton
+@onready var settings_button: TextureButton = $Control/ButtonContainer/SettingsButton
+@onready var quit_button: TextureButton = $Control/ButtonContainer/QuitButton
+
+var is_settings_mode : bool = false
 
 var book_content = {
-	1: ["", "", "", "Act 1", "[url=level_1]Level 1[/url]", "[url=level_2]Level 2[/url]"], #cover, page 1
-	2: ["Act 2", "[url=level_3]Level 3[/url]", "[url=level_4]Level 4[/url]", #page 2
-		"Act 3", "[url=level_5]Level 5[/url]", "[url=level_6]Level 6[/url]"], #page 3
-	3: ["Act 4", "[url=level_7]Level 7[/url]", "[url=level_8]Level 8[/url]", "", "", ""] #page 4, end
+	1: ["", "", "", "Act 1", "[url=tutorial]Tutorial[/url]", "[url=level_1]Level 1[/url]"],
+	2: ["Act 2", "[url=level_2]Level 2[/url]", "[url=level_3]Level 3[/url]", "Act 3", "[url=level_4]Level 4[/url]", "[url=level_5]Level 5[/url]"],
+	3: ["Act 4", "[url=level_6]Level 6[/url]", "[url=level_7]Level 7[/url]", "", "", ""]
 }
 
 func _ready():
 	state_machine.init(self)
 
-func update_text_visibility(is_visible: bool):
-	left_title.visible = is_visible
-	left_label.visible = is_visible
-	left_label_2.visible = is_visible
-	right_title.visible = is_visible
-	right_label.visible = is_visible
-	right_label_2.visible = is_visible
-	close_button.visible = is_visible
-	if is_visible and book_content.has(current_page):
-		var p = book_content[current_page]
+func update_text_visibility(should_show: bool):
+	if not should_show:
+		_set_reading_content_visible(false)
+		button_container.visible = false
+		settings_container.visible = false
+		_set_photos_visible(false, false)
+		return
+
+	if current_page == 0:
+		button_container.visible = true       # Show Menu
+		_set_reading_content_visible(false)   # Hide Book Text
+		_set_photos_visible(false, false)     # Hide Photos
+		settings_container.visible = false
+		next_button.visible = false           
+		prev_button.visible = false
+
+	elif current_page > page_count:
+		button_container.visible = false      # Hide Menu
+		_set_reading_content_visible(false)   # Hide Book Text
+		_set_photos_visible(false, false)     # Hide Photos
+		settings_container.visible = false
+		close_button.visible = true
 		
-		# Left Page Mapping
-		left_title.text = p[0]
-		left_label.text = format_text(p[1])
-		left_label_2.text = format_text(p[2])
+		next_button.visible = false
+		prev_button.visible = true 
 		
-		# Right Page Mapping
-		right_title.text = p[3]
-		right_label.text = format_text(p[4])
-		right_label_2.text = format_text(p[5])
+	else:
+		button_container.visible = false      # Hide Menu
+		_set_reading_content_visible(true)    # Show Book Text
+		
+		next_button.visible = true            
+		prev_button.visible = true
+		
+		if is_settings_mode:
+			settings_container.visible = true
+			
+			_set_reading_content_visible(false)
+			_set_photos_visible(false, false)
+			next_button.visible = false
+			prev_button.visible = false
+			close_button.visible = true
+
+		else:
+			settings_container.visible = false
+			_set_reading_content_visible(true)
+			
+			# Handle Photos
+			var show_left = (current_page > 1) 
+			var show_right = (current_page < page_count)
+			_set_photos_visible(show_left, show_right)
+		
+		# Update Text Content
+			if book_content.has(current_page):
+				var p = book_content[current_page]
+				left_title.text = p[0]
+				left_label.text = format_text(p[1])
+				left_label_2.text = format_text(p[2])
+				right_title.text = p[3]
+				right_label.text = format_text(p[4])
+				right_label_2.text = format_text(p[5])
+
+func _set_reading_content_visible(is_vis: bool):
+	left_title.visible = is_vis
+	left_label.visible = is_vis
+	left_label_2.visible = is_vis
+	right_title.visible = is_vis
+	right_label.visible = is_vis
+	right_label_2.visible = is_vis
+	close_button.visible = is_vis
+
+func _set_photos_visible(show_left: bool, show_right: bool):
+	photo_1.visible = show_left
+	photo_2.visible = show_left
+	photo_3.visible = show_right
+	photo_4.visible = show_right
 
 func format_text(url_string: String) -> String:
 	if url_string == "" or "[url=" not in url_string: return url_string
 	var level_id = url_string.get_slice("=", 1).get_slice("]", 0)
-	
 	if SaveManager.unlocked_levels.get(level_id, false):
 		return url_string
 	return "[color=gray]Locked[/color]"
 
-	if is_visible and book_content.has(current_page):
-		left_title.text = book_content[current_page][0]
-		left_label.text = book_content[current_page][1]
-		left_label_2.text = book_content[current_page][2]
-		right_title.text = book_content[current_page][3]
-		right_label.text = book_content[current_page][4]
-		right_label_2.text = book_content[current_page][5]
-
 func clamp_page(new_page : int) -> int:
-	if new_page < 0: return page_count
-	elif new_page > page_count: return 0
+	if new_page < 0: 
+		return 0 
+	elif new_page > page_count + 1: 
+		return page_count + 1 
 	return new_page
+
+func _on_play_pressed():
+	is_settings_mode = false 
+	state_machine.previous_page_number = 0
+	current_page = 1
+	state_machine.change_state("FlippingState")
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+func _on_settings_pressed() -> void:
+	is_settings_mode = true
+	state_machine.previous_page_number = 0
+	current_page = 1
+	state_machine.change_state("FlippingState")

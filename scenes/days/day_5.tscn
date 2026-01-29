@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnuu60hvluq2v"]
+
+[ext_resource type="Script" uid="uid://dc2s66grhq10f" path="res://assets/dialogue/test/dialogue_test.gd" id="1_rinci"]
+[ext_resource type="Resource" uid="uid://d3ul002gimpof" path="res://assets/dialogue/day5.dialogue" id="2_xksmq"]
+[ext_resource type="Texture2D" uid="uid://ybn75pcqd4hg" path="res://assets/levels/day 4/bg day 4.png" id="3_prbwt"]
+
+[node name="Day5" type="Node2D"]
+script = ExtResource("1_rinci")
+dialogue_resource = ExtResource("2_xksmq")
+num_day = "5"
+current_level = "level_5"
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1404.0
+offset_bottom = 782.15405
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("3_prbwt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FlashbackEffect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -322.0
+offset_right = 596.0
+offset_bottom = 331.0
+grow_vertical = 2

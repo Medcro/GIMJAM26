@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://ohcnl1qsiu1k"]
+[gd_scene load_steps=15 format=3 uid="uid://ohcnl1qsiu1k"]
 
+[ext_resource type="Texture2D" uid="uid://crtc63u2hq5gg" path="res://assets/settings/Book.PNG" id="1_4kmp2"]
 [ext_resource type="Script" uid="uid://c2fpcjdcv4cdy" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Texture2D" uid="uid://d2vkkqu2prcyu" path="res://assets/settings/Circle slider.tres" id="2_pi1lj"]
+[ext_resource type="Texture2D" uid="uid://cduqrt81jsw74" path="res://assets/settings/Slider black.tres" id="3_swei6"]
+[ext_resource type="Texture2D" uid="uid://cjbukbsos7m0g" path="res://assets/settings/Merah polos.tres" id="6_5kvmg"]
+[ext_resource type="Texture2D" uid="uid://dmkeppe6g3m42" path="res://assets/settings/Text.PNG" id="6_pwck6"]
+[ext_resource type="Texture2D" uid="uid://dvi0wsmaq56vu" path="res://assets/settings/Reset.tres" id="7_s8kys"]
+[ext_resource type="Texture2D" uid="uid://dbc2r86rikxhv" path="res://assets/settings/Settings button with text.PNG" id="8_mec2s"]
+[ext_resource type="AudioStream" uid="uid://btxb54wugjwa5" path="res://assets/audio/ButtonHoverSFX1.wav" id="9_s8kys"]
+[ext_resource type="AudioStream" uid="uid://bcaig8xal1r6t" path="res://assets/audio/ButtonClickSFX.wav" id="10_mec2s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwq8w"]
+texture = ExtResource("1_4kmp2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kvmg"]
+texture = ExtResource("3_swei6")
+expand_margin_top = 30.0
+expand_margin_bottom = 30.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kmp2"]
+texture = ExtResource("6_5kvmg")
+texture_margin_bottom = 10.0
+expand_margin_top = 14.0
+expand_margin_bottom = 14.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(-30, 0, 0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pwck6"]
+texture = ExtResource("6_5kvmg")
+expand_margin_top = 14.0
+expand_margin_bottom = 14.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(-30, 0, 0, 0)
 
 [node name="Settings" type="Panel"]
 anchors_preset = 15
@@ -8,59 +41,69 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nwq8w")
 script = ExtResource("1_5p8wc")
+
+[node name="SettingLabel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_mec2s")
+
+[node name="Text" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_pwck6")
 
 [node name="MusicControl" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 606.0
-offset_top = 166.0
-offset_right = 1038.0
-offset_bottom = 227.0
+offset_left = 636.0
+offset_top = 186.0
+offset_right = 1012.0
+offset_bottom = 246.0
+theme_override_icons/grabber = ExtResource("2_pi1lj")
+theme_override_icons/grabber_highlight = ExtResource("2_pi1lj")
+theme_override_icons/grabber_disabled = ExtResource("2_pi1lj")
+theme_override_styles/slider = SubResource("StyleBoxTexture_5kvmg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_4kmp2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_pwck6")
 
 [node name="SFXControl" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 608.0
-offset_top = 273.0
-offset_right = 1037.0
-offset_bottom = 289.0
+offset_left = 636.0
+offset_top = 306.0
+offset_right = 1012.0
+offset_bottom = 366.0
+theme_override_icons/grabber = ExtResource("2_pi1lj")
+theme_override_icons/grabber_highlight = ExtResource("2_pi1lj")
+theme_override_icons/grabber_disabled = ExtResource("2_pi1lj")
+theme_override_styles/slider = SubResource("StyleBoxTexture_5kvmg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_4kmp2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_pwck6")
 
-[node name="Label" type="Label" parent="."]
+[node name="ResetData" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 161.0
-offset_right = 540.0
-offset_bottom = 225.0
-theme_override_font_sizes/font_size = 41
-text = "Background Music"
+offset_left = 91.0
+offset_top = 502.0
+offset_right = 377.0
+offset_bottom = 612.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("7_s8kys")
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 247.0
-offset_right = 491.0
-offset_bottom = 304.0
-theme_override_font_sizes/font_size = 41
-text = "Sound Effects"
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s8kys")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 449.0
-offset_top = -8.0
-offset_right = 681.0
-offset_bottom = 161.0
-theme_override_font_sizes/font_size = 60
-text = "Settings
-"
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_mec2s")
 
-[node name="ResetData" type="Button" parent="."]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 412.0
-offset_right = 407.0
-offset_bottom = 503.0
-theme_override_font_sizes/font_size = 141
-text = "reset data"
-
+[connection signal="drag_ended" from="MusicControl" to="." method="_on_music_control_drag_ended"]
 [connection signal="value_changed" from="MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="drag_ended" from="SFXControl" to="." method="_on_sfx_control_drag_ended"]
 [connection signal="value_changed" from="SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="mouse_entered" from="ResetData" to="." method="_on_reset_data_mouse_entered"]
 [connection signal="pressed" from="ResetData" to="." method="_on_reset_data_pressed"]

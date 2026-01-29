@@ -18,6 +18,7 @@ func _on_previous_page_button_down():
 	_trigger_flip(book.current_page - 1)
 
 func _on_close_button_down():
+	book.is_settings_mode = false
 	get_parent().previous_page_number = book.current_page
 	book.current_page = 0 
 	get_parent().change_state("FlippingState")
@@ -31,20 +32,4 @@ func _trigger_flip(target_page: int):
 
 func _on_link_clicked(meta):
 	if SaveManager.unlocked_levels.get(str(meta), false):
-		match meta: #The level scenes still using a placeholder
-			"level_1":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_2":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
-			"level_3":
-				get_tree().change_scene_to_file("res://scenes/collision.tscn")
-			"level_4":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_5":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
-			"level_6":
-				get_tree().change_scene_to_file("res://scenes/collision.tscn")
-			"level_7":
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-			"level_8":
-				get_tree().change_scene_to_file("res://scenes/player.tscn")
+		LevelTransition.change_scene("res://scenes/levels/" + str(meta) + ".tscn")

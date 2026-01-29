@@ -24,6 +24,7 @@ signal dialogue_ended
 @onready var autoplay_timer: Timer = Timer.new()
 
 @onready var autoplay_button: TextureButton = $AutoplayButton
+@onready var skip_button: TextureButton = %SkipButton
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -59,6 +60,8 @@ var dialogue_line: DialogueLine:
 ## A cooldown timer for delaying the balloon hide when encountering a mutation.
 var mutation_cooldown: Timer = Timer.new()
 
+var is_manual_portrait: bool = false
+
 ## The base balloon anchor
 @onready var balloon: Control = %Balloon
 
@@ -81,6 +84,14 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var chara_portrait: TextureRect = $CharaPortrait
 
 func _ready() -> void:
+	var level_id = SaveManager.current_level
+	var is_finished = SaveManager.unlocked_levels.get(level_id, false)
+	
+	if is_finished:
+		skip_button.visible = true
+	else:
+		skip_button.visible = false
+	
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 	if dialogue_label:
@@ -145,13 +156,25 @@ func apply_dialogue_line() -> void:
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
-	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(dialogue_line.character, "dialogue")
+	var is_narrator: bool = dialogue_line.character.is_empty()
 	
-	var potrait_path: String = "res://assets/portrait/%s/.png" % dialogue_line.character
-	if ResourceLoader.exists(potrait_path):
-		chara_portrait.texture = load(potrait_path)
-	else: chara_portrait.texture = null
+	if is_narrator:
+		character_label.modulate.a = 0.0
+	else:
+		character_label.modulate.a = 1.0
+		character_label.text = tr(dialogue_line.character, "dialogue")
+	
+	if not is_manual_portrait:
+		var portrait_path: String = "res://assets/portrait/[%s] default.png" % dialogue_line.character
+		if ResourceLoader.exists(portrait_path):
+			chara_portrait.texture = load(portrait_path)
+			chara_portrait.show()
+		else:
+			chara_portrait.texture = null
+			chara_portrait.hide()
+	
+	# Reset for the next line of dialogue
+	is_manual_portrait = false
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -159,13 +182,14 @@ func apply_dialogue_line() -> void:
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
 
-	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
 
 	dialogue_label.show()
 	if not dialogue_line.text.is_empty():
+		# Use the typewriter effect
 		dialogue_label.type_out()
+		# Wait for it to finish
 		await dialogue_label.finished_typing
 
 	# Wait for next line
@@ -186,6 +210,29 @@ func apply_dialogue_line() -> void:
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
 
+## Change the portrait expression
+func set_expression(expression: String) -> void:
+	if dialogue_line.character.is_empty(): 
+		return
+	var portrait_path: String = "res://assets/portrait/[%s] %s.png" % [dialogue_line.character, expression]
+	
+	if ResourceLoader.exists(portrait_path):
+		chara_portrait.texture = load(portrait_path)
+	else:
+		push_warning("Expression file not found: " + portrait_path)
+
+func set_portrait(chara_id: String, expression: String = "default") -> void:
+	# This builds the exact path: res://assets/portrait/[chara_id] expression.png
+	var path: String = "res://assets/portrait/[%s] %s.png" % [chara_id, expression]
+	
+	if ResourceLoader.exists(path):
+		chara_portrait.texture = load(path)
+		chara_portrait.show()
+		chara_portrait.modulate.a = 1.0
+		is_manual_portrait = true
+	else:
+		push_warning("Manual portrait failed: " + path)
+		chara_portrait.hide()
 
 ## Go to the next line
 func next(next_id: String) -> void:
