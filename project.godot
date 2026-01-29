@@ -89,7 +89,7 @@ space={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test/test.dialogue", "res://assets/dialogue/day2.dialogue", "res://assets/dialogue/day3.dialogue", "res://assets/dialogue/day4.dialogue", "res://assets/dialogue/day5.dialogue", "res://assets/dialogue/day6.dialogue", "res://assets/dialogue/day7.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/test/test.dialogue", "res://assets/dialogue/day2.dialogue", "res://assets/dialogue/day3.dialogue", "res://assets/dialogue/day4.dialogue", "res://assets/dialogue/day5.dialogue", "res://assets/dialogue/day6.dialogue", "res://assets/dialogue/day7.dialogue", "res://assets/dialogue/last_level.dialogue", "res://assets/dialogue/death.dialogue")
 
 [rendering]
 

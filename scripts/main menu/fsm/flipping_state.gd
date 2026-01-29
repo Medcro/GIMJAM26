@@ -30,8 +30,8 @@ func enter():
 	else:
 		if page > prev: book.play("next_page")
 		else: book.play("previous_page")
-    
-  play_flip_sound()
+	
+		play_flip_sound()
 
 func update(_delta):
 	if not book.is_playing():

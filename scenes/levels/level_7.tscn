@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://erijih0m4eds"]
+[gd_scene load_steps=24 format=3 uid="uid://erijih0m4eds"]
 
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_posk4"]
+[ext_resource type="Resource" uid="uid://c2h0ns5ef3h7p" path="res://assets/dialogue/last_level.dialogue" id="2_q0wsq"]
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_sjq8i"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="3_q0wsq"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_ivh0c"]
 [ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="5_wreli"]
+[ext_resource type="Texture2D" uid="uid://47jtrvr5etb5" path="res://assets/pathfinder/stage akhir/asset orb glow.png" id="6_ivh0c"]
+[ext_resource type="Script" uid="uid://djmeoqlipprmb" path="res://scripts/levels/player_level7.gd" id="6_wreli"]
 [ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="6_ymk4h"]
 [ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="7_st48t"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_dfn7m"]
@@ -17,6 +20,9 @@ size = Vector2(506, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
 size = Vector2(3.5, 436.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wreli"]
+size = Vector2(65, 65)
 
 [sub_resource type="Animation" id="Animation_q0wsq"]
 length = 0.001
@@ -43,6 +49,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-3, -34.000004)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nenek:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_sjq8i"]
@@ -73,15 +91,96 @@ tracks/1/keys = {
 "values": [Vector2(-3, -34.000004), Vector2(-710, -34.000004)]
 }
 
+[sub_resource type="Animation" id="Animation_ymk4h"]
+resource_name = "nenek_geser_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nenek:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-5, -143)]
+}
+
+[sub_resource type="Animation" id="Animation_ivh0c"]
+resource_name = "nenek_geser_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nenek:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5, -143), Vector2(-507, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_wreli"]
+resource_name = "nenek_geser_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nenek:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-507, -145), Vector2(-506, -288)]
+}
+
+[sub_resource type="Animation" id="Animation_st48t"]
+resource_name = "nenek_geser_4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nenek:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-506, -288), Vector2(-2, -289)]
+}
+
+[sub_resource type="Animation" id="Animation_dfn7m"]
+resource_name = "nenek_geser_5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nenek:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -289), Vector2(-2, -502)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ivh0c"]
 _data = {
 &"RESET": SubResource("Animation_q0wsq"),
-&"awan_geser": SubResource("Animation_sjq8i")
+&"awan_geser": SubResource("Animation_sjq8i"),
+&"nenek_geser_1": SubResource("Animation_ymk4h"),
+&"nenek_geser_2": SubResource("Animation_ivh0c"),
+&"nenek_geser_3": SubResource("Animation_wreli"),
+&"nenek_geser_4": SubResource("Animation_st48t"),
+&"nenek_geser_5": SubResource("Animation_dfn7m")
 }
 
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("Player")]
 script = ExtResource("1_posk4")
 Player = NodePath("Player")
+dialogue_resource = ExtResource("2_q0wsq")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -141,7 +240,19 @@ shape = SubResource("RectangleShape2D_sjq8i")
 [node name="Player" parent="." instance=ExtResource("4_ivh0c")]
 position = Vector2(-253, 122.999985)
 scale = Vector2(0.520168, 0.538477)
+script = ExtResource("6_wreli")
 max_input = 1
+
+[node name="Nenek" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Nenek"]
+position = Vector2(256, 119)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("6_ivh0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nenek"]
+position = Vector2(254.5, 123.5)
+shape = SubResource("RectangleShape2D_wreli")
 
 [node name="StageAkhir" type="Sprite2D" parent="."]
 position = Vector2(-5, -28.000002)
@@ -165,5 +276,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ivh0c")
 }
 
+[connection signal="body_entered" from="Nenek" to="." method="_on_nenek_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

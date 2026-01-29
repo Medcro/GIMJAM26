@@ -35,11 +35,11 @@ tex_right = ExtResource("5_wl4y1")
 tex_dot = ExtResource("6_bl8sh")
 
 [node name="ResetButton" type="TextureButton" parent="."]
-offset_left = 1005.00006
-offset_top = 6.0000005
-offset_right = 1462.0
-offset_bottom = 196.0
-scale = Vector2(0.21169987, 0.2527595)
+offset_left = 991.00006
+offset_top = 10.999998
+offset_right = 1448.0
+offset_bottom = 201.0
+scale = Vector2(0.35, 0.35)
 action_mode = 0
 texture_normal = ExtResource("2_gjigx")
 texture_pressed = ExtResource("8_s23mh")
@@ -101,6 +101,8 @@ scale = Vector2(0.87177604, 0.717761)
 texture_normal = ExtResource("12_g3bk5")
 texture_pressed = ExtResource("18_ywj4q")
 metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="." instance=ExtResource("20_ywj4q")]
 
 [node name="Box" type="Panel" parent="."]
 anchors_preset = 7
