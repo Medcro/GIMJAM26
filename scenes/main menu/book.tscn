@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://bam328ala766s"]
+
+[ext_resource type="Texture2D" uid="uid://cr4ew8jp26e7n" path="res://assets/select level/lvl selection page.png" id="1_ew3uw"]
+[ext_resource type="Script" uid="uid://vk7w4vb03mv8" path="res://scripts/main menu/book.gd" id="1_tchch"]
+[ext_resource type="Texture2D" uid="uid://e6y24vqcx3ul" path="res://assets/select level/lvl selection next button dark.png" id="3_pli43"]
+[ext_resource type="Texture2D" uid="uid://buqdghr8sja6d" path="res://assets/select level/lvl selection next button light.png" id="4_iyqmd"]
+[ext_resource type="Texture2D" uid="uid://cil3g4bvil2ha" path="res://assets/select level/lvl selection photo format.png" id="5_87ygy"]
+
+[node name="Book" type="Node2D"]
+script = ExtResource("1_tchch")
+
+[node name="LvlSelectionPage" type="Sprite2D" parent="."]
+position = Vector2(575.00006, 325)
+scale = Vector2(0.59687495, 0.6)
+texture = ExtResource("1_ew3uw")
+
+[node name="NextButton" type="TextureButton" parent="."]
+offset_left = 1000.0
+offset_top = 556.0
+offset_right = 2920.0
+offset_bottom = 1636.0
+scale = Vector2(0.07866173, 0.07887556)
+texture_normal = ExtResource("3_pli43")
+texture_pressed = ExtResource("4_iyqmd")
+
+[node name="PrevButton" type="TextureButton" parent="."]
+offset_left = -6.0
+offset_top = 569.0
+offset_right = 1914.0
+offset_bottom = 1649.0
+scale = Vector2(0.07866173, 0.07887556)
+texture_normal = ExtResource("3_pli43")
+texture_pressed = ExtResource("4_iyqmd")
+flip_h = true
+
+[node name="Photos" type="Node2D" parent="."]
+
+[node name="Photo" type="Sprite2D" parent="Photos"]
+position = Vector2(252, 247)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_87ygy")
+
+[node name="Photo2" type="Sprite2D" parent="Photos"]
+position = Vector2(483, 457)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_87ygy")
+
+[node name="Photo3" type="Sprite2D" parent="Photos"]
+position = Vector2(678, 239)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_87ygy")
+
+[node name="Photo4" type="Sprite2D" parent="Photos"]
+position = Vector2(917, 449)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_87ygy")
+
+[node name="LeftLabel" type="RichTextLabel" parent="."]
+offset_left = 340.0
+offset_top = 164.0
+offset_right = 563.0
+offset_bottom = 342.0
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Left A"
+selection_enabled = true
+
+[node name="LeftLabel2" type="RichTextLabel" parent="."]
+offset_left = 177.0
+offset_top = 357.0
+offset_right = 380.0
+offset_bottom = 520.0
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Left B"
+selection_enabled = true
+
+[node name="RightLabel" type="RichTextLabel" parent="."]
+offset_left = 758.0
+offset_top = 138.0
+offset_right = 976.0
+offset_bottom = 323.0
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Right A"
+selection_enabled = true
+
+[node name="RightLabel2" type="RichTextLabel" parent="."]
+offset_left = 601.0
+offset_top = 353.0
+offset_right = 829.0
+offset_bottom = 545.0
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "Right B"
+selection_enabled = true
+
+[node name="LeftTitle" type="RichTextLabel" parent="."]
+offset_left = 203.0
+offset_top = 53.0
+offset_right = 516.0
+offset_bottom = 145.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Left Title"
+
+[node name="RightTitle" type="RichTextLabel" parent="."]
+offset_left = 625.0
+offset_top = 44.0
+offset_right = 963.0
+offset_bottom = 135.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Right Tile"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]

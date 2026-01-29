@@ -4,15 +4,17 @@ const SAVE_PATH = "user://save_game.dat"
 
 # Tracks which levels are unlocked
 var unlocked_levels = {
-	"level_1": true,
+	"tutorial": true,
+	"level_1": false,
 	"level_2": false,
 	"level_3": false,
 	"level_4": false,
 	"level_5": false,
 	"level_6": false,
-	"level_7": false,
-	"level_8": false
+	"level_7": false
 }
+
+var current_level: String = ""
 
 func _ready():
 	load_game()
@@ -30,13 +32,13 @@ func load_game():
 
 func reset_data():
 	unlocked_levels = {
-	"level_1": true,
+	"tutorial": true,
+	"level_1": false,
 	"level_2": false,
 	"level_3": false,
 	"level_4": false,
 	"level_5": false,
 	"level_6": false,
-	"level_7": false,
-	"level_8": false
+	"level_7": false
 	}
 	save_game()

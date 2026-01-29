@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c1v6ao50oo2wi"]
+
+[ext_resource type="Texture2D" uid="uid://6ffe17cwjsrm" path="res://assets/player/asset grandpa pathfinder.png" id="1_l5c6f"]
+
+[resource]
+atlas = ExtResource("1_l5c6f")
+region = Rect2(225, 39, 3558, 962)

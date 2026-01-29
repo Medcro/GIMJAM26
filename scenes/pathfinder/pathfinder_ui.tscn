@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dkl832t6r4y02"]
+[gd_scene load_steps=24 format=3 uid="uid://dkl832t6r4y02"]
 
 [ext_resource type="Script" uid="uid://ck0l8o3hr4mbk" path="res://scripts/pathfinder_ui.gd" id="1_svm1b"]
 [ext_resource type="Texture2D" uid="uid://cbtvwjy7vu6u7" path="res://assets/pathfinder/arrow up.tres" id="2_bl8sh"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cn0fmpuuha8jq" path="res://assets/pathfinder/tombol arrow/[clicked] down.tres" id="13_s23mh"]
 [ext_resource type="Texture2D" uid="uid://cg7ww6kfcjyyu" path="res://assets/pathfinder/tombol arrow/[clicked] left.tres" id="15_ywj4q"]
 [ext_resource type="Texture2D" uid="uid://c1r23kvp1d1g2" path="res://assets/pathfinder/[clicked] start.tres" id="18_ywj4q"]
+[ext_resource type="PackedScene" uid="uid://nejahfjj5lp8" path="res://scenes/pause_menu.tscn" id="20_ywj4q"]
+[ext_resource type="AudioStream" uid="uid://bcaig8xal1r6t" path="res://assets/audio/ButtonClickSFX.wav" id="21_cn8lk"]
+[ext_resource type="AudioStream" uid="uid://btxb54wugjwa5" path="res://assets/audio/ButtonHoverSFX1.wav" id="22_cvf8j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3bk5"]
 texture = ExtResource("7_bl8sh")
@@ -32,11 +35,11 @@ tex_right = ExtResource("5_wl4y1")
 tex_dot = ExtResource("6_bl8sh")
 
 [node name="ResetButton" type="TextureButton" parent="."]
-offset_left = 1005.00006
-offset_top = 6.0000005
-offset_right = 1462.0
-offset_bottom = 196.0
-scale = Vector2(0.21169987, 0.2527595)
+offset_left = 991.00006
+offset_top = 10.999998
+offset_right = 1448.0
+offset_bottom = 201.0
+scale = Vector2(0.35, 0.35)
 action_mode = 0
 texture_normal = ExtResource("2_gjigx")
 texture_pressed = ExtResource("8_s23mh")
@@ -99,6 +102,8 @@ texture_normal = ExtResource("12_g3bk5")
 texture_pressed = ExtResource("18_ywj4q")
 metadata/_edit_use_anchors_ = true
 
+[node name="Pause" parent="." instance=ExtResource("20_ywj4q")]
+
 [node name="Box" type="Panel" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
@@ -128,5 +133,17 @@ theme_override_constants/separation = 4
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="pause_menu" parent="." instance=ExtResource("20_ywj4q")]
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_cn8lk")
+bus = &"SFX"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_cvf8j")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="ResetButton" to="." method="_on_reset_button_mouse_entered"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="mouse_entered" from="ExecuteButton" to="." method="_on_execute_button_mouse_entered"]
 [connection signal="pressed" from="ExecuteButton" to="." method="_on_execute_button_pressed"]
