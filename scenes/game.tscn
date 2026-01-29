@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnkjt4pabfvey"]
+[gd_scene load_steps=6 format=3 uid="uid://cnkjt4pabfvey"]
 
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://biilea57qgx0k" path="res://scenes/collision.tscn" id="2_feb5d"]
@@ -17,6 +17,7 @@ position = Vector2(8, -246)
 scale = Vector2(9.596054, 0.87832785)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 29)
 
 [node name="Collision2" parent="." instance=ExtResource("2_feb5d")]
 position = Vector2(520, -136)
@@ -43,3 +44,9 @@ position = Vector2(-515, 147)
 position = Vector2(520, -21)
 
 [node name="PathfinderUI" parent="." instance=ExtResource("3_lnu2h")]
+
+[node name="RotationPlate" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(178, -10)
+
+[node name="RotationPlate2" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(201, 267)
