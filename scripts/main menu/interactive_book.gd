@@ -28,6 +28,7 @@ var book_content = {
 
 func _ready():
 	state_machine.init(self)
+	$Menu.play()
 
 func update_text_visibility(is_visible: bool):
 	left_title.visible = is_visible
@@ -79,3 +80,30 @@ func clamp_page(new_page : int) -> int:
 	if new_page < 0: return page_count
 	elif new_page > page_count: return 0
 	return new_page
+
+func _on_play_pressed():
+	$ButtonClicked.play()
+	is_settings_mode = false 
+	state_machine.previous_page_number = 0
+	current_page = 1
+	state_machine.change_state("FlippingState")
+
+func _on_quit_pressed():
+	$ButtonClicked.play()
+	get_tree().quit()
+
+func _on_settings_pressed() -> void:
+	$ButtonClicked.play()
+	is_settings_mode = true
+	state_machine.previous_page_number = 0
+	current_page = 1
+	state_machine.change_state("FlippingState")
+	
+func _on_play_button_mouse_entered() -> void:
+	$ButtonHover.play()
+	
+func _on_settings_button_mouse_entered() -> void:
+	$ButtonHover.play()
+
+func _on_quit_button_mouse_entered() -> void:
+	$ButtonHover.play()

@@ -138,6 +138,8 @@ stream = ExtResource("21_cn8lk")
 
 [node name="ButtonHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_cvf8j")
+pitch_scale = 0.7
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="ResetButton" to="." method="_on_reset_button_mouse_entered"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
