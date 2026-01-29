@@ -32,4 +32,4 @@ func _trigger_flip(target_page: int):
 
 func _on_link_clicked(meta):
 	if SaveManager.unlocked_levels.get(str(meta), false):
-		get_tree().change_scene_to_file("res://scenes/levels/" + str(meta) + ".tscn")
+		LevelTransition.change_scene("res://scenes/levels/" + str(meta) + ".tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dpce6f6m8gtk3"]
+[gd_scene load_steps=93 format=3 uid="uid://dpce6f6m8gtk3"]
 
 [ext_resource type="Texture2D" uid="uid://bvyhepiwqq827" path="res://assets/select level/Animation sprite.PNG" id="1_v030w"]
 [ext_resource type="Script" uid="uid://dfspqt2ry62pd" path="res://scripts/main menu/fsm/state_machine.gd" id="2_0qncq"]
@@ -11,11 +11,13 @@
 [ext_resource type="Script" uid="uid://cobxmxc5if4bt" path="res://scripts/main menu/fsm/reading_state.gd" id="5_yletg"]
 [ext_resource type="Texture2D" uid="uid://dbc2r86rikxhv" path="res://assets/settings/Settings button with text.PNG" id="6_7fe6y"]
 [ext_resource type="Texture2D" uid="uid://dmkeppe6g3m42" path="res://assets/settings/Text.PNG" id="7_fn1bl"]
+[ext_resource type="AudioStream" uid="uid://c8ufn0p5ygbdt" path="res://assets/audio/Page Flip.wav" id="8_r0sq5"]
 [ext_resource type="Texture2D" uid="uid://d2vkkqu2prcyu" path="res://assets/settings/Circle slider.tres" id="8_uantw"]
 [ext_resource type="Texture2D" uid="uid://cduqrt81jsw74" path="res://assets/settings/Slider black.tres" id="9_wnpga"]
+[ext_resource type="AudioStream" uid="uid://btxb54wugjwa5" path="res://assets/audio/ButtonHoverSFX1.wav" id="10_uantw"]
 [ext_resource type="Texture2D" uid="uid://cjbukbsos7m0g" path="res://assets/settings/Merah polos.tres" id="10_w1j1p"]
 [ext_resource type="Texture2D" uid="uid://dvi0wsmaq56vu" path="res://assets/settings/Reset.tres" id="11_dgdb4"]
-[ext_resource type="AudioStream" uid="uid://c8ufn0p5ygbdt" path="res://assets/audio/Page Flip.wav" id="8_r0sq5"]
+[ext_resource type="AudioStream" uid="uid://bcaig8xal1r6t" path="res://assets/audio/ButtonClickSFX.wav" id="11_wnpga"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24scs"]
 atlas = ExtResource("1_v030w")
@@ -740,6 +742,7 @@ theme_override_icons/grabber_disabled = ExtResource("8_uantw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
+value = 50.0
 
 [node name="SFXControl" type="HSlider" parent="Control/Settings"]
 layout_mode = 0
@@ -754,6 +757,7 @@ theme_override_icons/grabber_disabled = ExtResource("8_uantw")
 theme_override_styles/slider = SubResource("StyleBoxTexture_x83lf")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_yr1bv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_m8uf1")
+value = 50.0
 
 [node name="ResetData" type="TextureButton" parent="Control/Settings"]
 layout_mode = 0
@@ -762,6 +766,14 @@ offset_top = 296.6667
 offset_right = -430.66663
 offset_bottom = 406.6667
 texture_normal = ExtResource("11_dgdb4")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="Control/Settings"]
+stream = ExtResource("10_uantw")
+bus = &"SFX"
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="Control/Settings"]
+stream = ExtResource("11_wnpga")
+bus = &"SFX"
 
 [node name="CloseButton" type="Button" parent="Control"]
 process_mode = 3

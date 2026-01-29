@@ -14,6 +14,8 @@ var unlocked_levels = {
 	"level_7": false
 }
 
+var current_level: String = ""
+
 func _ready():
 	load_game()
 

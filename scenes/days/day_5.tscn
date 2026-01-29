@@ -8,6 +8,7 @@
 script = ExtResource("1_rinci")
 dialogue_resource = ExtResource("2_xksmq")
 num_day = "5"
+current_level = "level_5"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
