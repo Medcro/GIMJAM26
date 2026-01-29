@@ -13,6 +13,7 @@ script = ExtResource("1_3wnsu")
 position = Vector2(3.7999477, 7.867813e-06)
 scale = Vector2(0.47599986, 0.476)
 texture = ExtResource("1_g42xi")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.7374878, 0.06251526)
