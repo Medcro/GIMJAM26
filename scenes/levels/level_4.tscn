@@ -82,12 +82,12 @@ position = Vector2(-221, -258)
 position = Vector2(-142, -227)
 
 [node name="RotationPlate" parent="." instance=ExtResource("7_ts8eg")]
-position = Vector2(46, -134)
+position = Vector2(140, -134)
 
 [node name="Player" parent="." instance=ExtResource("4_ts8eg")]
 position = Vector2(-46, 57)
 scale = Vector2(0.520168, 0.538477)
-max_input = 1
+max_input = 3
 
 [node name="PathfinderUI" parent="." instance=ExtResource("5_um320")]
 

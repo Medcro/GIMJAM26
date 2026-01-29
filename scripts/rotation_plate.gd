@@ -14,9 +14,9 @@ func _on_body_entered(body: Node2D) -> void:
 	var new_dir: Vector2
 	
 	if !hasRotated:
-		new_dir = rotation_clockwise(p.current_direction) # rotate clockwise
+		new_dir = rotation_anticlockwise(p.current_direction) # rotate clockwise
 	else:
-		new_dir = rotation_anticlockwise(p.current_direction) # rotate anticlockwise
+		new_dir = rotation_clockwise(p.current_direction) # rotate anticlockwise
 	var tween = create_tween().set_parallel(true)
 	
 	# move the player smoothly on the plate
