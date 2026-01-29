@@ -26,7 +26,7 @@ size = Vector2(103.5, 101.5)
 size = Vector2(13.056633, 308.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
-size = Vector2(643, 11)
+size = Vector2(643, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
 size = Vector2(7.25, 436.5)
@@ -40,7 +40,7 @@ tracks/0/path = NodePath("CloudGeserKanan:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(3.7),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(120.000015, -30)]
@@ -92,9 +92,8 @@ _data = {
 &"awan_geser": SubResource("Animation_sjq8i")
 }
 
-[node name="Level2" type="Node2D" node_paths=PackedStringArray("Player")]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_8qukl")
-Player = NodePath("Player")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -141,57 +140,36 @@ shape = SubResource("RectangleShape2D_s8va5")
 position = Vector2(-160, -1)
 shape = SubResource("RectangleShape2D_dga24")
 
-[node name="Walls" type="StaticBody2D" parent="Collision"]
+[node name="Walls" type="StaticBody2D" parent="."]
 
-[node name="Wall3" type="CollisionShape2D" parent="Collision/Walls"]
+[node name="Wall3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(156.75, -270.94336)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qxy0u")
 
-[node name="wall" type="CollisionShape2D" parent="Collision/Walls"]
+[node name="wall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-4, 161)
 shape = SubResource("RectangleShape2D_posk4")
 
-[node name="wall2" type="CollisionShape2D" parent="Collision/Walls"]
-position = Vector2(316.5, -26.5)
+[node name="wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(317.75, -139)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_posk4")
 
-[node name="wall4" type="CollisionShape2D" parent="Collision/Walls"]
+[node name="wall4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-322, -56.75)
 shape = SubResource("RectangleShape2D_sjq8i")
 
-[node name="Wall4" type="CollisionShape2D" parent="Collision/Walls"]
+[node name="Wall4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-261, -269)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qxy0u")
 
 [node name="Player" parent="." instance=ExtResource("4_nt80m")]
 position = Vector2(-266, 106)
-scale = Vector2(-0.79152393, 0.82502997)
+rotation = 3.1415927
+scale = Vector2(0.79152393, -0.82502997)
 max_input = 1
-
-[node name="StageAkhir" type="Sprite2D" parent="."]
-position = Vector2(943, 12)
-scale = Vector2(0.6, 0.60370374)
-texture = ExtResource("5_brxtv")
-
-[node name="CloudGeserKanan" type="Sprite2D" parent="."]
-position = Vector2(120.000015, -30)
-scale = Vector2(0.58020836, 0.57870376)
-texture = ExtResource("6_tv7cl")
-
-[node name="CloudGeserKiri" type="Sprite2D" parent="."]
-position = Vector2(-3, -34.000004)
-scale = Vector2(0.5947917, 0.575)
-texture = ExtResource("7_r88tb")
-
-[node name="PathfinderUI" parent="." instance=ExtResource("8_1yj8c")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ivh0c")
-}
 
 [node name="water" type="Node2D" parent="."]
 
@@ -226,6 +204,28 @@ texture = ExtResource("11_r88tb")
 position = Vector2(-266, -214)
 scale = Vector2(0.38157603, 0.37491962)
 texture = ExtResource("10_brxtv")
+
+[node name="StageAkhir" type="Sprite2D" parent="."]
+position = Vector2(943, 12)
+scale = Vector2(0.6, 0.60370374)
+texture = ExtResource("5_brxtv")
+
+[node name="CloudGeserKanan" type="Sprite2D" parent="."]
+position = Vector2(120.000015, -30)
+scale = Vector2(0.58020836, 0.57870376)
+texture = ExtResource("6_tv7cl")
+
+[node name="CloudGeserKiri" type="Sprite2D" parent="."]
+position = Vector2(-3, -34.000004)
+scale = Vector2(0.5947917, 0.575)
+texture = ExtResource("7_r88tb")
+
+[node name="PathfinderUI" parent="." instance=ExtResource("8_1yj8c")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ivh0c")
+}
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

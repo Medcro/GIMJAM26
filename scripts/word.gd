@@ -1,8 +1,8 @@
-extends StaticBody2D
+extends Area2D
 
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var word: CollisionShape2D
-
-
-func _ready() :
-	
+# This function runs when something enters the area
+func _on_body_entered(body):
+	if body.name == "Player":
+		GlobalSettings.word += 1
+		print("Item collected!")
+		queue_free() 

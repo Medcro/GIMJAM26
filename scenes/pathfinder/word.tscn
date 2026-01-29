@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://33ernvhe6n0l"]
+[gd_scene load_steps=4 format=3 uid="uid://bvwveemkap371"]
 
+[ext_resource type="Script" uid="uid://dfmynf5ckwtj7" path="res://scripts/word.gd" id="1_m0ukc"]
 [ext_resource type="Texture2D" uid="uid://cjikx0tmk2u2w" path="res://assets/pathfinder/memory shards.png" id="1_syhyo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0q3j"]
-size = Vector2(121, 114)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3m4k"]
+size = Vector2(132, 128)
 
-[node name="Collision" type="StaticBody2D"]
+[node name="Word" type="Node2D"]
+script = ExtResource("1_m0ukc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.0000002, 0.99999994)
-scale = Vector2(0.681, 0.68333334)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(65, 62)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_syhyo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-shape = SubResource("RectangleShape2D_m0q3j")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(65, 62)
+shape = SubResource("RectangleShape2D_p3m4k")
