@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm2dk1rfpiagu"]
+[gd_scene load_steps=14 format=3 uid="uid://dm2dk1rfpiagu"]
 
+[ext_resource type="Script" uid="uid://baxvnwdvnpgg2" path="res://scripts/levels/level_manager.gd" id="1_4a02d"]
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_g7bfq"]
 [ext_resource type="Texture2D" uid="uid://tk8qm6nyk7oh" path="res://assets/pathfinder/4x4.png" id="3_7ac3l"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="4_iig34"]
@@ -20,6 +21,8 @@ size = Vector2(284, 4)
 size = Vector2(3.5, 378)
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_4a02d")
+next_level = "level_1"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -109,7 +112,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_3e81p")
 
 [node name="Word" parent="." instance=ExtResource("7_g7bfq")]
-position = Vector2(45, -134)
+position = Vector2(-136, -136)
 scale = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("4_uu0hj")]

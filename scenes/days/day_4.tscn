@@ -8,6 +8,7 @@
 script = ExtResource("1_ybybt")
 dialogue_resource = ExtResource("2_ybybt")
 num_day = "4"
+current_level = "level_4"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

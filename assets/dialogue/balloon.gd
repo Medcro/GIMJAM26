@@ -24,6 +24,7 @@ signal dialogue_ended
 @onready var autoplay_timer: Timer = Timer.new()
 
 @onready var autoplay_button: TextureButton = $AutoplayButton
+@onready var skip_button: TextureButton = %SkipButton
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -83,6 +84,14 @@ var is_manual_portrait: bool = false
 @onready var chara_portrait: TextureRect = $CharaPortrait
 
 func _ready() -> void:
+	var level_id = SaveManager.current_level
+	var is_finished = SaveManager.unlocked_levels.get(level_id, false)
+	
+	if is_finished:
+		skip_button.visible = true
+	else:
+		skip_button.visible = false
+	
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 	if dialogue_label:

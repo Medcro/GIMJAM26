@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccwv30vxplcvi"]
 
 [ext_resource type="Script" uid="uid://dc2s66grhq10f" path="res://assets/dialogue/test/dialogue_test.gd" id="1_hu0in"]
-[ext_resource type="Resource" uid="uid://d3ul002gimpof" path="res://assets/dialogue/day5.dialogue" id="2_btahl"]
+[ext_resource type="Resource" uid="uid://cwyx5osjc0l53" path="res://assets/dialogue/day6.dialogue" id="2_hu0in"]
 [ext_resource type="Texture2D" uid="uid://b0dwffdywrjkv" path="res://assets/levels/day 6/bg day 5&6.png" id="3_hu0in"]
 
 [node name="Day6" type="Node2D"]
 script = ExtResource("1_hu0in")
-dialogue_resource = ExtResource("2_btahl")
+dialogue_resource = ExtResource("2_hu0in")
 num_day = "6"
+current_level = "level_6"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
