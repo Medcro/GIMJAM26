@@ -113,7 +113,6 @@ position = Vector2(-183, 52)
 [node name="Player" parent="." instance=ExtResource("5_5ke18")]
 position = Vector2(37, 123)
 scale = Vector2(0.520168, 0.538477)
-max_input = 1
 
 [node name="PathfinderUI" parent="." instance=ExtResource("6_j14br")]
 
