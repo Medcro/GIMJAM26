@@ -1,6 +1,11 @@
 extends State
 
+var pageflip_audio: AudioStreamPlayer
+
 func enter():
+	if pageflip_audio == null:
+		pageflip_audio = book.get_node("PageFlip")
+		
 	book.update_text_visibility(false)
 		
 	var page = book.current_page
@@ -31,6 +36,8 @@ func enter():
 	else:
 		if page > prev: book.play("next_page")
 		elif page < prev: book.play("previous_page")
+	
+	play_flip_sound()
 
 func update(_delta):
 	if not book.is_playing():
@@ -38,3 +45,8 @@ func update(_delta):
 			get_parent().change_state("IdleState")
 		else:
 			get_parent().change_state("ReadingState")
+
+func play_flip_sound():
+	if pageflip_audio:
+		pageflip_audio.pitch_scale = randf_range(0.9, 1.1)
+		pageflip_audio.play()
