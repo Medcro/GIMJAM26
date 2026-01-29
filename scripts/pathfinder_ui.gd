@@ -77,3 +77,12 @@ func _on_execute_button_mouse_entered() -> void:
 func _on_reset_button_mouse_entered() -> void:
 	$ButtonHover.play()
 	
+func _input(event):
+	if event.is_action_pressed("move up"):
+		$ButtonClicked.play()
+	elif event.is_action_pressed("move left"):
+		$ButtonClicked.play()
+	elif event.is_action_pressed("move down"):
+		$ButtonClicked.play()
+	elif event.is_action_pressed("move right"):
+		$ButtonClicked.play()
