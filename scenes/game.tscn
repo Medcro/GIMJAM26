@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://biilea57qgx0k" path="res://scenes/collision.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" path="res://scenes/pathfinder/water_freezing_block.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bju8rr8s67v4a" path="res://scenes/pathfinder/water_freezing_block.tscn" id="4_lbhrr"]
 
 [node name="game" type="Node2D"]
 

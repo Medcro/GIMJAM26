@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsdtr383hlyeq"
+path="res://.godot/imported/Feels like a distant memory.mp3-d8cc67ff92769628440a98c1c7a4fdc5.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Feels like a distant memory.mp3"
+dest_files=["res://.godot/imported/Feels like a distant memory.mp3-d8cc67ff92769628440a98c1c7a4fdc5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
