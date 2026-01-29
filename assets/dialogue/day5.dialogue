@@ -3,20 +3,23 @@
 Kakek: ‘[i]Kenapa akhir-akhir ini… ingatan lama datang satu per satu?[/i] ’ 
 Kakek: ‘[i]Apalagi malam tadi…[/i] ’
 [Pikirannya diganggu oleh ketukan pintu.]
-Pengasuh 2: Pak, tamunya sudah datang. 
+Suster 2: Pak, tamunya sudah datang. 
 Kakek: …[i]Yang ini pasti[/i] —
 Kakek: Silahkan.
 [Pintunya terbuka. Seorang wanita dewasa masuk. Gerakan dan posturnya sopan, matanya langsung mencari wajah Kakek. Bajunya rapi, seperti baru dari kantor kerja. Wanita tersebut terlihat lelah, keriput di wajahnya menunjukkan dia sudah cukup berumur. Namun muda, jelas lebih muda dari Kakek.]
+do set_portrait("kanaya". "default")
 ???: Ayah… Pagi.
 [Mukanya tersenyum sopan. Tidak hangat, tapi ada kekhawatiran yang tidak bisa disembunyikan.] 
 Kakek: …Pagi.
 [Wanita tersebut seperti ingat sesuatu lalu batuk.]
 Kanaya: Maaf… saya lupa. Saya Kanaya. Putri sulungnya Ayah.
 Kakek: Kanaya… Kamu kakaknya Kafin dan Kalea? 
+do set_portrait("kanaya". "bitter smile")
 Kanaya: Ayah… ingat? 
 [Suaranya seperti berharap, meskipun kecil.]
 Kakek: …Maaf, tapi tidak. Kemarin, Kafin beritahu nama-nama kalian. 
 Kakek: Nama… anak-anak saya.
+do set_portrait("kanaya". "mangap dikit")
 Kanaya: Oh. Kafin… ya. 
 Kanaya: Saya ga berpikir dia akan bicara banyak ke Ayah. Jadi maaf, saya lumayan kaget. 
 [Kanaya duduk rapi di depan ayahnya. Ruangan tersebut hening, hanya suara hujan tipis menemani mereka dari luar.]
@@ -24,31 +27,44 @@ Kakek: Kamu… terlihat lelah.
 Kanaya: Ah, iya. Sedikit. Saya memang langsung ke sini habis kerja. 
 Kakek: Kenapa kamu tidak istirahat saja?
 [Kanaya mendiam mendengar pertanyaan itu, lalu menghelakan napasnya.]
+do set_portrait("kanaya". "soft smile")
 Kanaya: Ayah bentar lagi ulang tahun, loh. Sedih rasanya kalau nanti Ayah sendirian.
 [Kakek terdengar bingung akan pengalihan tersebut, namun mengikuti alur percakapan. Kakek tersebut tersenyum akan kekhawatiran si sulung.]
+do set_portrait("kakek". "soft smile")
 Kakek: Haha, iyakah? Ulang tahun ke berapa, ya?
+do set_portrait("kanaya". "soft smile")
 Kanaya: Iya. Tahun ini Ayah jadi 88 tahun.
 [Kanaya seperti berdiam, lalu tersenyum tipis.]
+do set_portrait("kanaya". "bitter smile")
 Kanaya: …Ayah. Sehat-sehat ya? Kata pengasuh, Ayah sedang kesulitan tidur akhir-akhir ini.
 Kakek: Ah, iya. Saya sering terbangun akhir-akhir ini.
 Kanaya: Mimpi?
 Kakek: Bukan. Seperti… ingatan.
 Kakek: ‘[i]Seperti malam tadi…[/i] ’
+do set_flashback(true)
 [Kondisi tersebut sudah tidak asing baginya, mimpi tapi nyata. Sebuah memori yang menghantui malam Kakek. Ada sebuah pintu, terbuka paksa. Tas yang dibawa dilempar ke kursi, sepatu dilepas sembarang. Kakek… berjalan masuk tanpa menoleh. Seseorang pun berjongkok, memungut sepatu, melipat kaos kaki, dan merapikan tas Kakek. Wajahnya tidak jelas, meskipun rambutnya diikat. Namun, gerakannya cekatan, seperti terbiasa dengan ini. Ada seorang gadis, dengan ekspresi seperti Ayahnya, yang kesal melihat apa yang terjadi. Tangan kecilnya mengepal, menahan dirinya. Kakek muda duduk di meja makan yang sudah penuh tersaji makanan. Bincangannya dengan telepon tersebut berisik, seperti sebuah perdebatan. Lalu tiba-tiba— prak! Sebuah gelas jatuh dan pecah. Sosok yang tadi merapikan barang panik, berlutut, membersihkan pecahan gelas tersebut. Lalu, Kakek muda berteriak—]
+do set_portrait("kakek", "muda")
 Kakek: Aaaah! Apalagi itu?
+do set_portrait("kakek", "muda")
 Kakek: Ngapain sih?!
 [Telepon tersebut bahkan tidak ditutup. Hatinya, pada saat itu, saking penuh dengan amarah untuk peduli dengan hal sepele seperti orang lain yang dapat mendengar teriakannya.]
+do set_portrait("kakek", "muda")
 Kakek: Orang lagi sibuk—tahu sibuk kan?! Ada aja kerjaannya! Ga guna banget jadi istr—!
+do set_flashback(false)
 [Kakek pun terbangun, hatinya bergetar semenjak mimpi (memori?) tersebut. Seluruh badannya kaget, seperti terbangun dari mimpi buruk. Namun, satu hal khusus yang membuat hatinya sakit. Gadis tersebut yang menatap tajam ke arahnya saat semua itu terjadi. Rahangnya mengeras dan tidak berkata apa-apa. Tidak perlu juga, semuanya telah terucapkan dari tatapan tersebut.]
 Kakek: ‘[i]…Butuh beberapa jam bagi para pengasuh untuk menenangkan saya.[/i] ’
 Kanaya: Ayah?
+do set_portrait("kakek". "sad")
 Kakek: Saya ingat sesuatu. 
+do set_portrait("kakek". "sad")
 Kakek: Saya… baru pulang kerja. Marah di telepon, barang berantakan. Terus… ada yang pecah. 
+do set_portrait("kakek". "sad")
 Kakek: Saya berteriak, marah. Lalu… kamu marah. 
 [Kanaya menarik napasnya, lalu menjawab datar.]
 Kanaya: Saya engga marah. Saya… kesal.
 Kakek: Karena saya berteriak? 
 [Kanaya tersenyum pahit, menggelengkan kepalanya.]
+do set_portrait("kanaya". "bitter smile")
 Kanaya: Karena Ayah tidak pernah lihat siapa yang selalu ada buat Ayah.
 Kakek: …Istri saya?
 Kanaya: Ya, Ibu kami. 
@@ -61,6 +77,7 @@ Kakek: Kalau begitu…
 Kakek: …Kenapa dia tidak meninggalkan saya?
 Kanaya: …Kenapa?
 [Kanaya tersenyum pahit.]
+do set_portrait("kanaya". "bitter smile")
 Kanaya: Karena dia mencintai Ayah. Dengan… caranya sendiri. Meskipun Ayah begitu.
 [Sang Ayah menutup matanya sendiri, seperti sedang memproses informasi baru itu.]
 Kanaya: Apakah… Ayah ingat? Tentang Ibu?
