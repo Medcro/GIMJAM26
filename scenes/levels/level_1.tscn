@@ -1,12 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dmit0f6pdu4gk"]
+[gd_scene load_steps=14 format=3 uid="uid://dmit0f6pdu4gk"]
 
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_s8va5"]
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_dga24"]
 [ext_resource type="Texture2D" uid="uid://bv41rrm6mm4cm" path="res://assets/pathfinder/6x4.png" id="3_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_excbq"]
-[ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="5_iav0o"]
-[ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="6_dnkej"]
-[ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="7_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_wtwp4"]
 [ext_resource type="Texture2D" uid="uid://vsj5dbqh5ko1" path="res://assets/pathfinder/wall 2.png" id="10_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="11_wtwp4"]
@@ -27,70 +24,8 @@ size = Vector2(0.91195893, 536.0123)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dga24"]
 size = Vector2(103.5, 101.5)
 
-[sub_resource type="Animation" id="Animation_q0wsq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3.7),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(120.000015, -30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -34.000004)]
-}
-
-[sub_resource type="Animation" id="Animation_sjq8i"]
-resource_name = "awan_geser"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.36666667, -0.16666667, 1.5, 4.4666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(120.000015, -30), Vector2(44, -36), Vector2(44, -36), Vector2(695, -36)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5333334, 4.4666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-3, -34.000004), Vector2(-710, -34.000004)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivh0c"]
-_data = {
-&"RESET": SubResource("Animation_q0wsq"),
-&"awan_geser": SubResource("Animation_sjq8i")
-}
-
-[node name="Level2" type="Node2D" node_paths=PackedStringArray("Player")]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_s8va5")
-Player = NodePath("Player")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -186,27 +121,4 @@ rotation = 3.1415927
 scale = Vector2(0.79152393, -0.82503)
 max_input = 1
 
-[node name="StageAkhir" type="Sprite2D" parent="."]
-position = Vector2(943, 12)
-scale = Vector2(0.6, 0.60370374)
-texture = ExtResource("5_iav0o")
-
-[node name="CloudGeserKanan" type="Sprite2D" parent="."]
-position = Vector2(120.000015, -30)
-scale = Vector2(0.58020836, 0.57870376)
-texture = ExtResource("6_dnkej")
-
-[node name="CloudGeserKiri" type="Sprite2D" parent="."]
-position = Vector2(-3, -34.000004)
-scale = Vector2(0.5947917, 0.575)
-texture = ExtResource("7_mm8aj")
-
 [node name="PathfinderUI" parent="." instance=ExtResource("8_wtwp4")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ivh0c")
-}
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

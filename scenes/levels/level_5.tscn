@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjamdyf07kcty"]
+[gd_scene load_steps=16 format=3 uid="uid://cnyuonqspvfr8"]
 
 [ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_vvoq0"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_vvoq0"]
-[ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_dwyms"]
+[ext_resource type="PackedScene" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_dwyms"]
 [ext_resource type="PackedScene" uid="uid://dwm2p8kl6kfh4" path="res://scenes/pathfinder/rotation_plate.tscn" id="4_6xwso"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_5ke18"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="6_j14br"]
@@ -101,11 +101,11 @@ position = Vector2(-330, -69)
 [node name="RotationPlate2" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(33, -21)
 
-[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_6xwso")]
-position = Vector2(146, 146)
-
 [node name="RotationPlate3" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(250, -20)
+
+[node name="RotationPlate4" parent="." instance=ExtResource("4_6xwso")]
+position = Vector2(179, 125)
 
 [node name="RotationPlate" parent="." instance=ExtResource("4_6xwso")]
 position = Vector2(-183, 52)

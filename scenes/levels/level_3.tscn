@@ -1,27 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://cpvaurvpikvrb"]
+[gd_scene load_steps=13 format=3 uid="uid://cpvaurvpikvrb"]
 
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_f6egh"]
 [ext_resource type="Texture2D" uid="uid://c28gujdqcc035" path="res://assets/pathfinder/stage akhir/[dark ver_ background pathfinder.png" id="2_t4txi"]
 [ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="3_apo5x"]
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_josfm"]
+[ext_resource type="PackedScene" uid="uid://c4ajb8eclnieh" path="res://scenes/pathfinder/water_freezing_block.tscn" id="4_ugcn1"]
 [ext_resource type="Texture2D" uid="uid://cjikx0tmk2u2w" path="res://assets/pathfinder/memory shards.png" id="5_lgrx1"]
-[ext_resource type="Texture2D" uid="uid://b2jhjgh6odkv2" path="res://assets/pathfinder/water 3.png" id="6_fhpes"]
-[ext_resource type="Texture2D" uid="uid://dyin4pwoxmnxu" path="res://assets/pathfinder/water 5.png" id="7_vmg1d"]
-[ext_resource type="Texture2D" uid="uid://djqk1p0ighu3o" path="res://assets/pathfinder/water 1.png" id="8_1nwmf"]
 [ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="9_5f5xw"]
-[ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="10_o3ttr"]
-[ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="11_kdsi4"]
-[ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="12_kva3v"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="13_jql0x"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
-size = Vector2(3.1164196, 177.82394)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8va5"]
-size = Vector2(0.65633345, 558.22015)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dga24"]
-size = Vector2(75, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxy0u"]
 size = Vector2(9, 220)
@@ -35,70 +21,8 @@ size = Vector2(7.25, 436.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_do6pa"]
 size = Vector2(72.5, 71)
 
-[sub_resource type="Animation" id="Animation_q0wsq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(120.000015, -30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -34.000004)]
-}
-
-[sub_resource type="Animation" id="Animation_sjq8i"]
-resource_name = "awan_geser"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CloudGeserKanan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.36666667, -0.16666667, 1.5, 4.4666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(120.000015, -30), Vector2(44, -36), Vector2(44, -36), Vector2(695, -36)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloudGeserKiri:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5333334, 4.4666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-3, -34.000004), Vector2(-710, -34.000004)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivh0c"]
-_data = {
-&"RESET": SubResource("Animation_q0wsq"),
-&"awan_geser": SubResource("Animation_sjq8i")
-}
-
-[node name="Level3" type="Node2D" node_paths=PackedStringArray("Player")]
+[node name="Level3" type="Node2D"]
 script = ExtResource("1_f6egh")
-Player = NodePath("Player")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -119,30 +43,6 @@ scale = Vector2(0.6, 0.59999996)
 texture = ExtResource("3_apo5x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Ice Cube" type="StaticBody2D" parent="."]
-
-[node name="Awan3" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(-33.49999, -21)
-scale = Vector2(116.4798, 0.3936477)
-shape = SubResource("RectangleShape2D_q0wsq")
-
-[node name="Awan1" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(-107.00003, -164.87103)
-scale = Vector2(116.4798, 0.3936477)
-shape = SubResource("RectangleShape2D_s8va5")
-
-[node name="Awan2" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(257, -93)
-shape = SubResource("RectangleShape2D_dga24")
-
-[node name="Awan4" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(253, 56)
-shape = SubResource("RectangleShape2D_dga24")
-
-[node name="Awan5" type="CollisionShape2D" parent="Ice Cube"]
-position = Vector2(36, -165)
-shape = SubResource("RectangleShape2D_dga24")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -178,6 +78,50 @@ shape = SubResource("RectangleShape2D_do6pa")
 position = Vector2(183, -21)
 shape = SubResource("RectangleShape2D_do6pa")
 
+[node name="WaterFreezingBlock2" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(37, -166)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock3" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-105.99999, -239.00002)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock4" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-105.999985, -167.00002)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock5" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-106, -95.00003)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock6" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(255.99998, -95.00002)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock7" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-178.99998, -22.00003)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock8" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-105.999985, -23.000032)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock9" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(-33.999992, -23.000032)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock10" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(38, -23.000017)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock11" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(110, -23.00003)
+scale = Vector2(0.9599969, 0.9599969)
+
+[node name="WaterFreezingBlock12" parent="." instance=ExtResource("4_ugcn1")]
+position = Vector2(254.99998, 50.99997)
+scale = Vector2(0.9599969, 0.9599969)
+
 [node name="Player" parent="." instance=ExtResource("4_josfm")]
 position = Vector2(-251, -165)
 scale = Vector2(0.520168, 0.538477)
@@ -187,34 +131,6 @@ max_input = 1
 position = Vector2(254.00002, 125)
 scale = Vector2(0.26797125, 0.26329663)
 texture = ExtResource("5_lgrx1")
-
-[node name="water" type="Sprite2D" parent="."]
-
-[node name="watercube1" type="Sprite2D" parent="water"]
-position = Vector2(-106.999985, -163.99998)
-rotation = 1.5707964
-scale = Vector2(0.46069002, 0.4606901)
-texture = ExtResource("6_fhpes")
-
-[node name="watercube2" type="Sprite2D" parent="water"]
-position = Vector2(-34.000008, -18.999992)
-scale = Vector2(0.46069002, 0.4606901)
-texture = ExtResource("7_vmg1d")
-
-[node name="watercube3" type="Sprite2D" parent="water"]
-position = Vector2(35.750004, -165.25)
-scale = Vector2(0.4689999, 0.46899998)
-texture = ExtResource("8_1nwmf")
-
-[node name="watercube4" type="Sprite2D" parent="water"]
-position = Vector2(255, -93)
-scale = Vector2(0.4689999, 0.46899998)
-texture = ExtResource("8_1nwmf")
-
-[node name="watercube5" type="Sprite2D" parent="water"]
-position = Vector2(254, 56)
-scale = Vector2(0.4689999, 0.46899998)
-texture = ExtResource("8_1nwmf")
 
 [node name="wall" type="Node2D" parent="."]
 
@@ -233,27 +149,4 @@ position = Vector2(182, -19.99999)
 scale = Vector2(0.46511364, 0.45099998)
 texture = ExtResource("9_5f5xw")
 
-[node name="StageAkhir" type="Sprite2D" parent="."]
-position = Vector2(943, 12)
-scale = Vector2(0.6, 0.60370374)
-texture = ExtResource("10_o3ttr")
-
-[node name="CloudGeserKanan" type="Sprite2D" parent="."]
-position = Vector2(120.000015, -30)
-scale = Vector2(0.58020836, 0.57870376)
-texture = ExtResource("11_kdsi4")
-
-[node name="CloudGeserKiri" type="Sprite2D" parent="."]
-position = Vector2(-3, -34.000004)
-scale = Vector2(0.5947917, 0.575)
-texture = ExtResource("12_kva3v")
-
 [node name="PathfinderUI" parent="." instance=ExtResource("13_jql0x")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ivh0c")
-}
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
