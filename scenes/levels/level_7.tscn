@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://erijih0m4eds"]
+[gd_scene load_steps=24 format=3 uid="uid://erijih0m4eds"]
 
 [ext_resource type="Script" uid="uid://185vx5qditly" path="res://scripts/levels/level_7.gd" id="1_posk4"]
 [ext_resource type="Resource" uid="uid://c2h0ns5ef3h7p" path="res://assets/dialogue/last_level.dialogue" id="2_q0wsq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="4_ivh0c"]
 [ext_resource type="Texture2D" uid="uid://gy6mskrw755a" path="res://assets/pathfinder/stage akhir/stage akhir.png" id="5_wreli"]
 [ext_resource type="Texture2D" uid="uid://47jtrvr5etb5" path="res://assets/pathfinder/stage akhir/asset orb glow.png" id="6_ivh0c"]
+[ext_resource type="Script" uid="uid://djmeoqlipprmb" path="res://scripts/levels/player_level7.gd" id="6_wreli"]
 [ext_resource type="Texture2D" uid="uid://brr0ktgtgk70o" path="res://assets/pathfinder/stage akhir/cloud geser kanan.png" id="6_ymk4h"]
 [ext_resource type="Texture2D" uid="uid://ceo4rkbvxsllw" path="res://assets/pathfinder/stage akhir/cloud geser kiri.png" id="7_st48t"]
 [ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="8_dfn7m"]
@@ -239,6 +240,7 @@ shape = SubResource("RectangleShape2D_sjq8i")
 [node name="Player" parent="." instance=ExtResource("4_ivh0c")]
 position = Vector2(-253, 122.999985)
 scale = Vector2(0.520168, 0.538477)
+script = ExtResource("6_wreli")
 max_input = 1
 
 [node name="Nenek" type="Area2D" parent="."]

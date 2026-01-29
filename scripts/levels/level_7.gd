@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var Player: player 
+@export var Player: PlayerLevel7 
 @export var dialogue_resource: DialogueResource
 
 var move_count = 0
@@ -20,7 +20,7 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 		if Player: Player.is_locked = false
 
 func _on_nenek_body_entered(body: Node2D) -> void:
-	if body is player:
+	if body is PlayerLevel7:
 		if anim.is_playing(): return
 		
 		match move_count:

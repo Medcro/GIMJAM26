@@ -1,12 +1,10 @@
 extends CharacterBody2D
-class_name player
+class_name PlayerLevel7
 
 signal queue_updated(new_queue: Array, max_size: int)
 
 @export var speed: float = 400.0
 @export var max_input: int = 5
-
-@export var dialogue_resource: DialogueResource
  
 @onready var input_queue: Array = []
 @onready var is_moving: bool = false
@@ -17,35 +15,36 @@ signal queue_updated(new_queue: Array, max_size: int)
 
 @onready var is_locked: bool = false
 
-@onready var num_input := 0
-@onready var is_in_endpoint: bool = false
-@onready var has_collected_memory: bool = false
-
 func _ready():
 	add_to_group("player")
 
 func _process(_delta):
 	if not is_moving and not is_locked and input_queue.size() < max_input:
 		#input user (up, down, left, right)
-		if Input.is_action_just_pressed("ui_up"):    add_to_queue(Vector2.UP)
-		if Input.is_action_just_pressed("ui_down"):  add_to_queue(Vector2.DOWN)
-		if Input.is_action_just_pressed("ui_left"):  add_to_queue(Vector2.LEFT)
-		if Input.is_action_just_pressed("ui_right"): add_to_queue(Vector2.RIGHT)
+		if Input.is_action_just_pressed("ui_up"):    
+			add_to_queue(Vector2.UP)
+			execute_commands()
+		if Input.is_action_just_pressed("ui_down"):  
+			add_to_queue(Vector2.DOWN)
+			execute_commands()
+		if Input.is_action_just_pressed("ui_left"):  
+			add_to_queue(Vector2.LEFT)
+			execute_commands()
+		if Input.is_action_just_pressed("ui_right"): 
+			add_to_queue(Vector2.RIGHT)
+			execute_commands()
 	
 	#execute the command from the user	
 	if Input.is_action_just_pressed("space") and not is_moving and not is_locked:
 		execute_commands()
-		num_input = 0
 
 func add_to_queue(dir: Vector2):
 	if not is_moving and input_queue.size() < max_input:
 		input_queue.append(dir)
-		num_input += 1
 		queue_updated.emit(input_queue, max_input)
 
 func reset_queue():
 	input_queue.clear()
-	num_input = 0
 	queue_updated.emit(input_queue, max_input)
 
 func execute_commands():
@@ -61,24 +60,14 @@ func execute_commands():
 	is_moving = false
 	update_animation()
 
-	if not is_in_endpoint:
-		await show_dialogue_and_wait("exited_without_memory")
-		reset_level()
-	elif not has_collected_memory:
-		await show_dialogue_and_wait("fail_to_exit")
-		reset_level()
-	else:
-		print("Berhasil")
-
 func move_until_collision():
 	while true:
-		if is_turning or is_locked:
-			await  get_tree().physics_frame
+		if is_locked or is_turning:
+			await get_tree().physics_frame
 			continue
 
 		var collision = move_and_collide(current_direction * speed * get_process_delta_time())
 		if collision: 
-			#emit_signal(word_added)
 			break
 		await get_tree().physics_frame
 
@@ -98,12 +87,3 @@ func update_animation():
 		anim.flip_h = true # face right
 	
 	anim.play(state + suffix)
-
-func reset_level():
-	has_collected_memory = false
-	get_tree().reload_current_scene()
-
-func show_dialogue_and_wait(title: String):
-	is_locked = true
-	var balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, title, [self])
-	await balloon.tree_exited
