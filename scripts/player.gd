@@ -13,11 +13,13 @@ signal queue_updated(new_queue: Array, max_size: int)
 
 @onready var anim: AnimatedSprite2D = $Sprite2D
 
+@onready var is_locked: bool = false
+
 func _ready():
 	add_to_group("player")
 
 func _process(_delta):
-	if not is_moving and input_queue.size() < max_input:
+	if not is_moving and not is_locked and input_queue.size() < max_input:
 		#input user (up, down, left, right)
 		if Input.is_action_just_pressed("ui_up"):    add_to_queue(Vector2.UP)
 		if Input.is_action_just_pressed("ui_down"):  add_to_queue(Vector2.DOWN)
@@ -25,7 +27,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("ui_right"): add_to_queue(Vector2.RIGHT)
 	
 	#execute the command from the user	
-	if Input.is_action_just_pressed("space") and not is_moving:
+	if Input.is_action_just_pressed("space") and not is_moving and not is_locked:
 		execute_commands()
 
 func add_to_queue(dir: Vector2):
@@ -52,7 +54,7 @@ func execute_commands():
 
 func move_until_collision():
 	while true:
-		if is_turning:
+		if is_turning or is_locked:
 			await  get_tree().physics_frame
 			continue
 
