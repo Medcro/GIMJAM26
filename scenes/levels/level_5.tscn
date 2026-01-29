@@ -1,0 +1,155 @@
+[gd_scene load_steps=16 format=3 uid="uid://bjamdyf07kcty"]
+
+[ext_resource type="Texture2D" uid="uid://d0wrt7h11f6dt" path="res://assets/pathfinder/[light ver] background pathfinder.png" id="1_vvoq0"]
+[ext_resource type="Texture2D" uid="uid://bbxvxq1hrof2b" path="res://assets/pathfinder/8x6.png" id="2_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://dl5eaflytfva7" path="res://scenes/pathfinder/memory_bubble.tscn" id="3_dwyms"]
+[ext_resource type="PackedScene" uid="uid://dwm2p8kl6kfh4" path="res://scenes/pathfinder/rotation_plate.tscn" id="4_6xwso"]
+[ext_resource type="PackedScene" uid="uid://dydvid1pmnxda" path="res://scenes/player.tscn" id="5_5ke18"]
+[ext_resource type="PackedScene" uid="uid://dkl832t6r4y02" path="res://scenes/pathfinder/pathfinder_ui.tscn" id="6_j14br"]
+[ext_resource type="Texture2D" uid="uid://cfxnx057hn4gs" path="res://assets/pathfinder/titik dalem arrow box versi max 5.png" id="7_vvoq0"]
+[ext_resource type="Texture2D" uid="uid://1deubfg6l73i" path="res://assets/pathfinder/exit gate.png" id="8_gruok"]
+[ext_resource type="Texture2D" uid="uid://dbikgub4qm47v" path="res://assets/pathfinder/wall 1.png" id="9_h717f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0wsq"]
+size = Vector2(6.7002034, 110.772255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anwe6"]
+size = Vector2(4.5, 440)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+size = Vector2(3.25, 443.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posk4"]
+size = Vector2(73, 2.984375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvoq0"]
+size = Vector2(436, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqnj0"]
+size = Vector2(583, 5)
+
+[node name="Level5" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5999933, 0.5999943)
+texture = ExtResource("1_vvoq0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Grid" type="Sprite2D" parent="."]
+position = Vector2(-11.99995, -34.000004)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("2_vvoq0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="Wall" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-252.15625, -21.750004)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Wall2" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-107.000015, 122.99999)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Wall4" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-108.00001, -167)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Wall3" type="CollisionShape2D" parent="Collision"]
+position = Vector2(109.99999, -22.00001)
+scale = Vector2(10.792581, 0.6274135)
+shape = SubResource("RectangleShape2D_q0wsq")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(292.5, -57)
+shape = SubResource("RectangleShape2D_anwe6")
+
+[node name="wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-290.625, -54.6875)
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="wall5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(257.5, -275.4922)
+shape = SubResource("RectangleShape2D_posk4")
+
+[node name="wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-74, -274)
+shape = SubResource("RectangleShape2D_vvoq0")
+
+[node name="wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 162.5)
+shape = SubResource("RectangleShape2D_tqnj0")
+
+[node name="MemoryBubble" parent="." instance=ExtResource("3_dwyms")]
+position = Vector2(-330, -69)
+
+[node name="RotationPlate2" parent="." instance=ExtResource("4_6xwso")]
+position = Vector2(33, -21)
+
+[node name="RotationPlate2" parent="RotationPlate2" instance=ExtResource("4_6xwso")]
+position = Vector2(146, 146)
+
+[node name="RotationPlate3" parent="." instance=ExtResource("4_6xwso")]
+position = Vector2(250, -20)
+
+[node name="RotationPlate" parent="." instance=ExtResource("4_6xwso")]
+position = Vector2(-183, 52)
+
+[node name="Player" parent="." instance=ExtResource("5_5ke18")]
+position = Vector2(37, 123)
+scale = Vector2(0.520168, 0.538477)
+max_input = 1
+
+[node name="PathfinderUI" parent="." instance=ExtResource("6_j14br")]
+
+[node name="TitikArrowBox" type="Sprite2D" parent="PathfinderUI"]
+position = Vector2(571.00006, 403.99997)
+scale = Vector2(0.48240742, 0.48888895)
+texture = ExtResource("7_vvoq0")
+
+[node name="ExitGate" type="Sprite2D" parent="."]
+position = Vector2(262, 106)
+rotation = -1.5707964
+scale = Vector2(0.7845365, 0.8018232)
+texture = ExtResource("8_gruok")
+
+[node name="WallImage" type="Sprite2D" parent="."]
+position = Vector2(-252.82236, -20.718744)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage2" type="Sprite2D" parent="."]
+position = Vector2(-108, 123)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage5" type="Sprite2D" parent="."]
+position = Vector2(-108, -166)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage4" type="Sprite2D" parent="."]
+position = Vector2(110, -20.999992)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
+
+[node name="WallImage3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-108.00001, -166.00002)
+scale = Vector2(0.4598193, 0.454875)
+texture = ExtResource("9_h717f")
